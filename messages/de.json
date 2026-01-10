@@ -1,0 +1,196 @@
+{
+  "header": {
+    "services": "Unsere Dienstleistungen",
+    "about": "Über uns",
+    "references": "Referenzen",
+    "faq": "FAQ",
+    "freeAssessment": "Kostenlose Bewertung"
+  },
+  "hero": {
+    "title": "Eine grünere Zukunft gestalten",
+    "subtitle": "Solarenergielösungen für Ihr Zuhause",
+    "requestConsultation": "Beratung anfordern",
+    "ourServices": "Unsere Dienstleistungen"
+  },
+  "targetAudience": {
+    "title": "Solarlösungen für Jedermann",
+    "subtitle": "Egal ob Hausbesitzer oder Geschäftsinhaber, wir haben die perfekte Solarlösung für Ihre Bedürfnisse",
+    "residential": {
+      "title": "Privatkunden",
+      "description": "Verwandeln Sie Ihr Zuhause in ein nachhaltiges Energiekraftwerk",
+      "benefit1": "Reduzieren Sie Ihre monatlichen Stromrechnungen um bis zu 90%",
+      "benefit2": "Steigern Sie sofort Ihren Immobilienwert",
+      "benefit3": "25+ Jahre Garantie auf Solarmodule",
+      "benefit4": "Flexible Finanzierungsmöglichkeiten verfügbar",
+      "button": "Privatlösungen erkunden"
+    },
+    "commercial": {
+      "title": "Gewerbekunden",
+      "description": "Maximieren Sie Gewinne bei minimiertem CO2-Fußabdruck",
+      "benefit1": "Signifikanter ROI innerhalb von 3-5 Jahren",
+      "benefit2": "Steuerliche Anreize und Betriebsabzüge",
+      "benefit3": "Verbessertes Nachhaltigkeitsprofil des Unternehmens",
+      "benefit4": "Skalierbare Systeme für jede Unternehmensgröße",
+      "button": "Geschäftslösungen erkunden"
+    },
+    "stats": {
+      "installations": "Installationen",
+      "yearsWarranty": "Jahre Garantie",
+      "billReduction": "Rechnungsreduzierung",
+      "satisfactionRate": "Zufriedenheitsrate"
+    }
+  },
+  "services": {
+    "title": "Unsere Dienstleistungen",
+    "subtitle": "Umfassende Elektro- und Solarlösungen für Ihre Immobilie",
+    "solarPanels": {
+      "title": "Solaranlagen-Systeme",
+      "description": "Komplette Solaranlageninstallation mit hocheffizienten Modulen, Wechselrichtern und Überwachungssystemen für maximale Energieproduktion."
+    },
+    "evCharger": {
+      "title": "E-Auto-Ladestation Installation",
+      "description": "Professionelle Installation von Elektrofahrzeug-Ladestationen für Zuhause und Unternehmen mit intelligenten Ladefunktionen."
+    },
+    "batteryStorage": {
+      "title": "Batteriespeicher-Systeme",
+      "description": "Speichern Sie überschüssige Solarenergie mit fortschrittlichen Batteriesystemen für 24/7 Stromverfügbarkeit und Energieunabhängigkeit."
+    },
+    "hvac": {
+      "title": "Heiz- & Kühlsysteme",
+      "description": "Energieeffiziente elektrische Heiz- und Kühllösungen, integriert mit Ihrer Solaranlage für optimalen Komfort."
+    },
+    "electricalPrep": {
+      "title": "Elektrische System-Vorbereitung",
+      "description": "Aufrüstung und Vorbereitung der elektrischen Infrastruktur Ihrer Immobilie zur Unterstützung von Solaranlagen und modernen Energiesystemen."
+    }
+  },
+  "howWeWork": {
+    "title": "Wie wir arbeiten",
+    "subtitle": "Unser optimierter Prozess macht den Umstieg auf Solar einfach und problemlos",
+    "step1": {
+      "title": "Erstgespräch",
+      "description": "Erstberatung, um Ihren Energiebedarf zu verstehen, Ihr Grundstück zu bewerten und die optimale Solarlösung für Ihr Zuhause zu bestimmen."
+    },
+    "step2": {
+      "title": "Papierkram erledigen",
+      "description": "Wir kümmern uns um alle Formalitäten - Genehmigungen, Anträge und behördliche Anforderungen, damit Sie sich nicht um die Bürokratie kümmern müssen."
+    },
+    "step3": {
+      "title": "Systeminstallation",
+      "description": "Professionelle Installation durch unser zertifiziertes Team, das qualitativ hochwertige Arbeit und optimale Systemleistung gewährleistet."
+    },
+    "step4": {
+      "title": "Laufender Support",
+      "description": "Fortlaufende Überwachung, Wartungsunterstützung und Kundenservice, um sicherzustellen, dass Ihr System mit höchster Effizienz arbeitet."
+    }
+  },
+  "brands": {
+    "subtitle": "Vertrauenswürdige Partner",
+    "title": "Premium-Marken, mit denen wir arbeiten",
+    "footer": "Wir verwenden nur zertifizierte, branchenführende Geräte für alle Installationen"
+  },
+  "governmentSupport": {
+    "badge": "Staatliche Programme",
+    "title": "Bis zu 50% staatliche Förderung erhalten",
+    "subtitle": "Nutzen Sie staatliche Förderprogramme, die Solarenergie für Hausbesitzer und Unternehmen erschwinglicher machen",
+    "highlight": {
+      "label": "Aktuelles Programm",
+      "percentage": "50%",
+      "subtitle": "Staatlicher Zuschuss",
+      "description": "Der Staat übernimmt bis zu 50% Ihrer Solarpanel-Installationskosten durch verschiedene Förderprogramme für erneuerbare Energien.",
+      "note": "Verfügbar für qualifizierte Wohn- und Gewerbeinstallationen"
+    },
+    "benefit1": {
+      "title": "Direkte Zuschüsse",
+      "description": "Erhalten Sie direkte finanzielle Unterstützung, die Ihre Anfangsinvestition erheblich reduziert"
+    },
+    "benefit2": {
+      "title": "Steuergutschriften",
+      "description": "Profitieren Sie von Bundes- und Landessteuergutschriften, die die Gesamtkosten Ihres Systems weiter senken"
+    },
+    "benefit3": {
+      "title": "Zinsgünstige Darlehen",
+      "description": "Zugang zu speziellen staatlich geförderten Finanzierungsoptionen mit günstigen Zinssätzen"
+    },
+    "benefit4": {
+      "title": "Einspeisevergütung",
+      "description": "Verdienen Sie Geld, indem Sie überschüssige Energie zu garantierten Premiumpreisen ins Netz einspeisen"
+    },
+    "cta": {
+      "title": "Lassen Sie uns Ihnen helfen, Ihre Einsparungen zu maximieren",
+      "description": "Unser Team führt Sie durch alle verfügbaren staatlichen Programme und kümmert sich um den Papierkram, um sicherzustellen, dass Sie maximale Vorteile erhalten",
+      "viewAllPrograms": "Alle Programme anzeigen",
+      "button": "Berechtigung prüfen"
+    }
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "subtitle": "Finden Sie Antworten auf häufige Fragen zu unseren Solarlösungen",
+    "q1": {
+      "question": "Welche Dienstleistungen bieten Sie an?",
+      "answer": "Wir bieten komplette Solaranlageninstallationsdienstleistungen einschließlich Erstberatung, Systemdesign und -dimensionierung, aller Formalitäten und Genehmigungsabwicklung, professioneller Installation und laufender Wartungsunterstützung. Wir kümmern uns um alles von Anfang bis Ende."
+    },
+    "q2": {
+      "question": "Wie lange dauert es, bis sich die Investition amortisiert?",
+      "answer": "Der Return on Investment liegt typischerweise zwischen 6-10 Jahren, abhängig von Ihrem Energieverbrauch, der Systemgröße und verfügbaren staatlichen Anreizen. Nach der Amortisationszeit genießen Sie jahrzehntelang kostenlose, saubere Energie."
+    },
+    "q3": {
+      "question": "Welche Garantien bieten Sie?",
+      "answer": "Unsere Solarmodule haben 25 Jahre Leistungsgarantie, und Wechselrichter haben 10-15 Jahre Garantie. Wir bieten auch Verarbeitungsgarantien für alle Installationen, um sicherzustellen, dass Ihr System optimal funktioniert."
+    },
+    "q4": {
+      "question": "Wie läuft der Installationsprozess ab?",
+      "answer": "Nach einer Erstberatung und Standortbewertung entwerfen wir ein maßgeschneidertes System für Ihre Bedürfnisse. Nach Genehmigung kümmern wir uns um alle Genehmigungen und Formalitäten. Die Installation dauert in der Regel 1-3 Tage, gefolgt von Inspektion und Netzanschluss."
+    },
+    "q5": {
+      "question": "Benötigt das System Wartung?",
+      "answer": "Solarmodule benötigen minimale Wartung. Wir empfehlen jährliche Inspektionen und gelegentliche Reinigung. Unsere Wartungspakete stellen sicher, dass Ihr System während seiner gesamten Lebensdauer optimal funktioniert."
+    },
+    "q6": {
+      "question": "Gibt es staatliche Anreize?",
+      "answer": "Ja, verschiedene staatliche Anreize und Rabatte sind für Solarinstallationen verfügbar. Wir helfen Ihnen, alle verfügbaren Programme zu nutzen, um Ihre Einsparungen zu maximieren und Solar erschwinglicher zu machen."
+    }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Fordern Sie eine kostenlose Beratung und ein Angebot für Ihre Solarinstallation an",
+    "getInTouch": "Kontaktieren Sie uns",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "address": "Adresse",
+    "form": {
+      "title": "Fordern Sie Ihr kostenloses Angebot an",
+      "name": "Vollständiger Name",
+      "namePlaceholder": "Max Mustermann",
+      "phone": "Telefonnummer",
+      "phonePlaceholder": "+49 XXX XXXXXXX",
+      "email": "E-Mail-Adresse",
+      "emailPlaceholder": "ihre@email.de",
+      "address": "Installationsadresse",
+      "addressPlaceholder": "Ihre vollständige Adresse",
+      "roofType": "Dachtyp",
+      "roofTypePlaceholder": "Dachtyp auswählen",
+      "roofFlat": "Flachdach",
+      "roofPitched": "Satteldach",
+      "roofTile": "Ziegeldach",
+      "roofMetal": "Metalldach",
+      "roofOther": "Andere",
+      "energyBill": "Monatliche Energierechnung",
+      "energyBillPlaceholder": "Ungefähre monatliche Kosten",
+      "message": "Zusätzliche Informationen",
+      "messagePlaceholder": "Erzählen Sie uns von Ihrem Projekt...",
+      "submit": "Kostenloses Angebot anfordern",
+      "submitting": "Wird gesendet...",
+      "successMessage": "Vielen Dank! Wir werden Sie in Kürze kontaktieren.",
+      "errorMessage": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
+    }
+  },
+  "footer": {
+    "tagline": "Erneuerbare Energie für eine nachhaltige Zukunft",
+    "servicesTitle": "Dienstleistungen",
+    "companyTitle": "Unternehmen",
+    "contactTitle": "Kontakt",
+    "about": "Über uns",
+    "copyright": "Alle Rechte vorbehalten"
+  }
+}

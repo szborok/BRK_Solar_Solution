@@ -1,0 +1,192 @@
+{
+  "header": {
+    "services": "Szolgáltatásaink",
+    "about": "Rólunk",
+    "references": "Referenciák",
+    "faq": "GYIK",
+    "freeAssessment": "Ingyenes Felmérés"
+  },
+  "hero": {
+    "title": "Zöldebb Jövőt Teremtünk",
+    "subtitle": "Napenergia Megoldások az Ön Otthonához",
+    "requestConsultation": "Konzultáció Kérése",
+    "ourServices": "Szolgáltatásaink"
+  },
+  "targetAudience": {
+    "title": "Napenergia Megoldások Mindenkinek",
+    "subtitle": "Legyen Ön lakástulajdonos vagy vállalkozó, van megfelelő napenergia megoldásunk az Ön igényeire szabva",
+    "residential": {
+      "title": "Magánszemélyek",
+      "description": "Alakítsa otthonát fenntartható energiaerőművé",
+      "benefit1": "Csökkentse havi villanyszámláját akár 90%-kal",
+      "benefit2": "Növelje ingatlan értékét azonnal",
+      "benefit3": "25+ év garancia a napelemekre",
+      "benefit4": "Rugalmas finanszírozási lehetőségek",
+      "button": "Otthoni Megoldások Felfedezése"
+    },
+    "commercial": {
+      "title": "Vállalkozások",
+      "description": "Maximalizálja a profitot miközben minimalizálja a karbon lábnyomot",
+      "benefit1": "Jelentős megtérülés 3-5 éven belül",
+      "benefit2": "Adókedvezmények és üzleti levonások",
+      "benefit3": "Javított vállalati fenntarthatósági profil",
+      "benefit4": "Skálázható rendszerek bármilyen vállalati mérethez",
+      "button": "Üzleti Megoldások Felfedezése"
+    },
+    "stats": {
+      "installations": "Telepítés",
+      "yearsWarranty": "Év Garancia",
+      "billReduction": "Számlacsökkentés",
+      "satisfactionRate": "Elégedettségi Arány"
+    }
+  },
+  "services": {
+    "title": "Szolgáltatásaink",
+    "subtitle": "Átfogó elektromos és napenergia megoldások az Ön ingatlanja számára",
+    "solarPanels": {
+      "title": "Napelemes Rendszerek",
+      "description": "Teljes napelem telepítés nagy hatékonyságú modulokkal, inverterekkel és monitoring rendszerekkel a maximális energia termelésért."
+    },
+    "evCharger": {
+      "title": "Elektromos Autó Töltő Telepítés",
+      "description": "Professzionális elektromos járműtöltő állomás telepítés otthonokhoz és vállalkozásokhoz intelligens töltési funkciókkal."
+    },    "batteryStorage": {
+      "title": "Akkumulátor Tárolási Rendszerek",
+      "description": "Tárolja a felesleges napenergiát fejlett akkumulátor rendszerekkel a 24/7 áramellátás és energiafüggetlenség érdekében."
+    },    "hvac": {
+      "title": "Fűtési és Hűtési Rendszerek",
+      "description": "Energiahatékony elektromos fűtési és hűtési megoldások integrálva a napelemes rendszerével az optimális kényelemért."
+    },
+    "electricalPrep": {
+      "title": "Elektromos Rendszer Előkészítés",
+      "description": "Ingatlan elektromos infrastruktúrájának fejlesztése és előkészítése a napelemek és modern energia rendszerek támogatására."
+    }
+  },
+  "howWeWork": {
+    "title": "Hogyan Dolgozunk",
+    "subtitle": "Egyszerűsített folyamatunk egyszerűvé és problémamentessé teszi a napenergiára való átállást",
+    "step1": {
+      "title": "Kezdeti Megbeszélés",
+      "description": "Kezdeti konzultáció az Ön energiaigényeinek megértésére, ingatlana felmérésére és az optimális napenergia megoldás meghatározására."
+    },
+    "step2": {
+      "title": "Papírmunka Kezelése",
+      "description": "Mi intézzük az összes papírmunkát - engedélyek, kérelmek és szabályozási követelmények, hogy Önnek ne kelljen aggódnia a bürokrácia miatt."
+    },
+    "step3": {
+      "title": "Rendszer Telepítése",
+      "description": "Professzionális telepítés minősített csapatunk által, biztosítva a minőségi kivitelezést és az optimális rendszerteljesítményt."
+    },
+    "step4": {
+      "title": "Folyamatos Támogatás",
+      "description": "Folyamatos monitorozás, karbantartási támogatás és ügyfélszolgálat, hogy biztosítsuk rendszere csúcshatékonysággal működését."
+    }
+  },
+  "brands": {
+    "subtitle": "Megbízható Partnerek",
+    "title": "Prémium márkák, amelyekkel dolgozunk",
+    "footer": "Minden telepítéshez csak tanúsított, iparágvezető berendezéseket használunk"
+  },
+  "governmentSupport": {
+    "badge": "Kormányzati Programok",
+    "title": "Akár 50% állami támogatás",
+    "subtitle": "Használja ki az állami ösztönző programokat, amelyek célja, hogy a napenergia elérhetőbb legyen a lakástulajdonosok és vállalkozások számára",
+    "highlight": {
+      "label": "Jelenlegi Program",
+      "percentage": "50%",
+      "subtitle": "Állami Támogatás",
+      "description": "Az állam különböző megújuló energia támogatási programokon keresztül akár 50%-át is fedezi a napelemes telepítés költségeinek.",
+      "note": "Elérhető minősített lakossági és kereskedelmi telepítésekhez"
+    },
+    "benefit1": {
+      "title": "Közvetlen Támogatások",
+      "description": "Kapjon közvetlen pénzügyi támogatást, amely jelentősen csökkenti a kezdeti befektetési költségeket"
+    },
+    "benefit2": {
+      "title": "Adókedvezmények",
+      "description": "Élvezze a szövetségi és helyi adókedvezményeket, amelyek tovább csökkentik rendszere teljes költségét"
+    },
+    "benefit3": {
+      "title": "Alacsony Kamatozású Hitelek",
+      "description": "Hozzáférés speciális államilag támogatott finanszírozási lehetőségekhez kedvező kamatlábakkal"
+    },
+    "benefit4": {
+      "title": "Betáplálási Tarifa",
+      "description": "Keressen pénzt a felesleges energia hálózatba történő visszatáplálásával garantált prémium árakon"
+    },
+    "cta": {
+      "title": "Segítünk maximalizálni megtakarításait",
+      "description": "Csapatunk végigvezeti Önt az összes elérhető kormányzati programon, és elintézi a papírmunkát, hogy biztosítsa a maximális előnyöket",      "viewAllPrograms": "Összes Program Megtekintése",      "button": "Jogosultság ellenőrzése"
+    }
+  },
+  "faq": {
+    "title": "Gyakori Kérdések",
+    "subtitle": "Találjon válaszokat a gyakori kérdésekre napenergia megoldásainkkal kapcsolatban",
+    "q1": {
+      "question": "Milyen szolgáltatásokat kínálnak?",
+      "answer": "Teljes körű napelemes telepítési szolgáltatásokat nyújtunk, beleértve a kezdeti konzultációt, rendszertervezést és méretezést, minden papírmunka és engedély intézését, professzionális telepítést és folyamatos karbantartási támogatást. Mindent elintézünk az elejétől a végéig."
+    },
+    "q2": {
+      "question": "Mennyi idő alatt térül meg a befektetés?",
+      "answer": "A megtérülés jellemzően 6-10 év között változik, az Ön energiafogyasztásától, a rendszer méretétől és az elérhető állami támogatásoktól függően. A megtérülési időszak után évtizedekig élvezheti az ingyenes, tiszta energiát."
+    },
+    "q3": {
+      "question": "Milyen garanciát vállalnak?",
+      "answer": "Napelemeink 25 éves teljesítménygaranciával rendelkeznek, az invertereink pedig 10-15 éves garanciával. Kivitelezési garanciát is biztosítunk minden telepítésre, hogy rendszere optimálisan működjön."
+    },
+    "q4": {
+      "question": "Hogyan zajlik a telepítés?",
+      "answer": "A kezdeti konzultáció és helyszíni felmérés után egyedi rendszert tervezünk az Ön igényeire. Jóváhagyás után intézzük az összes engedélyt és papírmunkát. A telepítés általában 1-3 napot vesz igénybe, majd következik az ellenőrzés és a hálózati csatlakozás."
+    },
+    "q5": {
+      "question": "Kell-e karbantartani a rendszert?",
+      "answer": "A napelemek minimális karbantartást igényelnek. Javasoljuk az éves ellenőrzéseket és alkalmi tisztítást. Karbantartási csomagjaink biztosítják, hogy rendszere teljes élettartama alatt a legjobban teljesítsen."
+    },
+    "q6": {
+      "question": "Van-e állami támogatás?",
+      "answer": "Igen, különböző állami ösztönzők és visszatérítések érhetők el napelemes telepítésekhez. Segítünk eligazodni az összes elérhető programban, hogy maximalizáljuk megtakarításait és megfizethetőbbé tegyük a napenergiát."
+    }
+  },
+  "contact": {
+    "title": "Kapcsolat",
+    "subtitle": "Kérjen ingyenes konzultációt és árajánlatot napelemes telepítésére",
+    "getInTouch": "Lépjen Kapcsolatba",
+    "phone": "Telefon",
+    "email": "Email",
+    "address": "Cím",
+    "form": {
+      "title": "Kérje Ingyenes Árajánlatát",
+      "name": "Teljes Név",
+      "namePlaceholder": "Kiss János",
+      "phone": "Telefonszám",
+      "phonePlaceholder": "+36 XX XXX-XXXX",
+      "email": "Email Cím",
+      "emailPlaceholder": "az.on@email.hu",
+      "address": "Telepítési Cím",
+      "addressPlaceholder": "Teljes címe",
+      "roofType": "Tetőtípus",
+      "roofTypePlaceholder": "Válasszon tetőtípust",
+      "roofFlat": "Lapostető",
+      "roofPitched": "Nyeregtetó",
+      "roofTile": "Cseréptetó",
+      "roofMetal": "Fémtetó",
+      "roofOther": "Egyéb",
+      "energyBill": "Havi Energiaszámla",
+      "energyBillPlaceholder": "Hozzávetőleges havi költség",
+      "message": "További Információk",
+      "messagePlaceholder": "Meséljen projektjéről...",
+      "submit": "Ingyenes Árajánlat Kérése",
+      "submitting": "Küldés...",
+      "successMessage": "Köszönjük! Hamarosan felvesszük Önnel a kapcsolatot.",
+      "errorMessage": "Hiba történt. Kérjük, próbálja újra."
+    }
+  },
+  "footer": {
+    "tagline": "Megújuló energia a fenntartható jövőért",
+    "servicesTitle": "Szolgáltatások",
+    "companyTitle": "Cégünk",
+    "contactTitle": "Kapcsolat",
+    "about": "Rólunk",
+    "copyright": "Minden jog fenntartva"
+  }
+}

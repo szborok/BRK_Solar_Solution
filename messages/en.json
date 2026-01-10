@@ -1,0 +1,196 @@
+{
+  "header": {
+    "services": "Our Services",
+    "about": "About Us",
+    "references": "References",
+    "faq": "FAQ",
+    "freeAssessment": "Free Assessment"
+  },
+  "hero": {
+    "title": "Powering a Greener Future",
+    "subtitle": "Solar Energy Solutions for Your Home",
+    "requestConsultation": "Request Consultation",
+    "ourServices": "Our Services"
+  },
+  "targetAudience": {
+    "title": "Solar Solutions for Everyone",
+    "subtitle": "Whether you're a homeowner or a business owner, we have the perfect solar solution tailored to your needs",
+    "residential": {
+      "title": "Residential",
+      "description": "Transform your home into a sustainable energy powerhouse",
+      "benefit1": "Reduce your monthly electricity bills by up to 90%",
+      "benefit2": "Increase your property value instantly",
+      "benefit3": "25+ year warranty on solar panels",
+      "benefit4": "Flexible financing options available",
+      "button": "Explore Home Solutions"
+    },
+    "commercial": {
+      "title": "Commercial",
+      "description": "Maximize profits while minimizing your carbon footprint",
+      "benefit1": "Significant ROI within 3-5 years",
+      "benefit2": "Tax incentives and business deductions",
+      "benefit3": "Enhanced corporate sustainability profile",
+      "benefit4": "Scalable systems for any business size",
+      "button": "Explore Business Solutions"
+    },
+    "stats": {
+      "installations": "Installations",
+      "yearsWarranty": "Years Warranty",
+      "billReduction": "Bill Reduction",
+      "satisfactionRate": "Satisfaction Rate"
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive electrical and solar solutions for your property",
+    "solarPanels": {
+      "title": "Solar Panel Systems",
+      "description": "Complete solar panel installation with high-efficiency modules, inverters, and monitoring systems for maximum energy production."
+    },
+    "evCharger": {
+      "title": "EV Charger Installation",
+      "description": "Professional electric vehicle charging station installation for home and business with smart charging capabilities."
+    },
+    "batteryStorage": {
+      "title": "Battery Storage Systems",
+      "description": "Store excess solar energy with advanced battery systems for 24/7 power availability and energy independence."
+    },
+    "hvac": {
+      "title": "Heating & Cooling Systems",
+      "description": "Energy-efficient electrical heating and cooling solutions integrated with your solar system for optimal comfort."
+    },
+    "electricalPrep": {
+      "title": "Electrical System Preparation",
+      "description": "Upgrade and prepare your property's electrical infrastructure to support solar panels and modern energy systems."
+    }
+  },
+  "howWeWork": {
+    "title": "How We Work",
+    "subtitle": "Our streamlined process makes going solar simple and hassle-free",
+    "step1": {
+      "title": "Initial Meeting",
+      "description": "Initial consultation to understand your energy needs, assess your property, and determine the optimal solar solution for your home."
+    },
+    "step2": {
+      "title": "Paperwork Handling",
+      "description": "We handle all the paperwork - permits, applications, and regulatory requirements so you don't have to worry about the bureaucracy."
+    },
+    "step3": {
+      "title": "System Installation",
+      "description": "Professional installation by our certified team ensuring quality workmanship and optimal system performance."
+    },
+    "step4": {
+      "title": "Ongoing Support",
+      "description": "Ongoing monitoring, maintenance support, and customer service to ensure your system operates at peak efficiency."
+    }
+  },
+  "brands": {
+    "subtitle": "Trusted Partners",
+    "title": "Premium Brands We Work With",
+    "footer": "We only use certified, industry-leading equipment for all installations"
+  },
+  "governmentSupport": {
+    "badge": "Government Programs",
+    "title": "Get Up to 50% Government Funding",
+    "subtitle": "Take advantage of government incentive programs designed to make solar energy more affordable for homeowners and businesses",
+    "highlight": {
+      "label": "Current Program",
+      "percentage": "50%",
+      "subtitle": "Government Subsidy",
+      "description": "The government covers up to 50% of your solar panel installation costs through various renewable energy support programs.",
+      "note": "Available for qualified residential and commercial installations"
+    },
+    "benefit1": {
+      "title": "Direct Subsidies",
+      "description": "Receive direct financial support that significantly reduces your upfront investment costs"
+    },
+    "benefit2": {
+      "title": "Tax Credits",
+      "description": "Benefit from federal and local tax credits that further reduce the total cost of your system"
+    },
+    "benefit3": {
+      "title": "Low-Interest Loans",
+      "description": "Access special government-backed financing options with favorable interest rates"
+    },
+    "benefit4": {
+      "title": "Feed-in Tariffs",
+      "description": "Earn money by selling excess energy back to the grid at guaranteed premium rates"
+    },
+    "cta": {
+      "title": "Let Us Help You Maximize Your Savings",
+      "description": "Our team will guide you through all available government programs and handle the paperwork to ensure you receive maximum benefits",
+      "viewAllPrograms": "View All Programs",
+      "button": "Check Your Eligibility"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common questions about our solar solutions",
+    "q1": {
+      "question": "What services do you offer?",
+      "answer": "We provide complete solar panel installation services including initial consultation, system design and sizing, all paperwork and permit handling, professional installation, and ongoing maintenance support. We handle everything from start to finish."
+    },
+    "q2": {
+      "question": "How long does it take to recoup the investment?",
+      "answer": "The return on investment typically ranges from 6-10 years depending on your energy consumption, system size, and available government incentives. After the payback period, you'll enjoy decades of free, clean energy."
+    },
+    "q3": {
+      "question": "What warranties do you provide?",
+      "answer": "Our solar panels come with 25-year performance warranties, and inverters have 10-15 year warranties. We also provide workmanship guarantees on all installations to ensure your system operates optimally."
+    },
+    "q4": {
+      "question": "How does the installation process work?",
+      "answer": "After an initial consultation and site assessment, we design a custom system for your needs. Once approved, we handle all permits and paperwork. Installation typically takes 1-3 days, followed by inspection and grid connection."
+    },
+    "q5": {
+      "question": "Does the system need maintenance?",
+      "answer": "Solar panels require minimal maintenance. We recommend annual inspections and occasional cleaning. Our maintenance packages ensure your system continues to perform at its best throughout its lifetime."
+    },
+    "q6": {
+      "question": "Are there government incentives?",
+      "answer": "Yes, various government incentives and rebates are available for solar installations. We help you navigate all available programs to maximize your savings and make solar more affordable."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Request a free consultation and quote for your solar installation",
+    "getInTouch": "Get In Touch",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "form": {
+      "title": "Request Your Free Quote",
+      "name": "Full Name",
+      "namePlaceholder": "John Doe",
+      "phone": "Phone Number",
+      "phonePlaceholder": "+36 XX XXX-XXXX",
+      "email": "Email Address",
+      "emailPlaceholder": "your@email.com",
+      "address": "Installation Address",
+      "addressPlaceholder": "Your full address",
+      "roofType": "Roof Type",
+      "roofTypePlaceholder": "Select roof type",
+      "roofFlat": "Flat Roof",
+      "roofPitched": "Pitched Roof",
+      "roofTile": "Tile Roof",
+      "roofMetal": "Metal Roof",
+      "roofOther": "Other",
+      "energyBill": "Monthly Energy Bill",
+      "energyBillPlaceholder": "Approx. monthly cost",
+      "message": "Additional Information",
+      "messagePlaceholder": "Tell us about your project...",
+      "submit": "Request Free Quote",
+      "submitting": "Sending...",
+      "successMessage": "Thank you! We will contact you shortly.",
+      "errorMessage": "An error occurred. Please try again."
+    }
+  },
+  "footer": {
+    "tagline": "Renewable energy for a sustainable future",
+    "servicesTitle": "Services",
+    "companyTitle": "Company",
+    "contactTitle": "Contact",
+    "about": "About Us",
+    "copyright": "All rights reserved"
+  }
+}
