@@ -81,7 +81,7 @@ export default function WhereWeWork() {
               setInterval(removeButtons, 500);
               
               // Block only clicks and zooming - allow mousemove for hover
-              const blockClickAndZoom = (e) => {
+              const blockClickAndZoom = (e: Event) => {
                 e.preventDefault();
                 e.stopPropagation();
               };
@@ -100,7 +100,7 @@ export default function WhereWeWork() {
               mapElement.addEventListener('touchend', blockClickAndZoom, { capture: true, passive: false });
               
               // Block drag by preventing SVG element selection and transforms
-              mapElement.addEventListener('mousedown', (e) => {
+              mapElement.addEventListener('mousedown', (e: Event) => {
                 e.preventDefault();
                 e.stopPropagation();
               }, true);
