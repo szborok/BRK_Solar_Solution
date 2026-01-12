@@ -72,7 +72,7 @@ export default function WhereWeWork() {
               
               // Remove any buttons that might be added
               const removeButtons = () => {
-                const buttons = mapElement.querySelectorAll('button, input[type="button"]');
+                const buttons = mapElement.querySelectorAll<HTMLElement>('button, input[type="button"]');
                 buttons.forEach(btn => {
                   btn.style.display = 'none';
                 });
