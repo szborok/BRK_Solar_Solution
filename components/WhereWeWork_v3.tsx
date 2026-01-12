@@ -6,6 +6,9 @@ declare global {
   interface Window {
     simplemaps_countrymap?: {
       load: () => void;
+      map?: {
+        svg?: SVGElement;
+      };
     };
   }
 }
@@ -26,10 +29,90 @@ export default function WhereWeWork() {
       script2.onload = () => {
         // Wait for map to render, then initialize
         setTimeout(() => {
-          if (window.simplemaps_countrymap) {
-            window.simplemaps_countrymap.load();
+          try {
+            if (window.simplemaps_countrymap) {
+              window.simplemaps_countrymap.load();
+              
+              const mapElement = document.getElementById('map');
+              if (!mapElement) {
+                console.error('Map element not found');
+                return;
+              }
+              
+              // Add comprehensive CSS styling
+              const style = document.createElement('style');
+              style.textContent = `
+                #map {
+                  user-select: none;
+                  -webkit-user-select: none;
+                  -moz-user-select: none;
+                  -ms-user-select: none;
+                  touch-action: none;
+                  overflow: hidden !important;
+                }
+                
+                #map svg {
+                  cursor: default !important;
+                  transform: none !important;
+                }
+                
+                #map rect[fill="white"] {
+                  fill: transparent !important;
+                }
+                
+                /* Hide zoom and reset buttons */
+                #map button,
+                #map input[type="button"],
+                .simplemaps_mapbutton,
+                .simplemaps_back_button {
+                  display: none !important;
+                }
+              `;
+              document.head.appendChild(style);
+              
+              // Remove any buttons that might be added
+              const removeButtons = () => {
+                const buttons = mapElement.querySelectorAll('button, input[type="button"]');
+                buttons.forEach(btn => {
+                  btn.style.display = 'none';
+                });
+              };
+              removeButtons();
+              setInterval(removeButtons, 500);
+              
+              // Block only clicks and zooming - allow mousemove for hover
+              const blockClickAndZoom = (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+              };
+              
+              // Block clicks on the map itself
+              mapElement.addEventListener('click', blockClickAndZoom, true);
+              mapElement.addEventListener('dblclick', blockClickAndZoom, true);
+              
+              // Block zoom with wheel
+              mapElement.addEventListener('wheel', blockClickAndZoom, { capture: true, passive: false });
+              mapElement.addEventListener('mousewheel', blockClickAndZoom, { capture: true, passive: false });
+              
+              // Block touch interactions
+              mapElement.addEventListener('touchstart', blockClickAndZoom, { capture: true, passive: false });
+              mapElement.addEventListener('touchmove', blockClickAndZoom, { capture: true, passive: false });
+              mapElement.addEventListener('touchend', blockClickAndZoom, { capture: true, passive: false });
+              
+              // Block drag by preventing SVG element selection and transforms
+              mapElement.addEventListener('mousedown', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+              }, true);
+              
+              console.log('Map initialized with interaction blocking');
+            } else {
+              console.error('simplemaps_countrymap not loaded');
+            }
+          } catch (error) {
+            console.error('Error initializing map:', error);
           }
-        }, 1000);
+        }, 1500);
       };
       
       document.head.appendChild(script2);
@@ -55,7 +138,7 @@ export default function WhereWeWork() {
         className="absolute inset-0 bg-cover bg-center opacity-40"
         style={{
           backgroundImage:
-            'url(https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1200)',
+            'url(/where_we_work_bg/pexels-darshan394-1123972.jpg)',
           backgroundAttachment: 'fixed',
         }}
       />
@@ -73,10 +156,10 @@ export default function WhereWeWork() {
         </div>
 
         {/* Interactive Map Section */}
-        <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-2xl mb-12">
+        <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 md:p-12 shadow-2xl mb-12 border border-white/20">
           <div className="flex flex-col items-center">
             {/* HTML5 Country Map Container */}
-            <div id="map" className="w-full" style={{ minHeight: '600px' }}></div>
+            <div id="map" className="w-full" style={{ minHeight: '600px', backgroundColor: 'transparent' }}></div>
 
             {/* Map Legend */}
             <div className="mt-8 w-full">

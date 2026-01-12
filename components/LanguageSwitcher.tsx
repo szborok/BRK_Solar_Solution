@@ -19,11 +19,24 @@ export default function LanguageSwitcher() {
   const currentLanguage = languages.find((lang) => lang.code === locale);
 
   const handleLanguageChange = (newLocale: string) => {
-    // Remove the current locale from the pathname
-    const pathWithoutLocale = pathname.replace(`/${locale}`, '');
+    // Get the pathname without the leading slash
+    const pathArray = pathname.split('/');
     
-    // Add the new locale
-    const newPath = `/${newLocale}${pathWithoutLocale || ''}`;
+    // Remove empty strings from split
+    const filteredPath = pathArray.filter(p => p);
+    
+    // Check if first element is a locale code
+    let remainingPath = '/';
+    if (filteredPath.length > 0 && ['en', 'de', 'hu'].includes(filteredPath[0])) {
+      // Remove the locale and rebuild path
+      remainingPath = '/' + filteredPath.slice(1).join('/');
+    } else {
+      // No locale in path, use entire path
+      remainingPath = pathname;
+    }
+    
+    // Build new path with new locale
+    const newPath = `/${newLocale}${remainingPath === '/' ? '' : remainingPath}`;
     
     router.push(newPath);
     setIsOpen(false);

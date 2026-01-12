@@ -41,7 +41,9 @@ export default function GovernmentSupport() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-white via-primary-50/30 to-white relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-b from-white via-primary-50/30 to-white relative overflow-hidden" style={{
+      backgroundImage: 'linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(245,246,250,0.3) 50%, rgba(255,255,255,1) 100%)'
+    }}>
       {/* Background Decoration */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary-100/50 to-transparent opacity-60" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary-200/30 rounded-full blur-3xl opacity-40 -translate-x-1/2 translate-y-1/2" />
