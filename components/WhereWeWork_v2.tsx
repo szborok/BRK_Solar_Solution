@@ -17,7 +17,7 @@ interface County {
 export default function WhereWeWork() {
   const [activeCounty, setActiveCounty] = useState<CountyType>(null);
 
-  const counties: Record<CountyType extends null ? never : CountyType, County> = {
+  const counties: Record<Exclude<CountyType, null>, County> = {
     'budapest': { name: 'Budapest', operator: 'ELMŰ', available: true },
     'pest': { name: 'Pest', operator: 'ELMŰ/EDKE', available: true },
     'fejér': { name: 'Fejér', operator: 'ELMŰ', available: true },
@@ -39,7 +39,7 @@ export default function WhereWeWork() {
     'hajdú-bihar': { name: 'Hajdú-Bihar', operator: 'MVM', available: true },
   };
 
-  const countyCoords: Record<CountyType extends null ? never : CountyType, { x: number; y: number; radius: number }> = {
+  const countyCoords: Record<Exclude<CountyType, null>, { x: number; y: number; radius: number }> = {
     'budapest': { x: 50, y: 42, radius: 2.5 },
     'pest': { x: 52, y: 45, radius: 4 },
     'fejér': { x: 48, y: 50, radius: 3.5 },
