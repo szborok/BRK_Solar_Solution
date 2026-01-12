@@ -19,7 +19,7 @@ export default function WhereWeWork() {
   const [activeCounty, setActiveCounty] = useState<CountyType>(null);
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
 
-  const counties: Record<CountyType extends null ? never : CountyType, County> = {
+  const counties: Record<Exclude<CountyType, null>, County> = {
     'budapest': { name: 'Budapest', operator: 'ELMŰ', available: true, color: '#ea580c' },
     'pest': { name: 'Pest', operator: 'ELMŰ/EDKE', available: true, color: '#f97316' },
     'fejér': { name: 'Fejér', operator: 'ELMŰ', available: true, color: '#fb923c' },
