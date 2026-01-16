@@ -1,18 +1,28 @@
 'use client';
 
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = useTranslations('header');
+  const locale = useLocale();
+  const pathname = usePathname();
+  
+  const isHomePage = pathname === `/${locale}` || pathname === '/';
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false);
+    if (isHomePage) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        setIsMenuOpen(false);
+      }
+    } else {
+      window.location.href = `/${locale}#${id}`;
     }
   };
 
@@ -34,24 +44,36 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-2">
-            <button
-              onClick={() => scrollToSection('services')}
+            <Link
+              href={`/${locale}/services`}
               className="px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-300"
             >
               {t('services')}
-            </button>
-            <button
-              onClick={() => scrollToSection('how-we-work')}
+            </Link>
+            <Link
+              href={`/${locale}/where-we-work`}
               className="px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-300"
             >
-              {t('about')}
-            </button>
-            <button
-              onClick={() => scrollToSection('faq')}
+              {t('whereWeWork')}
+            </Link>
+            <Link
+              href={`/${locale}/how-we-work`}
               className="px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-300"
             >
-              {t('faq')}
-            </button>
+              {t('howWeWork')}
+            </Link>
+            <Link
+              href={`/${locale}/government-support`}
+              className="px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-300"
+            >
+              {t('governmentSupport')}
+            </Link>
+            <Link
+              href={`/${locale}/knowledge`}
+              className="px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-300"
+            >
+              {t('knowledge')}
+            </Link>
             <button
               onClick={() => scrollToSection('contact')}
               className="bg-accent-600 hover:bg-accent-700 px-6 py-2 rounded-lg transition-all duration-300 font-medium ml-2 hover:shadow-lg hover:shadow-accent-500/30"
@@ -94,24 +116,41 @@ export default function Header() {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 flex flex-col gap-4">
-            <button
-              onClick={() => scrollToSection('services')}
+            <Link
+              href={`/${locale}/services`}
               className="text-left hover:text-accent-400 transition-colors py-2"
+              onClick={() => setIsMenuOpen(false)}
             >
               {t('services')}
-            </button>
-            <button
-              onClick={() => scrollToSection('how-we-work')}
+            </Link>
+            <Link
+              href={`/${locale}/where-we-work`}
               className="text-left hover:text-accent-400 transition-colors py-2"
+              onClick={() => setIsMenuOpen(false)}
             >
-              {t('about')}
-            </button>
-            <button
-              onClick={() => scrollToSection('faq')}
+              {t('whereWeWork')}
+            </Link>
+            <Link
+              href={`/${locale}/how-we-work`}
               className="text-left hover:text-accent-400 transition-colors py-2"
+              onClick={() => setIsMenuOpen(false)}
             >
-              {t('faq')}
-            </button>
+              {t('howWeWork')}
+            </Link>
+            <Link
+              href={`/${locale}/government-support`}
+              className="text-left hover:text-accent-400 transition-colors py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t('governmentSupport')}
+            </Link>
+            <Link
+              href={`/${locale}/knowledge`}
+              className="text-left hover:text-accent-400 transition-colors py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t('knowledge')}
+            </Link>
             <button
               onClick={() => scrollToSection('contact')}
               className="bg-accent-600 hover:bg-accent-700 px-6 py-2 rounded-md transition-colors font-medium text-left"

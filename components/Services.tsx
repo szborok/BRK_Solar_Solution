@@ -1,9 +1,13 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
+import { useParams } from 'next/navigation';
 
 export default function Services() {
   const t = useTranslations('services');
+  const params = useParams();
+  const locale = params.locale as string;
 
   const services = [
     {
@@ -56,17 +60,34 @@ export default function Services() {
   ];
 
   return (
-    <section className="py-20 bg-gray-50 relative overflow-hidden">
-      {/* Subtle Dot Pattern */}
-      <div className="absolute inset-0 opacity-[0.03]">
+    <section className="pt-20 pb-0 bg-gray-50 relative overflow-hidden">
+      {/* Green Gradient Overlay */}
+      <div className="absolute inset-0 z-0" style={{
+        background: 'linear-gradient(to bottom, rgba(30, 58, 47, 0.15) 0%, rgba(34, 139, 34, 0.25) 50%, rgba(30, 58, 47, 0.35) 100%)'
+      }} />
+
+      {/* Hexagon Solar Cell Pattern */}
+      <div className="absolute inset-0 z-0 opacity-[0.08]">
         <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          backgroundSize: '60px 60px'
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundSize: '40px 70px'
         }} />
       </div>
-      
-      {/* Gradient Transition to next section */}
-      <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-white to-transparent" />
+
+      {/* Animated Gradient Orbs */}
+      <div className="absolute top-[-10%] right-[-5%] w-[700px] h-[700px] bg-primary-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" />
+      <div className="absolute bottom-[-15%] left-[30%] w-[550px] h-[550px] bg-primary-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000" />
+      <div className="absolute top-[10%] right-[25%] w-[350px] h-[350px] bg-primary-300 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-blob animation-delay-1000" />
+      <div className="absolute top-[50%] right-[-5%] w-[450px] h-[450px] bg-green-400 rounded-full mix-blend-multiply filter blur-3xl opacity-18 animate-blob animation-delay-3000" />
+
+      {/* Floating Particles */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-[15%] left-[10%] w-2 h-2 bg-primary-400 rounded-full opacity-60 animate-float" />
+        <div className="absolute top-[25%] right-[15%] w-3 h-3 bg-primary-300 rounded-full opacity-50 animate-float animation-delay-1000" />
+        <div className="absolute top-[45%] left-[20%] w-2 h-2 bg-primary-500 rounded-full opacity-40 animate-float animation-delay-2000" />
+        <div className="absolute top-[60%] right-[25%] w-3 h-3 bg-primary-200 rounded-full opacity-60 animate-float animation-delay-3000" />
+        <div className="absolute top-[35%] right-[40%] w-2 h-2 bg-green-400 rounded-full opacity-50 animate-float animation-delay-1500" />
+      </div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
@@ -82,7 +103,7 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
+              className="group relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
             >
               {/* Icon/Image Header */}
               <div className="relative h-48 overflow-hidden">
@@ -101,18 +122,36 @@ export default function Services() {
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-dark-700 mb-3 group-hover:text-accent-600 transition-colors">
+                <h3 className="text-xl font-bold text-dark-700 mb-3">
                   {t(`${service.key}.title`)}
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed line-clamp-4">
                   {t(`${service.key}.description`)}
                 </p>
               </div>
-
-              {/* Hover Border Effect */}
-              <div className="absolute inset-0 border-2 border-transparent group-hover:border-accent-500 rounded-2xl transition-all duration-300 pointer-events-none" />
             </div>
           ))}
+        </div>
+
+        {/* Learn More Button */}
+        <div className="flex justify-center mt-16">
+          <Link
+            href={`/${locale}/services`}
+            className="group relative px-12 py-5 bg-gradient-to-r from-orange-500/20 via-orange-600/30 to-orange-500/20 backdrop-blur-sm border-2 border-orange-500/50 text-orange-600 rounded-full text-lg font-bold shadow-xl hover:shadow-orange-500/40 transition-all duration-300 hover:scale-105 overflow-hidden"
+          >
+            {/* Animated background effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-600/40 via-orange-500/50 to-orange-600/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            
+            {/* Shine effect */}
+            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/40 to-transparent" />
+            
+            <span className="relative flex items-center gap-3 group-hover:text-orange-700">
+              {t('learnMoreButton')}
+              <svg className="w-6 h-6 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </span>
+          </Link>
         </div>
       </div>
     </section>

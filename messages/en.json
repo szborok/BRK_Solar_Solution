@@ -1,6 +1,10 @@
 {
   "header": {
-    "services": "Our Services",
+    "services": "Services",
+    "whereWeWork": "Where We Work",
+    "howWeWork": "How We Work",
+    "governmentSupport": "Government Support",
+    "knowledge": "Knowledge Center",
     "about": "About Us",
     "references": "References",
     "faq": "FAQ",
@@ -43,6 +47,7 @@
   "services": {
     "title": "Our Services",
     "subtitle": "Comprehensive electrical and solar solutions for your property",
+    "learnMoreButton": "Explore All Our Services",
     "solarPanels": {
       "title": "Solar Panel Systems",
       "description": "Complete solar panel installation with high-efficiency modules, inverters, and monitoring systems for maximum energy production."
@@ -183,6 +188,1167 @@
       "submitting": "Sending...",
       "successMessage": "Thank you! We will contact you shortly.",
       "errorMessage": "An error occurred. Please try again."
+    }
+  },
+  "serviceDetails": {
+    "solarPanels": {
+      "backToHome": "Back to Home",
+      "title": "Solar Panel Systems",
+      "subtitle": "Transform sunlight into clean, renewable energy for your home or business",
+      "overview": {
+        "title": "High-Efficiency Solar Solutions",
+        "description": "Our solar panel systems use cutting-edge photovoltaic technology to convert sunlight into electricity with industry-leading efficiency. Each installation is custom-designed to maximize energy production based on your property's unique characteristics and energy needs.",
+        "description2": "We only use premium-grade solar panels from trusted manufacturers, ensuring long-term performance, durability, and maximum return on your investment."
+      },
+      "features": {
+        "title": "System Features",
+        "feature1": {
+          "title": "Premium Efficiency",
+          "description": "High-efficiency monocrystalline panels with up to 22% conversion rate"
+        },
+        "feature2": {
+          "title": "Smart Monitoring",
+          "description": "Real-time performance tracking and monitoring via mobile app"
+        },
+        "feature3": {
+          "title": "Weather Resistant",
+          "description": "Designed to withstand extreme weather conditions and temperatures"
+        },
+        "feature4": {
+          "title": "25-Year Warranty",
+          "description": "Industry-leading performance guarantee on all panels"
+        },
+        "feature5": {
+          "title": "Scalable Design",
+          "description": "Easy to expand your system as your energy needs grow"
+        },
+        "feature6": {
+          "title": "Low Maintenance",
+          "description": "Minimal upkeep required for decades of reliable operation"
+        }
+      },
+      "specs": {
+        "title": "Technical Specifications",
+        "panel": {
+          "title": "Solar Panels",
+          "spec1": "Power Output: 400-550W per panel",
+          "spec2": "Efficiency: 20-22% conversion rate",
+          "spec3": "Technology: Monocrystalline silicon",
+          "spec4": "Dimensions: 2.1m x 1.1m x 40mm",
+          "spec5": "Weight: 22-28kg per panel"
+        },
+        "inverter": {
+          "title": "Inverter System",
+          "spec1": "Type: String or microinverters",
+          "spec2": "Efficiency: Up to 98% conversion",
+          "spec3": "Monitoring: WiFi connectivity included",
+          "spec4": "Warranty: 10-15 years standard",
+          "spec5": "Smart grid ready with rapid shutdown"
+        }
+      },
+      "process": {
+        "title": "Installation Process",
+        "step1": {
+          "title": "Site Assessment",
+          "description": "Comprehensive evaluation of your property, roof structure, sun exposure, and energy consumption patterns to design the optimal system."
+        },
+        "step2": {
+          "title": "System Design",
+          "description": "Custom engineering and layout planning using satellite imagery and on-site measurements to maximize energy production."
+        },
+        "step3": {
+          "title": "Permits & Approvals",
+          "description": "Complete handling of all permits, utility interconnection applications, and regulatory compliance documentation."
+        },
+        "step4": {
+          "title": "Professional Installation",
+          "description": "Expert installation by certified technicians typically completed within 1-3 days depending on system size."
+        },
+        "step5": {
+          "title": "Activation & Support",
+          "description": "System commissioning, utility connection, and comprehensive training on monitoring and maintenance."
+        }
+      },
+      "cta": {
+        "title": "Ready to Go Solar?",
+        "subtitle": "Get a free custom quote and discover how much you can save with solar energy",
+        "button": "Get Free Quote"
+      }
+    },
+    "evCharger": {
+      "backToHome": "Back to Home",
+      "title": "EV Charger Installation",
+      "subtitle": "Fast, reliable electric vehicle charging at home or at your business",
+      "overview": {
+        "title": "Smart EV Charging Solutions",
+        "description": "Power your electric vehicle with clean solar energy. Our professional EV charger installation services provide convenient, fast charging right at your property. Whether for residential or commercial use, we install state-of-the-art charging stations that integrate seamlessly with your solar system.",
+        "description2": "Save money on charging costs while supporting sustainable transportation. Our smart chargers offer scheduling, load management, and mobile app control for maximum convenience."
+      },
+      "types": {
+        "title": "Charger Types",
+        "type1": {
+          "title": "Level 2 Home Charger",
+          "description": "Perfect for residential properties",
+          "spec1": "Charging Speed: 25-50 km/hour",
+          "spec2": "Power: 7.2 - 11 kW",
+          "spec3": "Full charge: 4-8 hours"
+        },
+        "type2": {
+          "title": "Smart Charger",
+          "description": "WiFi-enabled with app control",
+          "spec1": "Scheduled charging",
+          "spec2": "Load balancing",
+          "spec3": "Usage monitoring"
+        },
+        "type3": {
+          "title": "Commercial Charger",
+          "description": "For businesses and fleets",
+          "spec1": "Multiple vehicles",
+          "spec2": "Payment integration",
+          "spec3": "Higher power output"
+        }
+      },
+      "benefits": {
+        "title": "Why Install an EV Charger?",
+        "benefit1": {
+          "title": "Charge with Solar",
+          "description": "Use your solar-generated electricity to charge your EV for near-zero fuel costs"
+        },
+        "benefit2": {
+          "title": "Home Convenience",
+          "description": "No more trips to public charging stations - charge overnight at home"
+        },
+        "benefit3": {
+          "title": "Increase Property Value",
+          "description": "EV charging capability is a valuable amenity for modern homes"
+        },
+        "benefit4": {
+          "title": "Smart Features",
+          "description": "Schedule charging during off-peak hours and monitor usage via mobile app"
+        }
+      },
+      "smartFeatures": {
+        "title": "Smart Features",
+        "feature1": {
+          "title": "Mobile App Control",
+          "description": "Start, stop, and schedule charging remotely"
+        },
+        "feature2": {
+          "title": "Energy Monitoring",
+          "description": "Track charging sessions and costs"
+        },
+        "feature3": {
+          "title": "Load Management",
+          "description": "Automatic power optimization"
+        },
+        "feature4": {
+          "title": "Solar Integration",
+          "description": "Charge when solar production is highest"
+        }
+      },
+      "cta": {
+        "title": "Ready for Home EV Charging?",
+        "subtitle": "Get a professional installation quote and start charging with clean energy",
+        "button": "Request Installation Quote"
+      }
+    },
+    "batteryStorage": {
+      "backToHome": "Back to Home",
+      "title": "Battery Storage Systems",
+      "subtitle": "Store solar energy for 24/7 power independence and backup protection",
+      "overview": {
+        "title": "Energy Independence",
+        "description": "Battery storage systems allow you to store excess solar energy produced during the day for use at night or during power outages. Achieve true energy independence while maximizing your solar investment and protecting your home from grid disruptions.",
+        "description2": "Modern lithium-ion battery technology provides reliable, efficient energy storage with long lifespan and minimal maintenance requirements."
+      },
+      "howItWorks": {
+        "title": "How It Works",
+        "step1": {
+          "title": "Solar Energy Storage",
+          "description": "Excess solar energy is stored in batteries instead of being sent to the grid"
+        },
+        "step2": {
+          "title": "Power When You Need It",
+          "description": "Use stored energy at night, during peak rate hours, or power outages"
+        },
+        "step3": {
+          "title": "Smart Management",
+          "description": "Intelligent system optimizes when to store, use, or sell energy"
+        }
+      },
+      "benefits": {
+        "title": "Key Benefits",
+        "benefit1": {
+          "title": "Energy Independence",
+          "description": "Reduce reliance on the grid and achieve self-sufficiency"
+        },
+        "benefit2": {
+          "title": "Backup Power",
+          "description": "Keep essential systems running during power outages"
+        },
+        "benefit3": {
+          "title": "Peak Shaving",
+          "description": "Avoid expensive peak-hour electricity rates"
+        },
+        "benefit4": {
+          "title": "Maximize Solar ROI",
+          "description": "Use more of your solar production instead of selling at low rates"
+        },
+        "benefit5": {
+          "title": "Environmental Impact",
+          "description": "Store clean energy and reduce fossil fuel dependence"
+        },
+        "benefit6": {
+          "title": "Grid Services",
+          "description": "Participate in demand response programs for additional income"
+        }
+      },
+      "systems": {
+        "title": "Battery System Options",
+        "system1": {
+          "title": "Starter Battery",
+          "capacity": "5-10 kWh",
+          "spec1": "Powers essential loads",
+          "spec2": "4-8 hours backup",
+          "spec3": "Compact installation",
+          "spec4": "Scalable design",
+          "idealFor": "Ideal for: Small homes, essential backup"
+        },
+        "system2": {
+          "title": "Home Battery",
+          "capacity": "10-15 kWh",
+          "spec1": "Full home backup",
+          "spec2": "8-12 hours power",
+          "spec3": "Smart energy management",
+          "spec4": "Weather monitoring",
+          "idealFor": "Ideal for: Average homes, daily cycling"
+        },
+        "system3": {
+          "title": "Premium System",
+          "capacity": "15-20+ kWh",
+          "spec1": "Complete independence",
+          "spec2": "24+ hours backup",
+          "spec3": "Multiple batteries",
+          "spec4": "Advanced features",
+          "idealFor": "Ideal for: Large homes, off-grid capability"
+        }
+      },
+      "cta": {
+        "title": "Achieve Energy Independence",
+        "subtitle": "Discover how battery storage can transform your energy usage",
+        "button": "Get Storage Quote"
+      }
+    },
+    "hvac": {
+      "backToHome": "Back to Home",
+      "title": "Heating & Cooling Systems",
+      "subtitle": "Energy-efficient climate control powered by solar energy",
+      "overview": {
+        "title": "Solar-Powered Climate Control",
+        "description": "Integrate modern heating and cooling systems with your solar installation for maximum efficiency and comfort. Our energy-efficient HVAC solutions significantly reduce operating costs when powered by solar energy.",
+        "description2": "From heat pumps to smart thermostats, we provide comprehensive climate control solutions that work seamlessly with your renewable energy system."
+      },
+      "solutions": {
+        "title": "HVAC Solutions",
+        "solution1": {
+          "title": "Heat Pump Systems",
+          "description": "Highly efficient heating and cooling in one system",
+          "feature1": "3-4x more efficient than traditional systems",
+          "feature2": "Heating and cooling capability",
+          "feature3": "Low environmental impact"
+        },
+        "solution2": {
+          "title": "Solar Air Conditioning",
+          "description": "Cool your space with the power of the sun",
+          "feature1": "Peak cooling matches peak solar",
+          "feature2": "Dramatically lower cooling costs",
+          "feature3": "Inverter technology for efficiency"
+        },
+        "solution3": {
+          "title": "Smart Thermostats",
+          "description": "Intelligent temperature control and optimization",
+          "feature1": "Learn your preferences automatically",
+          "feature2": "Remote control via smartphone",
+          "feature3": "Energy usage reports"
+        },
+        "solution4": {
+          "title": "Radiant Heating",
+          "description": "Efficient electric floor heating systems",
+          "feature1": "Even heat distribution",
+          "feature2": "Silent operation",
+          "feature3": "Individual room control"
+        }
+      },
+      "efficiency": {
+        "title": "Energy Efficiency Stats",
+        "stat1": {
+          "value": "75%",
+          "title": "Cost Reduction",
+          "description": "Save up to 75% on heating/cooling costs with solar+HVAC"
+        },
+        "stat2": {
+          "value": "300%",
+          "title": "Heat Pump Efficiency",
+          "description": "3x more efficient than traditional heating"
+        },
+        "stat3": {
+          "value": "50%",
+          "title": "Peak Load Reduction",
+          "description": "Cut peak demand with smart controls"
+        },
+        "stat4": {
+          "value": "15-20",
+          "title": "System Lifespan",
+          "description": "Years of reliable operation"
+        },
+        "stat5": {
+          "value": "100%",
+          "title": "Solar Powered",
+          "description": "Run entirely on clean energy"
+        },
+        "stat6": {
+          "value": "24/7",
+          "title": "Comfort Control",
+          "description": "Consistent temperature year-round"
+        }
+      },
+      "features": {
+        "title": "System Features",
+        "feature1": {
+          "title": "Variable Speed",
+          "description": "Automatically adjust output for optimal efficiency"
+        },
+        "feature2": {
+          "title": "Zoned Control",
+          "description": "Different temperatures in different rooms"
+        },
+        "feature3": {
+          "title": "Air Quality",
+          "description": "Advanced filtration and ventilation"
+        },
+        "feature4": {
+          "title": "Quiet Operation",
+          "description": "Modern systems run nearly silent"
+        },
+        "feature5": {
+          "title": "Smart Integration",
+          "description": "Connect with home automation systems"
+        },
+        "feature6": {
+          "title": "Warranty Coverage",
+          "description": "Comprehensive parts and labor warranties"
+        }
+      },
+      "cta": {
+        "title": "Upgrade Your Climate Control",
+        "subtitle": "Experience efficient, sustainable heating and cooling",
+        "button": "Request HVAC Consultation"
+      }
+    },
+    "electricalPrep": {
+      "backToHome": "Back to Home",
+      "title": "Electrical System Preparation",
+      "subtitle": "Upgrade your electrical infrastructure for modern energy systems",
+      "overview": {
+        "title": "Essential Electrical Upgrades",
+        "description": "Before installing solar panels, EV chargers, or battery systems, your property's electrical infrastructure must be properly prepared. We provide comprehensive electrical upgrades to ensure your system is safe, compliant, and optimized for renewable energy.",
+        "description2": "Our certified electricians handle everything from panel upgrades to complete rewiring, ensuring your property is ready for the future of energy."
+      },
+      "services": {
+        "title": "Electrical Preparation Services",
+        "service1": {
+          "title": "Panel Upgrades",
+          "description": "Upgrade outdated electrical panels to handle increased solar and EV charging loads"
+        },
+        "service2": {
+          "title": "Circuit Installation",
+          "description": "Add dedicated circuits for solar inverters, batteries, and EV chargers"
+        },
+        "service3": {
+          "title": "Grounding Systems",
+          "description": "Proper grounding for safety and optimal solar system performance"
+        },
+        "service4": {
+          "title": "Metering Setup",
+          "description": "Install smart meters and production monitoring equipment"
+        },
+        "service5": {
+          "title": "Safety Compliance",
+          "description": "Ensure all work meets current electrical codes and standards"
+        },
+        "service6": {
+          "title": "Load Assessment",
+          "description": "Evaluate current and future electrical needs for proper sizing"
+        }
+      },
+      "importance": {
+        "title": "Why Electrical Prep Matters",
+        "reason1": {
+          "title": "Safety First",
+          "description": "Properly sized electrical infrastructure prevents overloads, fires, and equipment damage"
+        },
+        "reason2": {
+          "title": "System Performance",
+          "description": "Adequate electrical capacity ensures your solar and EV systems operate at peak efficiency"
+        },
+        "reason3": {
+          "title": "Code Compliance",
+          "description": "Meet all local electrical codes and pass inspections without delays"
+        },
+        "reason4": {
+          "title": "Future Proofing",
+          "description": "Prepare for expansion and additional electrical loads as your needs grow"
+        }
+      },
+      "standards": {
+        "title": "Standards & Compliance",
+        "standard1": {
+          "title": "Licensed Electricians",
+          "description": "All work performed by certified professionals"
+        },
+        "standard2": {
+          "title": "Code Compliant",
+          "description": "Meets national and local electrical codes"
+        },
+        "standard3": {
+          "title": "Permit Handling",
+          "description": "Complete permit acquisition and inspections"
+        },
+        "standard4": {
+          "title": "Quality Materials",
+          "description": "Commercial-grade components and hardware"
+        },
+        "standard5": {
+          "title": "Warranty Protection",
+          "description": "Workmanship guarantees on all installations"
+        },
+        "standard6": {
+          "title": "Safety Certified",
+          "description": "Rapid shutdown and arc-fault protection"
+        }
+      },
+      "cta": {
+        "title": "Prepare Your Property",
+        "subtitle": "Ensure your electrical system is ready for solar and modern energy technology",
+        "button": "Schedule Assessment"
+      }
+    }
+  },
+  "targetAudienceDetails": {
+    "residential": {
+      "backToHome": "Back to Home",
+      "title": "Residential Solar Solutions",
+      "subtitle": "Transform your home into a sustainable energy powerhouse",
+      "overview": {
+        "title": "Solar Power for Your Home",
+        "description": "Take control of your energy costs and reduce your carbon footprint with a custom residential solar installation. Our homeowner solar solutions are designed to maximize savings, increase property value, and provide energy independence for decades to come.",
+        "stat1": {
+          "value": "€150-200",
+          "title": "Monthly Savings",
+          "description": "Average electricity bill reduction"
+        },
+        "stat2": {
+          "value": "25+",
+          "title": "Years Warranty",
+          "description": "On solar panels and workmanship"
+        },
+        "stat3": {
+          "value": "3-5%",
+          "title": "Value Increase",
+          "description": "Average home value appreciation"
+        }
+      },
+      "benefits": {
+        "title": "Homeowner Benefits",
+        "benefit1": {
+          "title": "Dramatic Bill Reduction",
+          "description": "Reduce your monthly electricity bills by 70-90%. Many homeowners eliminate their electricity bills entirely, saving thousands of euros annually."
+        },
+        "benefit2": {
+          "title": "Increase Home Value",
+          "description": "Homes with solar panels sell faster and for more money. Studies show an average 3-5% increase in property value."
+        },
+        "benefit3": {
+          "title": "Energy Independence",
+          "description": "Generate your own clean electricity and protect yourself from rising utility rates and power outages."
+        },
+        "benefit4": {
+          "title": "Government Incentives",
+          "description": "Access generous subsidies, tax credits, and rebates that significantly reduce your upfront investment."
+        },
+        "benefit5": {
+          "title": "Environmental Impact",
+          "description": "Reduce your carbon footprint by 3-4 tons of CO2 annually while supporting renewable energy adoption."
+        },
+        "benefit6": {
+          "title": "Low Maintenance",
+          "description": "Solar panels require minimal maintenance and come with comprehensive warranties for peace of mind."
+        }
+      },
+      "packages": {
+        "title": "Solar Packages for Homes",
+        "starter": {
+          "name": "Starter System",
+          "power": "3-4 kW",
+          "description": "Perfect for small homes or starter systems",
+          "feature1": "8-12 solar panels (400W each)",
+          "feature2": "String inverter with monitoring",
+          "feature3": "25-year panel warranty",
+          "feature4": "Professional installation",
+          "feature5": "Covers basic home energy needs"
+        },
+        "premium": {
+          "name": "Premium System",
+          "power": "6-8 kW",
+          "description": "Most popular for average homes",
+          "feature1": "15-20 solar panels (400W each)",
+          "feature2": "Smart inverter with app control",
+          "feature3": "Extended warranties included",
+          "feature4": "EV charger ready",
+          "feature5": "70-90% electricity bill coverage"
+        },
+        "ultimate": {
+          "name": "Ultimate System",
+          "power": "10-15 kW",
+          "description": "Maximum energy independence",
+          "feature1": "25-35 solar panels (400W each)",
+          "feature2": "Battery storage option",
+          "feature3": "Complete home coverage",
+          "feature4": "Smart energy management",
+          "feature5": "Near-zero electricity bills"
+        },
+        "getQuote": "Get Custom Quote"
+      },
+      "stories": {
+        "title": "Success Stories",
+        "story1": {
+          "title": "Family Home in Budapest",
+          "quote": "Our electricity bill went from €180/month to just €25. The system paid for itself in 7 years, and now we're saving €1,800 annually!",
+          "name": "The Kovács Family",
+          "location": "Budapest, District 12",
+          "savings": "€155/month"
+        },
+        "story2": {
+          "title": "Villa in Lake Balaton",
+          "quote": "We installed a 10kW system with battery storage. Even during power outages, our home runs perfectly. Best investment we've made!",
+          "name": "András & Éva",
+          "location": "Balatonfüred",
+          "savings": "€220/month"
+        },
+        "monthlySavings": "Monthly Savings"
+      },
+      "process": {
+        "title": "Simple Installation Process",
+        "step1": {
+          "title": "Free Home Assessment",
+          "description": "We evaluate your roof, energy usage, and sun exposure to design the perfect system for your needs"
+        },
+        "step2": {
+          "title": "Custom Proposal",
+          "description": "Receive a detailed proposal with system design, costs, savings projections, and financing options"
+        },
+        "step3": {
+          "title": "Paperwork & Permits",
+          "description": "We handle all permits, utility paperwork, and government incentive applications on your behalf"
+        },
+        "step4": {
+          "title": "Professional Installation",
+          "description": "Expert installation completed in 1-3 days with minimal disruption to your daily life"
+        }
+      },
+      "cta": {
+        "title": "Start Saving Today",
+        "subtitle": "Get a free custom quote and see how much you can save with solar",
+        "button": "Get Free Home Assessment"
+      }
+    },
+    "commercial": {
+      "backToHome": "Back to Home",
+      "title": "Commercial Solar Solutions",
+      "subtitle": "Maximize profits while minimizing your carbon footprint",
+      "overview": {
+        "title": "Solar Power for Business",
+        "description": "Reduce operating costs, enhance your corporate sustainability profile, and increase profitability with commercial solar solutions. Our business solar systems deliver significant ROI while demonstrating environmental leadership to customers and stakeholders.",
+        "stat1": {
+          "value": "3-5",
+          "title": "Year ROI",
+          "description": "Typical payback period"
+        },
+        "stat2": {
+          "value": "20-40%",
+          "title": "Cost Reduction",
+          "description": "Average energy cost savings"
+        },
+        "stat3": {
+          "value": "30%",
+          "title": "Tax Benefits",
+          "description": "Accelerated depreciation available"
+        },
+        "stat4": {
+          "value": "25+",
+          "title": "Years Production",
+          "description": "Long-term revenue generation"
+        }
+      },
+      "industries": {
+        "title": "Industry Solutions",
+        "industry1": {
+          "title": "Retail & Offices",
+          "description": "Reduce overhead costs and demonstrate environmental commitment to customers",
+          "savings": "Save 20-30% on energy costs"
+        },
+        "industry2": {
+          "title": "Manufacturing",
+          "description": "High energy consumption makes solar particularly attractive with quick payback",
+          "savings": "Save 30-40% on energy costs"
+        },
+        "industry3": {
+          "title": "Agriculture",
+          "description": "Power irrigation, cooling, and operations with clean solar energy",
+          "savings": "Save 40-50% on energy costs"
+        },
+        "industry4": {
+          "title": "Hospitality",
+          "description": "Hotels and restaurants benefit from peak solar production matching peak AC demand",
+          "savings": "Save 25-35% on energy costs"
+        },
+        "industry5": {
+          "title": "Warehousing",
+          "description": "Large roof space perfect for extensive solar installations",
+          "savings": "Save 35-45% on energy costs"
+        },
+        "industry6": {
+          "title": "Healthcare",
+          "description": "Reliable backup power with battery storage for critical operations",
+          "savings": "Save 20-30% on energy costs"
+        }
+      },
+      "financial": {
+        "title": "Financial Benefits",
+        "benefit1": {
+          "title": "Immediate Cost Savings",
+          "description": "Start saving on electricity costs from day one. Commercial solar systems typically reduce energy expenses by 20-40% immediately."
+        },
+        "benefit2": {
+          "title": "Tax Incentives",
+          "description": "Take advantage of accelerated depreciation, investment tax credits, and local business incentives that significantly improve ROI."
+        },
+        "benefit3": {
+          "title": "Predictable Energy Costs",
+          "description": "Lock in low electricity rates for 25+ years and protect your business from volatile energy prices and rate increases."
+        },
+        "benefit4": {
+          "title": "Revenue Generation",
+          "description": "Sell excess energy back to the grid through feed-in tariffs or net metering programs for additional income streams."
+        }
+      },
+      "systems": {
+        "title": "Commercial System Sizes",
+        "small": {
+          "name": "Small Business",
+          "power": "15-30 kW",
+          "description": "For small offices and retail",
+          "idealFor": "5-20 employees, 100-300m² space",
+          "feature1": "40-75 solar panels",
+          "feature2": "Cover 60-80% of energy needs",
+          "feature3": "3-4 year ROI typical",
+          "feature4": "Scalable for future expansion",
+          "cost": "Contact for quote"
+        },
+        "medium": {
+          "name": "Medium Business",
+          "power": "50-100 kW",
+          "description": "For larger facilities and operations",
+          "idealFor": "20-100 employees, manufacturing, warehouses",
+          "feature1": "125-250 solar panels",
+          "feature2": "Cover 70-90% of energy needs",
+          "feature3": "4-5 year ROI typical",
+          "feature4": "Battery storage options",
+          "cost": "Contact for quote"
+        },
+        "large": {
+          "name": "Large Enterprise",
+          "power": "100+ kW",
+          "description": "Maximum scale installations",
+          "idealFor": "Large facilities, industrial operations",
+          "feature1": "250+ solar panels",
+          "feature2": "Complete energy independence possible",
+          "feature3": "3-5 year ROI typical",
+          "feature4": "Advanced monitoring & management",
+          "cost": "Contact for quote"
+        },
+        "estimatedCost": "Estimated Investment"
+      },
+      "caseStudies": {
+        "title": "Case Studies",
+        "case1": {
+          "title": "Manufacturing Plant - Győr",
+          "description": "A 200kW system installed on a manufacturing facility roof, powering production equipment and reducing operational costs significantly.",
+          "systemSize": "200 kW (500 panels)",
+          "savings": "€45,000/year",
+          "payback": "4.2 years",
+          "co2": "150 tons/year"
+        },
+        "case2": {
+          "title": "Hotel Complex - Siófok",
+          "description": "150kW system with battery storage providing reliable power for a lakeside resort, eliminating peak-hour charges and ensuring uninterrupted operations.",
+          "systemSize": "150 kW (375 panels)",
+          "savings": "€38,000/year",
+          "payback": "3.8 years",
+          "co2": "120 tons/year"
+        },
+        "systemSize": "System Size",
+        "annualSavings": "Annual Savings",
+        "payback": "Payback Period",
+        "co2Reduction": "CO₂ Reduction"
+      },
+      "cta": {
+        "title": "Power Your Business Growth",
+        "subtitle": "Schedule a free business energy assessment and ROI analysis",
+        "button": "Request Business Consultation"
+      }
+    }
+  },
+  "servicesPage": {
+    "hero": {
+      "title": "Our Comprehensive Services",
+      "subtitle": "Complete solar and electrical solutions for residential and commercial properties"
+    },
+    "overview": {
+      "title": "End-to-End Energy Solutions",
+      "description": "From solar panel installation to electrical infrastructure upgrades, we provide everything you need to transition to sustainable energy. Our expert team handles every aspect of your project with precision and care."
+    },
+    "services": {
+      "title": "What We Offer",
+      "keyFeatures": "Key Features",
+      "forResidential": "For Residential",
+      "forCommercial": "For Commercial",
+      "solarPanels": {
+        "title": "Solar Panel Systems",
+        "fullDescription": "High-efficiency solar panels that convert sunlight into clean electricity. Our premium systems include advanced inverters, monitoring technology, and weather-resistant mounting hardware designed to last 25+ years.",
+        "feature1": "Tier-1 monocrystalline solar panels with 25-year warranty",
+        "feature2": "Smart inverters with real-time performance monitoring",
+        "feature3": "Professional installation with structural assessment",
+        "feature4": "Complete permitting and utility interconnection",
+        "residentialPrice": "From €6,500",
+        "commercialPrice": "From €25,000"
+      },
+      "evCharger": {
+        "title": "EV Charger Installation",
+        "fullDescription": "Future-proof your property with Level 2 EV charging stations. Fast, reliable charging for electric vehicles with smart features like scheduling, load balancing, and mobile app control.",
+        "feature1": "Level 2 chargers (up to 40A) for faster charging",
+        "feature2": "Wi-Fi enabled with smartphone app control",
+        "feature3": "Weather-resistant outdoor or indoor installation",
+        "feature4": "Dedicated circuit installation with safety features",
+        "residentialPrice": "From €1,200",
+        "commercialPrice": "From €2,500"
+      },
+      "batteryStorage": {
+        "title": "Battery Storage Systems",
+        "fullDescription": "Store excess solar energy for use during nights, cloudy days, or power outages. Our battery systems provide energy independence and protect against rising utility costs.",
+        "feature1": "10-15 kWh lithium battery systems with 10-year warranty",
+        "feature2": "Automatic backup during power outages",
+        "feature3": "Intelligent energy management for peak shaving",
+        "feature4": "Expandable capacity as your needs grow",
+        "residentialPrice": "From €8,000",
+        "commercialPrice": "From €20,000"
+      },
+      "hvac": {
+        "title": "HVAC Systems",
+        "fullDescription": "Energy-efficient heating, ventilation, and air conditioning systems designed to work seamlessly with your solar installation. Reduce your heating and cooling costs while maintaining comfort.",
+        "feature1": "High SEER-rated heat pumps and AC units",
+        "feature2": "Smart thermostats with zone control",
+        "feature3": "Energy recovery ventilation systems",
+        "feature4": "Regular maintenance plans available",
+        "residentialPrice": "From €3,500",
+        "commercialPrice": "From €12,000"
+      },
+      "electricalPrep": {
+        "title": "Electrical Preparation & Upgrades",
+        "fullDescription": "Essential electrical infrastructure improvements to support solar systems, EV chargers, and modern appliances. Ensure your electrical panel and wiring meet current codes and safety standards.",
+        "feature1": "Electrical panel upgrades (100A to 200A+)",
+        "feature2": "Dedicated circuits for heavy appliances",
+        "feature3": "Complete electrical safety inspection",
+        "feature4": "Code compliance certification",
+        "residentialPrice": "From €1,800",
+        "commercialPrice": "From €5,000"
+      }
+    },
+    "targetAudience": {
+      "title": "Who We Serve",
+      "residential": {
+        "title": "Homeowners",
+        "description": "Make your home more energy-efficient and increase its value",
+        "benefit1": "Lower monthly electricity bills",
+        "benefit2": "Increase property resale value",
+        "benefit3": "Energy independence and security",
+        "benefit4": "Environmental impact reduction"
+      },
+      "commercial": {
+        "title": "Businesses",
+        "description": "Reduce operating costs and enhance your sustainability profile",
+        "benefit1": "Significant operational cost savings",
+        "benefit2": "Tax incentives and accelerated depreciation",
+        "benefit3": "Enhanced brand reputation",
+        "benefit4": "Employee and customer satisfaction"
+      }
+    },
+    "cta": {
+      "title": "Ready to Get Started?",
+      "subtitle": "Contact us today for a free consultation and custom quote",
+      "button": "Get Free Quote"
+    }
+  },
+  "whereWeWorkPage": {
+    "hero": {
+      "title": "Where We Work",
+      "subtitle": "Serving communities across Central Europe with reliable solar solutions"
+    },
+    "coverage": {
+      "title": "Our Service Area",
+      "description": "We proudly serve homeowners and businesses throughout Hungary, Austria, and Slovakia, with plans to expand further across Central Europe.",
+      "stat1": {
+        "value": "3",
+        "title": "Countries",
+        "description": "Active operations"
+      },
+      "stat2": {
+        "value": "50+",
+        "title": "Cities",
+        "description": "Service coverage"
+      },
+      "stat3": {
+        "value": "500km",
+        "title": "Radius",
+        "description": "From our headquarters"
+      }
+    },
+    "map": {
+      "title": "Interactive Coverage Map",
+      "placeholder": "[Interactive map will be displayed here]"
+    },
+    "areas": {
+      "title": "Primary Service Areas",
+      "area1": {
+        "name": "Budapest & Surrounding",
+        "description": "Capital region and suburbs",
+        "cities": "Budapest, Budaörs, Érd"
+      },
+      "area2": {
+        "name": "Western Hungary",
+        "description": "Industrial and residential zones",
+        "cities": "Győr, Sopron, Szombathely"
+      },
+      "area3": {
+        "name": "Lake Balaton Region",
+        "description": "Resort and residential areas",
+        "cities": "Siófok, Balatonfüred, Keszthely"
+      },
+      "area4": {
+        "name": "Eastern Austria",
+        "description": "Vienna metropolitan area",
+        "cities": "Vienna, Eisenstadt, Neusiedl"
+      },
+      "area5": {
+        "name": "Southern Slovakia",
+        "description": "Danube region",
+        "cities": "Bratislava, Komárno, Nitra"
+      },
+      "area6": {
+        "name": "Northern Hungary",
+        "description": "Historic cities",
+        "cities": "Eger, Miskolc, Salgótarján"
+      },
+      "area7": {
+        "name": "Southern Hungary",
+        "description": "Agricultural and urban mix",
+        "cities": "Szeged, Kecskemét, Pécs"
+      },
+      "area8": {
+        "name": "Eastern Hungary",
+        "description": "Agricultural heartland",
+        "cities": "Debrecen, Nyíregyháza, Szolnok"
+      },
+      "area9": {
+        "name": "Central Hungary",
+        "description": "Mix of urban and rural",
+        "cities": "Vác, Gödöllő, Cegléd"
+      }
+    },
+    "expansion": {
+      "title": "Expanding Our Reach",
+      "description": "We're continuously growing our service area. If your location isn't listed, contact us - we may still be able to help!",
+      "button": "Check Availability"
+    }
+  },
+  "howWeWorkPage": {
+    "hero": {
+      "title": "How We Work",
+      "subtitle": "A proven 6-step process that ensures your solar project is completed on time, on budget, and to your complete satisfaction"
+    },
+    "overview": {
+      "title": "Our Commitment to Excellence",
+      "description": "From initial consultation to long-term support, we're with you every step of the way. Our transparent process ensures you know exactly what to expect at each stage."
+    },
+    "steps": {
+      "duration": "Duration",
+      "deliverables": "Deliverables",
+      "step1": {
+        "title": "Initial Consultation",
+        "description": "We begin with a comprehensive discussion of your energy goals, property assessment, and budget. Our experts analyze your electricity usage, roof condition, and available space to recommend the optimal solution.",
+        "duration": "1-2 hours",
+        "deliverables": "Energy assessment, preliminary recommendations"
+      },
+      "step2": {
+        "title": "Site Survey & Design",
+        "description": "Our technical team conducts a detailed on-site evaluation using advanced tools. We create a custom system design optimized for your property's unique characteristics and energy needs.",
+        "duration": "3-5 days",
+        "deliverables": "3D system design, energy production estimates, detailed quote"
+      },
+      "step3": {
+        "title": "Financing & Permitting",
+        "description": "We help you explore financing options and handle all necessary permits and approvals. Our team navigates the bureaucracy so you don't have to, ensuring compliance with local regulations and utility requirements.",
+        "duration": "2-4 weeks",
+        "deliverables": "Approved permits, signed contract, financing arrangement"
+      },
+      "step4": {
+        "title": "Installation",
+        "description": "Our certified installers execute the project with precision and care. We complete electrical work, mounting, wiring, and inverter installation while minimizing disruption to your daily routine.",
+        "duration": "2-5 days",
+        "deliverables": "Fully installed system, electrical inspection approval"
+      },
+      "step5": {
+        "title": "Inspection & Activation",
+        "description": "We coordinate final inspections with local authorities and utility companies. Once approved, we activate your system and ensure everything is operating at peak performance.",
+        "duration": "1-2 weeks",
+        "deliverables": "System activation, utility interconnection, monitoring setup"
+      },
+      "step6": {
+        "title": "Monitoring & Support",
+        "description": "Your relationship with us doesn't end at installation. We provide ongoing monitoring, maintenance support, and are always available to answer questions or address concerns.",
+        "duration": "25+ years",
+        "deliverables": "24/7 monitoring, warranty coverage, maintenance services"
+      }
+    },
+    "commitment": {
+      "title": "What Sets Us Apart",
+      "point1": {
+        "title": "Transparent Pricing",
+        "description": "No hidden fees or surprise costs"
+      },
+      "point2": {
+        "title": "Quality Materials",
+        "description": "Only Tier-1 components with full warranties"
+      },
+      "point3": {
+        "title": "Expert Team",
+        "description": "Certified installers with 10+ years experience"
+      },
+      "point4": {
+        "title": "Fast Installation",
+        "description": "Most projects completed in under a week"
+      },
+      "point5": {
+        "title": "Comprehensive Warranty",
+        "description": "25-year panel warranty, 10-year workmanship guarantee"
+      },
+      "point6": {
+        "title": "Ongoing Support",
+        "description": "Lifetime customer support and system monitoring"
+      }
+    },
+    "whyUs": {
+      "title": "Why Choose BRK Solar",
+      "reason1": {
+        "title": "1000+ Successful Projects",
+        "description": "We've completed installations for homes and businesses across Central Europe"
+      },
+      "reason2": {
+        "title": "Average 4.9/5 Customer Rating",
+        "description": "Our customers consistently praise our professionalism and quality"
+      },
+      "reason3": {
+        "title": "Fastest Installation Times",
+        "description": "We respect your time and complete projects efficiently without compromising quality"
+      },
+      "reason4": {
+        "title": "Comprehensive Warranties",
+        "description": "Industry-leading coverage on equipment and workmanship for your peace of mind"
+      }
+    }
+  },
+  "governmentSupportPage": {
+    "hero": {
+      "title": "Government Support & Incentives",
+      "subtitle": "Take advantage of generous subsidies and tax benefits to make solar energy more affordable"
+    },
+    "highlight": {
+      "badge": "🇭🇺 Hungarian Government Program",
+      "percentage": "Up to 50%",
+      "title": "Solar Panel Installation Subsidy",
+      "description": "The Hungarian government offers substantial support for residential and commercial solar installations. Eligible applicants can receive up to 50% of installation costs, making solar energy more accessible than ever.",
+      "button": "Check Your Eligibility"
+    },
+    "programs": {
+      "title": "Available Support Programs",
+      "maxSupport": "Maximum Support",
+      "program1": {
+        "title": "Residential Solar Subsidy",
+        "description": "Direct grant for homeowners installing solar panels. Covers up to 50% of system costs including panels, inverters, and installation labor.",
+        "amount": "€3,000 - €5,000"
+      },
+      "program2": {
+        "title": "Battery Storage Incentive",
+        "description": "Additional support for installing battery storage systems alongside solar panels. Encourages energy independence and grid stability.",
+        "amount": "€2,000 - €3,500"
+      },
+      "program3": {
+        "title": "EV Charger Grant",
+        "description": "Subsidy for installing electric vehicle charging stations at home or business. Supports the transition to electric mobility.",
+        "amount": "€500 - €1,200"
+      },
+      "program4": {
+        "title": "Commercial Energy Efficiency",
+        "description": "Support for businesses implementing renewable energy and efficiency upgrades. Larger projects can access more substantial funding.",
+        "amount": "€10,000 - €50,000"
+      },
+      "program5": {
+        "title": "Tax Incentives",
+        "description": "Accelerated depreciation and VAT benefits for solar installations. Reduces tax burden for businesses and qualifying properties.",
+        "amount": "Variable"
+      },
+      "program6": {
+        "title": "Low-Interest Green Loans",
+        "description": "Government-backed financing with preferential interest rates for renewable energy projects. Makes upfront costs more manageable.",
+        "amount": "Up to €30,000"
+      }
+    },
+    "eligibility": {
+      "title": "Eligibility Requirements",
+      "category1": {
+        "title": "For Homeowners",
+        "requirement1": "Property owner or have written permission",
+        "requirement2": "Primary residence in Hungary",
+        "requirement3": "Electrical system meets safety standards",
+        "requirement4": "Minimum 3kW system size"
+      },
+      "category2": {
+        "title": "For Businesses",
+        "requirement1": "Registered business in Hungary",
+        "requirement2": "Up-to-date tax obligations",
+        "requirement3": "Property ownership or long-term lease",
+        "requirement4": "Energy audit completed"
+      },
+      "category3": {
+        "title": "For All Applicants",
+        "requirement1": "Use certified installers and equipment",
+        "requirement2": "Complete application before installation",
+        "requirement3": "Meet local building codes",
+        "requirement4": "System must be grid-connected"
+      }
+    },
+    "howToApply": {
+      "title": "How to Apply",
+      "description": "We handle the entire application process for you, ensuring maximum benefits and minimal hassle.",
+      "step1": {
+        "title": "Contact Us for Assessment",
+        "description": "Schedule a free consultation where we evaluate your eligibility and potential subsidy amount"
+      },
+      "step2": {
+        "title": "We Prepare Your Application",
+        "description": "Our team gathers all required documentation and completes the subsidy application on your behalf"
+      },
+      "step3": {
+        "title": "Application Submission",
+        "description": "We submit your application to the relevant government agency and track its progress"
+      },
+      "step4": {
+        "title": "Approval & Installation",
+        "description": "Once approved, we proceed with installation. The subsidy is typically paid after project completion"
+      },
+      "step5": {
+        "title": "Subsidy Receipt",
+        "description": "After final inspection, the government subsidy is transferred directly to your account or applied to your invoice"
+      }
+    },
+    "cta": {
+      "title": "Maximize Your Savings",
+      "subtitle": "Let us help you access every available subsidy and incentive",
+      "button": "Get Free Eligibility Check"
+    }
+  },
+  "knowledgePage": {
+    "hero": {
+      "title": "Knowledge Center",
+      "subtitle": "Expert insights, guides, and updates on solar energy and sustainable living"
+    },
+    "search": {
+      "placeholder": "Search articles..."
+    },
+    "categories": {
+      "all": "All Articles",
+      "solar": "Solar Panels",
+      "battery": "Battery Storage",
+      "evCharger": "EV Charging",
+      "maintenance": "Maintenance",
+      "financing": "Financing & Incentives"
+    },
+    "featured": {
+      "title": "Featured Article",
+      "badge": "Editor's Pick",
+      "article": {
+        "title": "The Complete Guide to Solar Energy in Hungary 2024",
+        "excerpt": "Everything you need to know about installing solar panels, available subsidies, and maximizing your investment. From choosing the right system size to understanding net metering.",
+        "date": "January 10, 2024",
+        "readTime": "12 min read"
+      },
+      "readMore": "Read Article"
+    },
+    "articles": {
+      "title": "Latest Articles",
+      "readMore": "Read More",
+      "article1": {
+        "title": "How Much Do Solar Panels Really Cost in 2024?",
+        "excerpt": "A comprehensive breakdown of solar panel costs, including equipment, installation, permits, and available subsidies. Learn what to expect when budgeting for your solar project.",
+        "date": "January 8, 2024",
+        "readTime": "8 min read"
+      },
+      "article2": {
+        "title": "Battery Storage: Is It Worth the Investment?",
+        "excerpt": "Analyzing the pros and cons of adding battery storage to your solar system. We compare costs, benefits, and payback periods to help you make an informed decision.",
+        "date": "January 5, 2024",
+        "readTime": "10 min read"
+      },
+      "article3": {
+        "title": "EV Charging at Home: What You Need to Know",
+        "excerpt": "Planning to charge your electric vehicle at home? This guide covers charger types, installation requirements, costs, and how to integrate with your solar system.",
+        "date": "January 3, 2024",
+        "readTime": "7 min read"
+      },
+      "article4": {
+        "title": "Top 10 Solar Panel Myths Debunked",
+        "excerpt": "Separating fact from fiction. We address common misconceptions about solar panels, from performance in cloudy weather to maintenance requirements and lifespan.",
+        "date": "December 28, 2023",
+        "readTime": "9 min read"
+      },
+      "article5": {
+        "title": "Solar Panel Maintenance: A Seasonal Guide",
+        "excerpt": "Keep your solar system performing optimally year-round with our maintenance checklist. Learn when to clean panels, inspect connections, and schedule professional service.",
+        "date": "December 25, 2023",
+        "readTime": "6 min read"
+      },
+      "article6": {
+        "title": "Understanding Solar Subsidies in Hungary",
+        "excerpt": "Navigate the complex world of government incentives and subsidies. This detailed guide explains eligibility requirements, application processes, and how to maximize benefits.",
+        "date": "December 20, 2023",
+        "readTime": "11 min read"
+      }
+    },
+    "newsletter": {
+      "title": "Stay Informed",
+      "subtitle": "Subscribe to our newsletter for the latest solar energy news, tips, and exclusive offers",
+      "placeholder": "Enter your email",
+      "button": "Subscribe"
     }
   },
   "footer": {

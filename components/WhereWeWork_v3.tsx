@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect } from 'react';
+import Link from 'next/link';
+import { useParams } from 'next/navigation';
 
 declare global {
   interface Window {
@@ -190,29 +192,25 @@ export default function WhereWeWork() {
           </div>
         </div>
 
-        {/* Service Availability */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
-            <div className="text-4xl font-bold text-accent-600 mb-2">19</div>
-            <h3 className="text-xl font-bold text-gray-800 mb-2">Counties</h3>
-            <p className="text-gray-600">
-              Complete coverage across all Hungarian counties with reliable electrical distribution networks
-            </p>
-          </div>
-          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
-            <div className="text-4xl font-bold text-accent-600 mb-2">24/7</div>
-            <h3 className="text-xl font-bold text-gray-800 mb-2">Always Available</h3>
-            <p className="text-gray-600">
-              Round-the-clock support through our network of qualified electricians and technicians
-            </p>
-          </div>
-          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
-            <div className="text-4xl font-bold text-accent-600 mb-2">100%</div>
-            <h3 className="text-xl font-bold text-gray-800 mb-2">Professional Service</h3>
-            <p className="text-gray-600">
-              Licensed experts working with all major electrical operators for compliant installations
-            </p>
-          </div>
+        {/* Learn More Button */}
+        <div className="flex justify-center mt-16">
+          <Link
+            href={`/${(useParams().locale as string)}/where-we-work`}
+            className="group relative px-12 py-5 bg-gradient-to-r from-orange-500/20 via-orange-600/30 to-orange-500/20 backdrop-blur-sm border-2 border-orange-500/50 text-orange-600 rounded-full text-lg font-bold shadow-xl hover:shadow-orange-500/40 transition-all duration-300 hover:scale-105 overflow-hidden"
+          >
+            {/* Animated background effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-600/40 via-orange-500/50 to-orange-600/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            
+            {/* Shine effect */}
+            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/40 to-transparent" />
+            
+            <span className="relative flex items-center gap-3 group-hover:text-orange-700">
+              Explore Our Service Areas
+              <svg className="w-6 h-6 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </span>
+          </Link>
         </div>
       </div>
     </section>

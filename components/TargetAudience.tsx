@@ -1,10 +1,14 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
+import { useParams } from 'next/navigation';
 
 export default function TargetAudience() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const params = useParams();
+  const locale = params.locale as string;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,9 +32,34 @@ export default function TargetAudience() {
   }, []);
 
   return (
-    <section id="services" ref={sectionRef} className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
-      {/* Gradient Fade from Hero */}
-      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[rgba(30,58,47,0.1)] to-transparent" />
+    <section id="services" ref={sectionRef} className="pt-0 pb-20 bg-gray-50 relative overflow-hidden">
+      {/* Green Gradient Overlay */}
+      <div className="absolute inset-0 z-0" style={{
+        background: 'linear-gradient(to bottom, rgba(30, 58, 47, 0.35) 0%, rgba(34, 139, 34, 0.25) 50%, rgba(30, 58, 47, 0.15) 100%)'
+      }} />
+
+      {/* Hexagon Solar Cell Pattern - Continuation from Services */}
+      <div className="absolute inset-0 z-0 opacity-[0.08]">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundSize: '40px 70px'
+        }} />
+      </div>
+
+      {/* Animated Gradient Orbs */}
+      <div className="absolute top-[-10%] right-[-5%] w-[700px] h-[700px] bg-primary-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" />
+      <div className="absolute bottom-[-15%] left-[30%] w-[550px] h-[550px] bg-primary-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000" />
+      <div className="absolute top-[10%] right-[25%] w-[350px] h-[350px] bg-primary-300 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-blob animation-delay-1000" />
+      <div className="absolute top-[50%] right-[-5%] w-[450px] h-[450px] bg-green-400 rounded-full mix-blend-multiply filter blur-3xl opacity-18 animate-blob animation-delay-3000" />
+
+      {/* Floating Particles */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-[15%] left-[10%] w-2 h-2 bg-primary-400 rounded-full opacity-60 animate-float" />
+        <div className="absolute top-[25%] right-[15%] w-3 h-3 bg-primary-300 rounded-full opacity-50 animate-float animation-delay-1000" />
+        <div className="absolute top-[45%] left-[20%] w-2 h-2 bg-primary-500 rounded-full opacity-40 animate-float animation-delay-2000" />
+        <div className="absolute top-[60%] right-[25%] w-3 h-3 bg-primary-200 rounded-full opacity-60 animate-float animation-delay-3000" />
+        <div className="absolute top-[35%] right-[40%] w-2 h-2 bg-green-400 rounded-full opacity-50 animate-float animation-delay-1500" />
+      </div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
@@ -44,8 +73,9 @@ export default function TargetAudience() {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Residential Card */}
-          <div
-            className={`group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform ${
+          <Link
+            href={`/${locale}/solutions/residential`}
+            className={`group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform block ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`}
             style={{ transitionDelay: '0ms' }}
@@ -61,7 +91,7 @@ export default function TargetAudience() {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 p-8 md:p-10 min-h-[500px] flex flex-col justify-between text-white">
+            <div className="relative z-10 p-8 md:p-10 flex flex-col text-white" style={{ minHeight: '600px' }}>
               <div>
                 <div className="inline-block p-3 bg-white/10 backdrop-blur-sm rounded-xl mb-6">
                   <svg
@@ -82,59 +112,60 @@ export default function TargetAudience() {
                 <p className="text-lg mb-6 text-gray-100">
                   Transform your home into a sustainable energy powerhouse
                 </p>
+              
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-start space-x-3">
+                    <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <span className="text-base">Reduce your monthly electricity bills by up to 90%</span>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <span className="text-base">Increase your property value instantly</span>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <span className="text-base">25+ year warranty on solar panels</span>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <span className="text-base">Flexible financing options available</span>
+                  </div>
+                </div>
               </div>
 
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="text-base">Reduce your monthly electricity bills by up to 90%</span>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="text-base">Increase your property value instantly</span>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="text-base">25+ year warranty on solar panels</span>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="text-base">Flexible financing options available</span>
-                </div>
-              </div>
-
-              <button className="mt-8 w-full bg-white text-primary-600 hover:bg-gray-100 px-8 py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 shadow-lg">
+              <button className="absolute bottom-8 left-8 right-8 w-auto bg-white text-primary-600 hover:bg-gray-100 px-8 py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 shadow-lg">
                 Explore Home Solutions
               </button>
             </div>
-          </div>
+          </Link>
 
           {/* Commercial Card */}
-          <div
+          <Link
+            href={`/${locale}/solutions/commercial`}
             className={`group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`}
@@ -151,7 +182,7 @@ export default function TargetAudience() {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 p-8 md:p-10 min-h-[500px] flex flex-col justify-between text-white">
+            <div className="relative z-10 p-8 md:p-10 flex flex-col text-white" style={{ minHeight: '600px' }}>
               <div>
                 <div className="inline-block p-3 bg-white/10 backdrop-blur-sm rounded-xl mb-6">
                   <svg
@@ -172,56 +203,56 @@ export default function TargetAudience() {
                 <p className="text-lg mb-6 text-gray-100">
                   Maximize profits while minimizing your carbon footprint
                 </p>
+              
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-start space-x-3">
+                    <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <span className="text-base">Significant ROI within 3-5 years</span>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <span className="text-base">Tax incentives and business deductions</span>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <span className="text-base">Enhanced corporate sustainability profile</span>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <span className="text-base">Scalable systems for any business size</span>
+                  </div>
+                </div>
               </div>
 
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="text-base">Significant ROI within 3-5 years</span>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="text-base">Tax incentives and business deductions</span>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="text-base">Enhanced corporate sustainability profile</span>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="text-base">Scalable systems for any business size</span>
-                </div>
-              </div>
-
-              <button className="mt-8 w-full bg-white text-dark-700 hover:bg-gray-100 px-8 py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 shadow-lg">
+              <button className="absolute bottom-8 left-8 right-8 w-auto bg-white text-dark-700 hover:bg-gray-100 px-8 py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 shadow-lg">
                 Explore Business Solutions
               </button>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </section>

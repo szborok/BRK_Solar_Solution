@@ -5,7 +5,7 @@ import { useState } from 'react';
 type FormType = 'contact' | 'quote';
 
 export default function Contact() {
-  const [activeForm, setActiveForm] = useState<FormType>('contact');
+  const [activeForm, setActiveForm] = useState<FormType>('quote');
   
   const [contactData, setContactData] = useState({
     name: '',
@@ -106,16 +106,6 @@ export default function Contact() {
         <div className="flex justify-center mb-12">
           <div className="inline-flex bg-gray-900/20 backdrop-blur-sm rounded-xl p-1 border border-gray-700/30">
             <button
-              onClick={() => setActiveForm('contact')}
-              className={`px-8 py-3 rounded-lg font-semibold transition-all duration-300 ${
-                activeForm === 'contact'
-                  ? 'bg-accent-600 text-white shadow-lg'
-                  : 'text-gray-700 hover:text-gray-900'
-              }`}
-            >
-              Quick Contact
-            </button>
-            <button
               onClick={() => setActiveForm('quote')}
               className={`px-8 py-3 rounded-lg font-semibold transition-all duration-300 ${
                 activeForm === 'quote'
@@ -124,6 +114,16 @@ export default function Contact() {
               }`}
             >
               Request Quote
+            </button>
+            <button
+              onClick={() => setActiveForm('contact')}
+              className={`px-8 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                activeForm === 'contact'
+                  ? 'bg-accent-600 text-white shadow-lg'
+                  : 'text-gray-700 hover:text-gray-900'
+              }`}
+            >
+              Quick Contact
             </button>
           </div>
         </div>
@@ -476,7 +476,7 @@ export default function Contact() {
                 </div>
                 </div>
 
-                <div className="flex-1 flex flex-col">
+                <div className="flex-1 flex flex-col mt-6">
                   <label htmlFor="quote-message" className="block text-sm font-semibold mb-2">
                     Additional Information
                   </label>

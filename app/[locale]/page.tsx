@@ -1,7 +1,6 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import TargetAudience from '@/components/TargetAudience';
-import Services from '@/components/Services';
+import ServicesAndSolutions from '@/components/ServicesAndSolutions';
 import WhereWeWork from '@/components/WhereWeWork_v3';
 import HowWeWork from '@/components/HowWeWork';
 import GovernmentSupport from '@/components/GovernmentSupport';
@@ -15,8 +14,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Header />
       <Hero />
-      <TargetAudience />
-      <Services />
+      <ServicesAndSolutions />
       <WhereWeWork />
       <Brands />
       <HowWeWork />

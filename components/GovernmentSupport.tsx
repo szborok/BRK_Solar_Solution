@@ -110,15 +110,34 @@ export default function GovernmentSupport() {
               {benefits.map((benefit, index) => (
                 <div
                   key={index}
-                  className="bg-white border border-gray-200 rounded-2xl p-6 hover:border-primary-300 hover:shadow-xl transition-all duration-300 group"
+                  className={`rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group relative overflow-hidden ${
+                    index % 2 === 0 
+                      ? 'bg-white border border-gray-200 hover:border-primary-300' 
+                      : ''
+                  }`}
+                  style={index % 2 === 1 ? {
+                    backgroundImage: index === 1 
+                      ? 'linear-gradient(135deg, rgba(34, 139, 34, 0.85), rgba(30, 58, 47, 0.9)), url(https://images.unsplash.com/photo-1554224311-beee460ae6ba?q=80&w=2070)'
+                      : 'linear-gradient(135deg, rgba(30, 58, 47, 0.85), rgba(34, 139, 34, 0.9)), url(https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=2071)',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  } : {}}
                 >
-                  <div className="w-14 h-14 bg-primary-100 text-primary-600 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary-600 group-hover:text-white transition-all duration-300">
+                  <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-4 transition-all duration-300 ${
+                    index % 2 === 0 
+                      ? 'bg-primary-100 text-primary-600 group-hover:bg-primary-600 group-hover:text-white'
+                      : 'bg-white/20 backdrop-blur-sm text-white group-hover:bg-white/30'
+                  }`}>
                     {benefit.icon}
                   </div>
-                  <h3 className="text-lg font-bold text-dark-700 mb-2">
+                  <h3 className={`text-lg font-bold mb-2 ${
+                    index % 2 === 0 ? 'text-dark-700' : 'text-white'
+                  }`}>
                     {t(`${benefit.key}.title`)}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className={`text-sm leading-relaxed ${
+                    index % 2 === 0 ? 'text-gray-600' : 'text-white/90'
+                  }`}>
                     {t(`${benefit.key}.description`)}
                   </p>
                 </div>
