@@ -43,7 +43,7 @@ export default function LanguageSwitcher() {
     const filteredPath = pathArray.filter(p => p);
     
     // Check if first element is a locale code
-    let remainingPath = '/'; ref={dropdownRef}
+    let remainingPath = '/';
     if (filteredPath.length > 0 && ['en', 'de', 'hu'].includes(filteredPath[0])) {
       // Remove the locale and rebuild path
       remainingPath = '/' + filteredPath.slice(1).join('/');
