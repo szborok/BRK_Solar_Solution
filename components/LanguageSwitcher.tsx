@@ -2,7 +2,7 @@
 
 import { useLocale } from 'next-intl';
 import { usePathname, useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const languages = [
   { code: 'en', name: 'English', flag: '🇬🇧' },
@@ -15,8 +15,25 @@ export default function LanguageSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const currentLanguage = languages.find((lang) => lang.code === locale);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
 
   const handleLanguageChange = (newLocale: string) => {
     // Get the pathname without the leading slash
@@ -26,7 +43,7 @@ export default function LanguageSwitcher() {
     const filteredPath = pathArray.filter(p => p);
     
     // Check if first element is a locale code
-    let remainingPath = '/';
+    let remainingPath = '/'; ref={dropdownRef}
     if (filteredPath.length > 0 && ['en', 'de', 'hu'].includes(filteredPath[0])) {
       // Remove the locale and rebuild path
       remainingPath = '/' + filteredPath.slice(1).join('/');
@@ -46,12 +63,15 @@ export default function LanguageSwitcher() {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-white/10 transition-colors"
+        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all duration-300 font-medium group"
       >
-        <span className="text-xl">{currentLanguage?.flag}</span>
-        <span className="hidden md:inline">{currentLanguage?.name}</span>
+        <span className="text-sm text-white/90 group-hover:text-white">
+          {currentLanguage?.code.toUpperCase()}
+        </span>
         <svg
-          className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+          className={`w-3.5 h-3.5 transition-transform duration-300 text-white/70 group-hover:text-white/90 ${
+            isOpen ? 'rotate-180' : ''
+          }`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -59,7 +79,7 @@ export default function LanguageSwitcher() {
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
-            strokeWidth={2}
+            strokeWidth={2.5}
             d="M19 9l-7 7-7-7"
           />
         </svg>
@@ -67,39 +87,37 @@ export default function LanguageSwitcher() {
 
       {isOpen && (
         <>
-          {/* Backdrop */}
-          <div
-            className="fixed inset-0 z-40"
-            onClick={() => setIsOpen(false)}
-          />
-          
           {/* Dropdown */}
-          <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl z-50 overflow-hidden">
-            {languages.map((lang) => (
-              <button
-                key={lang.code}
-                onClick={() => handleLanguageChange(lang.code)}
-                className={`w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-gray-100 transition-colors ${
-                  lang.code === locale ? 'bg-primary-50 text-primary-700' : 'text-gray-700'
-                }`}
-              >
-                <span className="text-xl">{lang.flag}</span>
-                <span className="font-medium">{lang.name}</span>
-                {lang.code === locale && (
-                  <svg
-                    className="w-5 h-5 ml-auto text-primary-600"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                )}
-              </button>
-            ))}
+          <div className="absolute right-0 mt-6 w-56 bg-dark-700/60 backdrop-blur-xl rounded-xl shadow-2xl border border-white/10 z-[10000] overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
+            <div className="p-1.5">
+              {languages.map((lang) => (
+                <button
+                  key={lang.code}
+                  onClick={() => handleLanguageChange(lang.code)}
+                  className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-all duration-200 ${
+                    lang.code === locale
+                      ? 'bg-primary-500/20 text-primary-300 shadow-sm'
+                      : 'text-white/80 hover:bg-white/5 hover:text-white'
+                  }`}
+                >
+                  <span className="text-2xl">{lang.flag}</span>
+                  <span className="font-medium text-sm">{lang.name}</span>
+                  {lang.code === locale && (
+                    <svg
+                      className="w-4 h-4 ml-auto text-primary-400"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  )}
+                </button>
+              ))}
+            </div>
           </div>
         </>
       )}

@@ -80,7 +80,9 @@ export default function Header() {
             >
               {t('freeAssessment')}
             </button>
-            <LanguageSwitcher />
+            <div className="ml-3">
+              <LanguageSwitcher />
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}

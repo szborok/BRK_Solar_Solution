@@ -114,73 +114,8 @@ export default function ServicesAndSolutions() {
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
-        {/* Services Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-dark-700 mb-4">
-            {t('title')}
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            {t('subtitle')}
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto mb-16">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="group relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
-            >
-              {/* Icon/Image Header */}
-              <div className="relative h-48 overflow-hidden">
-                <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                  style={{
-                    backgroundImage: `linear-gradient(135deg, rgba(30, 58, 47, 0.8), rgba(34, 139, 34, 0.6)), url(${service.image})`,
-                  }}
-                />
-                <div className="relative z-10 h-full flex items-center justify-center">
-                  <div className="p-4 bg-white/20 backdrop-blur-sm rounded-2xl text-white">
-                    {service.icon}
-                  </div>
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-dark-700 mb-3">
-                  {t(`${service.key}.title`)}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed line-clamp-4">
-                  {t(`${service.key}.description`)}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Learn More Button */}
-        <div className="flex justify-center mb-24">
-          <Link
-            href={`/${locale}/services`}
-            className="group relative px-12 py-5 bg-gradient-to-r from-orange-500/20 via-orange-600/30 to-orange-500/20 backdrop-blur-sm border-2 border-orange-500/50 text-orange-600 rounded-full text-lg font-bold shadow-xl hover:shadow-orange-500/40 transition-all duration-300 hover:scale-105 overflow-hidden"
-          >
-            {/* Animated background effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-600/40 via-orange-500/50 to-orange-600/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            
-            {/* Shine effect */}
-            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/40 to-transparent" />
-            
-            <span className="relative flex items-center gap-3 group-hover:text-orange-700">
-              {t('learnMoreButton')}
-              <svg className="w-6 h-6 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </span>
-          </Link>
-        </div>
-
-        {/* Solar Solutions Section */}
-        <div ref={solutionsRef} className="mt-16">
+        {/* Solar Solutions Section - Now First */}
+        <div ref={solutionsRef}>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-dark-700 mb-4">
               Solar Solutions for Everyone
@@ -190,7 +125,7 @@ export default function ServicesAndSolutions() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-24">
             {/* Residential Card */}
             <Link
               href={`/${locale}/solutions/residential`}
@@ -371,6 +306,73 @@ export default function ServicesAndSolutions() {
                   Explore Business Solutions
                 </button>
               </div>
+            </Link>
+          </div>
+        </div>
+
+        {/* Services Section - Now Second */}
+        <div className="mt-24">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-dark-700 mb-4">
+              {t('title')}
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              {t('subtitle')}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto mb-16">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="group relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+              >
+                {/* Icon/Image Header */}
+                <div className="relative h-48 overflow-hidden">
+                  <div
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                    style={{
+                      backgroundImage: `linear-gradient(135deg, rgba(30, 58, 47, 0.8), rgba(34, 139, 34, 0.6)), url(${service.image})`,
+                    }}
+                  />
+                  <div className="relative z-10 h-full flex items-center justify-center">
+                    <div className="p-4 bg-white/20 backdrop-blur-sm rounded-2xl text-white">
+                      {service.icon}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-dark-700 mb-3">
+                    {t(`${service.key}.title`)}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed line-clamp-4">
+                    {t(`${service.key}.description`)}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Learn More Button */}
+          <div className="flex justify-center">
+            <Link
+              href={`/${locale}/services`}
+              className="group relative px-12 py-5 bg-gradient-to-r from-orange-500/20 via-orange-600/30 to-orange-500/20 backdrop-blur-sm border-2 border-orange-500/50 text-orange-600 rounded-full text-lg font-bold shadow-xl hover:shadow-orange-500/40 transition-all duration-300 hover:scale-105 overflow-hidden"
+            >
+              {/* Animated background effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-600/40 via-orange-500/50 to-orange-600/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              
+              {/* Shine effect */}
+              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/40 to-transparent" />
+              
+              <span className="relative flex items-center gap-3 group-hover:text-orange-700">
+                {t('learnMoreButton')}
+                <svg className="w-6 h-6 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </span>
             </Link>
           </div>
         </div>

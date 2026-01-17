@@ -1,13 +1,54 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 
 export default function HowWeWork() {
   const t = useTranslations('howWeWork');
   const [activeStep, setActiveStep] = useState(0);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+
+      const section = sectionRef.current;
+      const rect = section.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      // Calculate the center position of the section
+      const sectionTop = rect.top;
+      const sectionHeight = rect.height;
+      const sectionCenter = sectionTop + sectionHeight / 2;
+      
+      // Animation starts when section center is at bottom of viewport
+      // Animation completes when section center reaches middle of viewport
+      const scrollStart = windowHeight; // Section center at bottom
+      const scrollEnd = windowHeight / 2; // Section center at middle
+      
+      const progress = (scrollStart - sectionCenter) / (scrollStart - scrollEnd);
+      
+      // Clamp between 0 and 1
+      const clampedProgress = Math.max(0, Math.min(1, progress));
+      
+      // Update continuous progress for the line
+      setScrollProgress(clampedProgress);
+      
+      // Map progress to steps (0-3)
+      const step = Math.floor(clampedProgress * 3.99);
+      const newActiveStep = Math.min(3, Math.max(0, step));
+      
+      setActiveStep(newActiveStep);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Call once on mount
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const steps = [
     {
@@ -49,7 +90,7 @@ export default function HowWeWork() {
   ];
 
   return (
-    <section id="how-we-work" className="py-20 bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 text-gray-900 relative overflow-hidden">
+    <section ref={sectionRef} id="how-we-work" className="py-20 bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 text-gray-900 relative overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0 opacity-20">
         <video
@@ -92,8 +133,8 @@ export default function HowWeWork() {
             {/* Progress Line */}
             <div className="absolute top-20 left-0 right-0 h-1 bg-gray-300">
               <div 
-                className="h-full bg-gradient-to-r from-gray-800 to-black transition-all duration-500"
-                style={{ width: `${(activeStep / (steps.length - 1)) * 100}%` }}
+                className="h-full bg-gradient-to-r from-gray-800 to-black transition-all duration-100"
+                style={{ width: `${scrollProgress * 100}%` }}
               />
             </div>
 
@@ -101,22 +142,21 @@ export default function HowWeWork() {
               {steps.map((step, index) => (
                 <div
                   key={index}
-                  onMouseEnter={() => setActiveStep(index)}
-                  className="relative cursor-pointer group"
+                  className="relative"
                 >
                   {/* Number Circle */}
                   <div className="relative z-10 mx-auto">
-                    <div className={`w-40 h-40 mx-auto mb-6 rounded-2xl flex flex-col items-center justify-center transition-all duration-500 transform ${
+                    <div className={`w-40 h-40 mx-auto mb-6 rounded-2xl flex flex-col items-center justify-center transition-all duration-700 transform ${
                       activeStep === index
                         ? 'bg-gradient-to-br from-gray-900 to-black shadow-2xl shadow-black/50 scale-125'
-                        : 'bg-white shadow-lg group-hover:shadow-2xl group-hover:scale-110'
+                        : 'bg-white shadow-lg scale-100'
                     }`}>
-                      <div className={`transition-all duration-500 ${
+                      <div className={`transition-all duration-700 ${
                         activeStep === index ? 'text-white scale-110' : 'text-gray-800'
                       }`}>
                         {step.icon}
                       </div>
-                      <div className={`text-4xl font-bold mt-2 transition-all duration-500 ${
+                      <div className={`text-4xl font-bold mt-2 transition-all duration-700 ${
                         activeStep === index ? 'text-white' : 'text-gray-400'
                       }`}>
                         {step.number}

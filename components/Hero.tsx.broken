@@ -19,25 +19,18 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative h-screen flex items-center justify-center text-white overflow-hidden">
-      {/* Background Video/GIF */}
-      <div className="absolute inset-0 z-0 bg-gray-900">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          className="absolute inset-0 w-full h-full object-cover"
-          poster="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072"
-        >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-solar-panels-in-the-field-1194-large.mp4" type="video/mp4" />
-        </video>
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/50" />
-      </div>
+    <section className="relative h-[70vh] flex items-center justify-center text-white pt-20 overflow-hidden">
+      {/* Background Image with Parallax Effect */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: 'linear-gradient(to bottom, rgba(30, 58, 47, 0.6) 0%, rgba(34, 139, 34, 0.75) 50%, rgba(30, 58, 47, 0.9) 100%), url(https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
 
-      {/* Content */}
+      {/* Content */
       <div className="relative z-10 container mx-auto px-4">
         <div className="max-w-4xl">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-2xl">

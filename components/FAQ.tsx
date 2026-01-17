@@ -48,7 +48,7 @@ export default function FAQ() {
         </div>
 
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 gap-6">
+          <div className="bg-white/70 backdrop-blur-sm rounded-3xl overflow-hidden border border-gray-200 shadow-xl">
             {faqs.map((faq, index) => (
               <div
                 key={index}
@@ -56,10 +56,12 @@ export default function FAQ() {
                 className="group cursor-pointer transition-all duration-300"
               >
                 <div
-                  className={`relative bg-white rounded-2xl border-2 transition-all duration-300 overflow-hidden ${
+                  className={`relative transition-all duration-300 ${
+                    index !== faqs.length - 1 ? 'border-b border-gray-200' : ''
+                  } ${
                     openIndex === index
-                      ? 'border-accent-500 shadow-xl shadow-accent-500/20'
-                      : 'border-gray-200 hover:border-accent-300 hover:shadow-lg'
+                      ? 'bg-accent-50/50'
+                      : 'hover:bg-white/50'
                   }`}
                 >
                   {/* Header */}
@@ -85,8 +87,8 @@ export default function FAQ() {
                         {t(`${faq.key}.question`)}
                       </h3>
                       <div 
-                        className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                          openIndex === index ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0 mt-0'
+                        className={`overflow-hidden transition-all duration-200 ease-out ${
+                          openIndex === index ? 'max-h-80 opacity-100 mt-4' : 'max-h-0 opacity-0 mt-0'
                         }`}
                       >
                         <div className="text-gray-600 leading-relaxed">
