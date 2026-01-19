@@ -28,17 +28,22 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-dark-700/90 backdrop-blur-lg text-white z-50 border-b border-white/10">
-      <div className="container mx-auto px-6 py-5">
+      <div className="w-full px-6 py-5">
         <div className="flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary-400 to-primary-600 rounded-lg flex items-center justify-center">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-gradient-to-br from-primary-400 to-primary-600 rounded-lg flex items-center justify-center">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <div className="text-2xl font-bold">
+                <span className="text-white">BRK</span>{' '}
+                <span className="text-primary-400">SOLAR</span>
+              </div>
             </div>
-            <div className="text-2xl font-bold">
-              <span className="text-white">BRK</span>{' '}
-              <span className="text-primary-400">SOLAR</span>
+            <div className="hidden md:block">
+              <LanguageSwitcher />
             </div>
           </div>
 
@@ -80,9 +85,6 @@ export default function Header() {
             >
               {t('freeAssessment')}
             </button>
-            <div className="ml-3">
-              <LanguageSwitcher />
-            </div>
           </nav>
 
           {/* Mobile Menu Button */}

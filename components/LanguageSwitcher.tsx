@@ -15,9 +15,20 @@ export default function LanguageSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [pendingLocale, setPendingLocale] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const currentLanguage = languages.find((lang) => lang.code === locale);
+  // Extract locale from pathname as fallback
+  const getLocaleFromPath = () => {
+    const pathArray = pathname.split('/').filter(p => p);
+    if (pathArray.length > 0 && ['en', 'de', 'hu'].includes(pathArray[0])) {
+      return pathArray[0];
+    }
+    return locale;
+  };
+
+  const currentLocale = pendingLocale || getLocaleFromPath() || locale;
+  const currentLanguage = languages.find((lang) => lang.code === currentLocale);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -36,6 +47,9 @@ export default function LanguageSwitcher() {
   }, [isOpen]);
 
   const handleLanguageChange = (newLocale: string) => {
+    // Set pending locale immediately for UI feedback
+    setPendingLocale(newLocale);
+    
     // Get the pathname without the leading slash
     const pathArray = pathname.split('/');
     
@@ -63,11 +77,9 @@ export default function LanguageSwitcher() {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all duration-300 font-medium group"
+        className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all duration-300 font-medium group"
       >
-        <span className="text-sm text-white/90 group-hover:text-white">
-          {currentLanguage?.code.toUpperCase()}
-        </span>
+        <span className="text-xl">{currentLanguage?.flag}</span>
         <svg
           className={`w-3.5 h-3.5 transition-transform duration-300 text-white/70 group-hover:text-white/90 ${
             isOpen ? 'rotate-180' : ''
@@ -95,14 +107,14 @@ export default function LanguageSwitcher() {
                   key={lang.code}
                   onClick={() => handleLanguageChange(lang.code)}
                   className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-all duration-200 ${
-                    lang.code === locale
+                    lang.code === currentLocale
                       ? 'bg-primary-500/20 text-primary-300 shadow-sm'
                       : 'text-white/80 hover:bg-white/5 hover:text-white'
                   }`}
                 >
                   <span className="text-2xl">{lang.flag}</span>
                   <span className="font-medium text-sm">{lang.name}</span>
-                  {lang.code === locale && (
+                  {lang.code === currentLocale && (
                     <svg
                       className="w-4 h-4 ml-auto text-primary-400"
                       fill="currentColor"

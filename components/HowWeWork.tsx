@@ -7,6 +7,8 @@ import { useParams } from 'next/navigation';
 
 export default function HowWeWork() {
   const t = useTranslations('howWeWork');
+  const params = useParams();
+  const locale = params.locale as string;
   const [activeStep, setActiveStep] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
@@ -224,7 +226,7 @@ export default function HowWeWork() {
         {/* Learn More Button */}
         <div className="flex justify-center mt-16">
           <Link
-            href={`/${(useParams().locale as string)}/how-we-work`}
+            href={`/${locale}/how-we-work`}
             className="group relative px-12 py-5 bg-gradient-to-r from-orange-500/20 via-orange-600/30 to-orange-500/20 backdrop-blur-sm border-2 border-orange-500/50 text-orange-600 rounded-full text-lg font-bold shadow-xl hover:shadow-orange-500/40 transition-all duration-300 hover:scale-105 overflow-hidden"
           >
             {/* Animated background effect */}
@@ -234,7 +236,7 @@ export default function HowWeWork() {
             <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/40 to-transparent" />
             
             <span className="relative flex items-center gap-3 group-hover:text-orange-700">
-              Learn More About Our Process
+              {t('learnMore')}
               <svg className="w-6 h-6 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>

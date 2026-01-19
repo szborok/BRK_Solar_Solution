@@ -1,10 +1,12 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 type FormType = 'contact' | 'quote';
 
 export default function Contact() {
+  const t = useTranslations('contact');
   const [activeForm, setActiveForm] = useState<FormType>('quote');
   
   const [contactData, setContactData] = useState({
@@ -15,13 +17,16 @@ export default function Contact() {
   });
 
   const [quoteData, setQuoteData] = useState({
-    name: '',
+    firstName: '',
+    surname: '',
     phone: '',
     email: '',
+    city: '',
     address: '',
     propertyType: '',
     roofType: '',
-    roofArea: '',
+    orientation: '',
+    phases: '',
     energyBill: '',
     installationType: '',
     timeframe: '',
@@ -96,9 +101,9 @@ export default function Contact() {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Contact Us</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">{t('title')}</h2>
           <p className="text-xl max-w-2xl mx-auto text-gray-800">
-            Get in touch or request a detailed solar installation quote
+            {t('description')}
           </p>
         </div>
 
@@ -113,7 +118,7 @@ export default function Contact() {
                   : 'text-gray-700 hover:text-gray-900'
               }`}
             >
-              Request Quote
+              {t('requestQuoteButton')}
             </button>
             <button
               onClick={() => setActiveForm('contact')}
@@ -123,7 +128,7 @@ export default function Contact() {
                   : 'text-gray-700 hover:text-gray-900'
               }`}
             >
-              Quick Contact
+              {t('quickContactButton')}
             </button>
           </div>
         </div>
@@ -133,12 +138,12 @@ export default function Contact() {
           {activeForm === 'contact' ? (
             // Simple Contact Form
             <div className="bg-white/95 backdrop-blur-sm text-gray-900 p-8 md:p-12 rounded-2xl shadow-2xl min-h-[1200px] flex flex-col">
-              <h3 className="text-2xl font-bold mb-6">Send us a message</h3>
+              <h3 className="text-2xl font-bold mb-6">{t('sendMessage')}</h3>
               <form onSubmit={handleContactSubmit} className="space-y-6 flex-1 flex flex-col">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="contact-name" className="block text-sm font-semibold mb-2">
-                      Name *
+                      {t('nameLabel')} *
                     </label>
                     <input
                       type="text"
@@ -147,13 +152,13 @@ export default function Contact() {
                       value={contactData.name}
                       onChange={handleContactChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent transition-all"
-                      placeholder="John Doe"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent transition-all"
+                      placeholder={t('namePlaceholder')}
                     />
                   </div>
                   <div>
                     <label htmlFor="contact-phone" className="block text-sm font-semibold mb-2">
-                      Phone *
+                      {t('phoneLabel')} *
                     </label>
                     <input
                       type="tel"
@@ -162,15 +167,15 @@ export default function Contact() {
                       value={contactData.phone}
                       onChange={handleContactChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent transition-all"
-                      placeholder="+36 XX XXX-XXXX"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent transition-all"
+                      placeholder={t('phonePlaceholder')}
                     />
                   </div>
                 </div>
 
                 <div>
                   <label htmlFor="contact-email" className="block text-sm font-semibold mb-2">
-                    Email *
+                    {t('emailLabel')} *
                   </label>
                   <input
                     type="email"
@@ -179,14 +184,14 @@ export default function Contact() {
                     value={contactData.email}
                     onChange={handleContactChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent transition-all"
-                    placeholder="your@email.com"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent transition-all"
+                    placeholder={t('emailPlaceholder')}
                   />
                 </div>
 
                 <div className="flex-1 flex flex-col">
                   <label htmlFor="contact-message" className="block text-sm font-semibold mb-2">
-                    Message *
+                    {t('messageLabel')} *
                   </label>
                   <textarea
                     id="contact-message"
@@ -195,19 +200,19 @@ export default function Contact() {
                     onChange={handleContactChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent transition-all resize-none flex-1"
-                    placeholder="How can we help you?"
+                    placeholder={t('messagePlaceholder')}
                   />
                 </div>
 
                 {submitStatus === 'success' && (
                   <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
-                    Thank you! We'll get back to you shortly.
+                    {t('successMessage')}
                   </div>
                 )}
 
                 {submitStatus === 'error' && (
                   <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
-                    Something went wrong. Please try again.
+                    {t('errorMessage')}
                   </div>
                 )}
               </form>
@@ -222,7 +227,7 @@ export default function Contact() {
                   if (form) form.dispatchEvent(new Event('submit', { bubbles: true }));
                 }}
               >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+                {isSubmitting ? t('sendingButton') : t('sendMessageButton')}
               </button>
 
               {/* Contact Info Below Form */}
@@ -235,7 +240,7 @@ export default function Contact() {
                       </svg>
                     </div>
                     <div>
-                      <p className="font-semibold text-gray-900">Phone</p>
+                      <p className="font-semibold text-gray-900">{t('phoneTitle')}</p>
                       <a href="tel:+3612892599" className="text-accent-600 hover:text-accent-700">
                         +36 1 289-2599
                       </a>
@@ -264,8 +269,8 @@ export default function Contact() {
                       </svg>
                     </div>
                     <div>
-                      <p className="font-semibold text-gray-900">Office</p>
-                      <p className="text-gray-600">Budapest, Hungary</p>
+                      <p className="font-semibold text-gray-900">{t('officeTitle')}</p>
+                      <p className="text-gray-600">{t('officeLocation')}</p>
                     </div>
                   </div>
                 </div>
@@ -274,31 +279,46 @@ export default function Contact() {
           ) : (
             // Detailed Quote Form
             <div className="bg-white/95 backdrop-blur-sm text-gray-900 p-8 md:p-12 rounded-2xl shadow-2xl min-h-[1200px] flex flex-col">
-              <h3 className="text-2xl font-bold mb-6">Request Detailed Quote</h3>
+              <h3 className="text-2xl font-bold mb-6 text-center">{t('requestDetailedQuote')}</h3>
               <form onSubmit={handleQuoteSubmit} className="space-y-6 flex-1 flex flex-col">
                 <div className="flex-1">
                 {/* Personal Information */}
                 <div>
-                  <h4 className="text-lg font-semibold mb-4 text-accent-600">Personal Information</h4>
-                  <div className="grid md:grid-cols-3 gap-6">
+                  <h4 className="text-lg font-semibold mt-6 mb-0 text-accent-600">{t('personalInformation')}</h4>
+                  <div className="grid md:grid-cols-2 gap-3">
                     <div>
-                      <label htmlFor="quote-name" className="block text-sm font-semibold mb-2">
-                        Full Name *
+                      <label htmlFor="quote-firstName" className="block text-sm font-semibold mb-2">
+                        {t('firstNameLabel')} *
                       </label>
                       <input
                         type="text"
-                        id="quote-name"
-                        name="name"
-                        value={quoteData.name}
+                        id="quote-firstName"
+                        name="firstName"
+                        value={quoteData.firstName || ''}
                         onChange={handleQuoteChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent"
-                        placeholder="John Doe"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent"
+                        placeholder={t('firstNamePlaceholder')}
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="quote-surname" className="block text-sm font-semibold mb-2">
+                        {t('surnameLabel')} *
+                      </label>
+                      <input
+                        type="text"
+                        id="quote-surname"
+                        name="surname"
+                        value={quoteData.surname || ''}
+                        onChange={handleQuoteChange}
+                        required
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent"
+                        placeholder={t('surnamePlaceholder')}
                       />
                     </div>
                     <div>
                       <label htmlFor="quote-phone" className="block text-sm font-semibold mb-2">
-                        Phone *
+                        {t('phoneLabel')} *
                       </label>
                       <input
                         type="tel"
@@ -307,13 +327,13 @@ export default function Contact() {
                         value={quoteData.phone}
                         onChange={handleQuoteChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent"
-                        placeholder="+36 XX XXX-XXXX"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent"
+                        placeholder={t('phonePlaceholder')}
                       />
                     </div>
                     <div>
                       <label htmlFor="quote-email" className="block text-sm font-semibold mb-2">
-                        Email *
+                        {t('emailLabel')} *
                       </label>
                       <input
                         type="email"
@@ -322,8 +342,8 @@ export default function Contact() {
                         value={quoteData.email}
                         onChange={handleQuoteChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent"
-                        placeholder="your@email.com"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent"
+                        placeholder={t('emailPlaceholder')}
                       />
                     </div>
                   </div>
@@ -331,11 +351,27 @@ export default function Contact() {
 
                 {/* Property Information */}
                 <div>
-                  <h4 className="text-lg font-semibold mb-4 text-accent-600">Property Information</h4>
+                  <h4 className="text-lg font-semibold mt-6 mb-0 text-accent-600">{t('propertyInformation')}</h4>
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="md:col-span-2">
+                    <div>
+                      <label htmlFor="quote-city" className="block text-sm font-semibold mb-2">
+                        {t('cityLabel')} *
+                      </label>
+                      <input
+                        type="text"
+                        id="quote-city"
+                        name="city"
+                        value={quoteData.city || ''}
+                        onChange={handleQuoteChange}
+                        required
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent"
+                        placeholder={t('cityPlaceholder')}
+                      />
+                    </div>
+
+                    <div>
                       <label htmlFor="quote-address" className="block text-sm font-semibold mb-2">
-                        Installation Address *
+                        {t('installationAddress')} *
                       </label>
                       <input
                         type="text"
@@ -344,14 +380,14 @@ export default function Contact() {
                         value={quoteData.address}
                         onChange={handleQuoteChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent"
-                        placeholder="Full address"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent"
+                        placeholder={t('installationAddressPlaceholder')}
                       />
                     </div>
 
                     <div>
                       <label htmlFor="quote-propertyType" className="block text-sm font-semibold mb-2">
-                        Property Type *
+                        {t('propertyTypeLabel')} *
                       </label>
                       <select
                         id="quote-propertyType"
@@ -359,19 +395,19 @@ export default function Contact() {
                         value={quoteData.propertyType}
                         onChange={handleQuoteChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent"
                       >
-                        <option value="">Select type...</option>
-                        <option value="residential">Residential House</option>
-                        <option value="apartment">Apartment Building</option>
-                        <option value="commercial">Commercial Building</option>
-                        <option value="industrial">Industrial Facility</option>
+                        <option value="">{t('selectTypeOption')}</option>
+                        <option value="residential">{t('residentialHouse')}</option>
+                        <option value="apartment">{t('apartmentBuilding')}</option>
+                        <option value="commercial">{t('commercialBuilding')}</option>
+                        <option value="industrial">{t('industrialFacility')}</option>
                       </select>
                     </div>
 
                     <div>
                       <label htmlFor="quote-roofType" className="block text-sm font-semibold mb-2">
-                        Roof Type *
+                        {t('roofTypeLabel')} *
                       </label>
                       <select
                         id="quote-roofType"
@@ -379,35 +415,60 @@ export default function Contact() {
                         value={quoteData.roofType}
                         onChange={handleQuoteChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent"
                       >
-                        <option value="">Select type...</option>
-                        <option value="flat">Flat Roof</option>
-                        <option value="pitched">Pitched Roof</option>
-                        <option value="tile">Tile Roof</option>
-                        <option value="metal">Metal Roof</option>
-                        <option value="other">Other</option>
+                        <option value="">{t('selectTypeOption')}</option>
+                        <option value="flat">{t('flatRoof')}</option>
+                        <option value="pitched">{t('pitchedRoof')}</option>
+                        <option value="tile">{t('tileRoof')}</option>
+                        <option value="metal">{t('metalRoof')}</option>
+                        <option value="other">{t('otherRoof')}</option>
                       </select>
                     </div>
 
                     <div>
-                      <label htmlFor="quote-roofArea" className="block text-sm font-semibold mb-2">
-                        Approximate Roof Area (m²)
+                      <label htmlFor="quote-orientation" className="block text-sm font-semibold mb-2">
+                        {t('orientationLabel')}
                       </label>
-                      <input
-                        type="number"
-                        id="quote-roofArea"
-                        name="roofArea"
-                        value={quoteData.roofArea}
+                      <select
+                        id="quote-orientation"
+                        name="orientation"
+                        value={quoteData.orientation || ''}
                         onChange={handleQuoteChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent"
-                        placeholder="e.g., 100"
-                      />
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent"
+                      >
+                        <option value="">{t('orientationPlaceholder')}</option>
+                        <option value="north">{t('north')}</option>
+                        <option value="northeast">{t('northeast')}</option>
+                        <option value="east">{t('east')}</option>
+                        <option value="southeast">{t('southeast')}</option>
+                        <option value="south">{t('south')}</option>
+                        <option value="southwest">{t('southwest')}</option>
+                        <option value="west">{t('west')}</option>
+                        <option value="northwest">{t('northwest')}</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label htmlFor="quote-phases" className="block text-sm font-semibold mb-2">
+                        {t('phasesLabel')}
+                      </label>
+                      <select
+                        id="quote-phases"
+                        name="phases"
+                        value={quoteData.phases || ''}
+                        onChange={handleQuoteChange}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent"
+                      >
+                        <option value="">{t('selectPhases')}</option>
+                        <option value="single">{t('singlePhase')}</option>
+                        <option value="three">{t('threePhase')}</option>
+                      </select>
                     </div>
 
                     <div>
                       <label htmlFor="quote-energyBill" className="block text-sm font-semibold mb-2">
-                        Monthly Energy Bill *
+                        {t('energyBillLabel')} *
                       </label>
                       <select
                         id="quote-energyBill"
@@ -415,9 +476,9 @@ export default function Contact() {
                         value={quoteData.energyBill}
                         onChange={handleQuoteChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent"
                       >
-                        <option value="">Select range...</option>
+                        <option value="">{t('selectRangeOption')}</option>
                         <option value="0-50">€0 - €50</option>
                         <option value="50-100">€50 - €100</option>
                         <option value="100-200">€100 - €200</option>
@@ -429,12 +490,12 @@ export default function Contact() {
                 </div>
 
                 {/* Installation Details */}
-                <div>
-                  <h4 className="text-lg font-semibold mb-4 text-accent-600">Installation Preferences</h4>
+                <div className="mb-0">
+                  <h4 className="text-lg font-semibold mt-6 mb-0 text-accent-600">{t('installationPreferences')}</h4>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="quote-installationType" className="block text-sm font-semibold mb-2">
-                        Installation Type *
+                        {t('installationTypeLabel')} *
                       </label>
                       <select
                         id="quote-installationType"
@@ -442,19 +503,19 @@ export default function Contact() {
                         value={quoteData.installationType}
                         onChange={handleQuoteChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent"
                       >
-                        <option value="">Select type...</option>
-                        <option value="solar-only">Solar Panels Only</option>
-                        <option value="solar-battery">Solar + Battery Storage</option>
-                        <option value="solar-ev">Solar + EV Charger</option>
-                        <option value="complete">Complete System (Solar + Battery + EV)</option>
+                        <option value="">{t('selectTypeOption')}</option>
+                        <option value="solar-only">{t('solarOnly')}</option>
+                        <option value="solar-battery">{t('solarBattery')}</option>
+                        <option value="solar-ev">{t('solarEV')}</option>
+                        <option value="complete">{t('completeSystem')}</option>
                       </select>
                     </div>
 
                     <div>
                       <label htmlFor="quote-timeframe" className="block text-sm font-semibold mb-2">
-                        Preferred Timeframe *
+                        {t('timeframeLabel')} *
                       </label>
                       <select
                         id="quote-timeframe"
@@ -462,23 +523,23 @@ export default function Contact() {
                         value={quoteData.timeframe}
                         onChange={handleQuoteChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent"
                       >
-                        <option value="">Select timeframe...</option>
-                        <option value="asap">As soon as possible</option>
-                        <option value="1-3months">1-3 months</option>
-                        <option value="3-6months">3-6 months</option>
-                        <option value="6+months">6+ months</option>
-                        <option value="just-exploring">Just exploring options</option>
+                        <option value="">{t('selectTimeframe')}</option>
+                        <option value="asap">{t('asap')}</option>
+                        <option value="1-3months">{t('next3Months')}</option>
+                        <option value="3-6months">{t('next6Months')}</option>
+                        <option value="6+months">{t('flexible')}</option>
+                        <option value="just-exploring">{t('justExploring')}</option>
                       </select>
                     </div>
                   </div>
                 </div>
                 </div>
 
-                <div className="flex-1 flex flex-col mt-6">
+                <div className="flex-1 flex flex-col mt-2">
                   <label htmlFor="quote-message" className="block text-sm font-semibold mb-2">
-                    Additional Information
+                    {t('additionalInfo')}
                   </label>
                   <textarea
                     id="quote-message"
@@ -486,19 +547,19 @@ export default function Contact() {
                     value={quoteData.message}
                     onChange={handleQuoteChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent resize-none flex-1"
-                    placeholder="Any specific requirements or questions?"
+                    placeholder={t('additionalInfoPlaceholder')}
                   />
                 </div>
 
                 {submitStatus === 'success' && (
                   <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
-                    Thank you! We'll prepare your quote and contact you within 24 hours.
+                    {t('successMessage')}
                   </div>
                 )}
 
                 {submitStatus === 'error' && (
                   <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
-                    Something went wrong. Please try again.
+                    {t('errorMessage')}
                   </div>
                 )}
               </form>
@@ -513,7 +574,7 @@ export default function Contact() {
                   if (form) form.dispatchEvent(new Event('submit', { bubbles: true }));
                 }}
               >
-                {isSubmitting ? 'Submitting...' : 'Request Quote'}
+                {isSubmitting ? t('submittingQuoteButton') : t('submitQuoteButton')}
               </button>
 
               {/* Contact Info Below Form */}
@@ -526,7 +587,7 @@ export default function Contact() {
                       </svg>
                     </div>
                     <div>
-                      <p className="font-semibold text-gray-900">Phone</p>
+                      <p className="font-semibold text-gray-900">{t('phoneTitle')}</p>
                       <a href="tel:+3612892599" className="text-accent-600 hover:text-accent-700">
                         +36 1 289-2599
                       </a>
@@ -555,8 +616,8 @@ export default function Contact() {
                       </svg>
                     </div>
                     <div>
-                      <p className="font-semibold text-gray-900">Office</p>
-                      <p className="text-gray-600">Budapest, Hungary</p>
+                      <p className="font-semibold text-gray-900">{t('officeTitle')}</p>
+                      <p className="text-gray-600">{t('officeLocation')}</p>
                     </div>
                   </div>
                 </div>
@@ -568,3 +629,5 @@ export default function Contact() {
     </section>
   );
 }
+
+

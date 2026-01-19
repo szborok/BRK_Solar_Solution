@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 declare global {
   interface Window {
@@ -16,6 +17,17 @@ declare global {
 }
 
 export default function WhereWeWork() {
+  const t = useTranslations('whereWeWork');
+  const params = useParams();
+  const locale = params.locale as string;
+
+  const partners = [
+    { name: 'EON', key: 'eon', color: 'blue' },
+    { name: 'MVM', key: 'mvm', color: 'green' },
+    { name: 'ELMŰ', key: 'elmuu', color: 'purple' },
+    { name: 'EDKE', key: 'edke', color: 'orange' },
+  ];
+
   useEffect(() => {
     // Load the mapdata first
     const script1 = document.createElement('script');
@@ -150,10 +162,10 @@ export default function WhereWeWork() {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Where We Work
+            {t('title')}
           </h2>
           <p className="text-xl text-gray-100 max-w-3xl mx-auto">
-            BRK Electrical Solution serves all of Hungary through our partnerships with major national electricity distributors. We work with EON, MVM, ELMŰ, and EDKE to provide comprehensive electrical solutions nationwide.
+            {t('description')}
           </p>
         </div>
 
@@ -165,28 +177,25 @@ export default function WhereWeWork() {
 
             {/* Map Legend */}
             <div className="mt-8 w-full">
-              <h3 className="text-xl font-bold text-gray-800 mb-4">Our Network Partners</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-4">{t('networkPartners')}</h3>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
-                  <h4 className="font-bold text-blue-900">EON</h4>
-                  <p className="text-sm text-gray-700">Western Regions</p>
-                  <p className="text-xs text-gray-600 mt-1">Győr-Moson-Sopron, Vas, Komárom-Esztergom, Baranya</p>
-                </div>
-                <div className="p-4 bg-green-50 rounded-lg border border-green-200">
-                  <h4 className="font-bold text-green-900">MVM</h4>
-                  <p className="text-sm text-gray-700">Central & Eastern</p>
-                  <p className="text-xs text-gray-600 mt-1">Bács-Kiskun, Csongrád-Csanád, Békés, Jász-Nagykun-Szolnok, Heves, Nógrád, Borsod-Abaúj-Zemplén, Szabolcs-Szatmár-Bereg, Hajdú-Bihar</p>
-                </div>
-                <div className="p-4 bg-purple-50 rounded-lg border border-purple-200">
-                  <h4 className="font-bold text-purple-900">ELMŰ</h4>
-                  <p className="text-sm text-gray-700">Budapest & Central</p>
-                  <p className="text-xs text-gray-600 mt-1">Budapest, Pest, Fejér, Veszprém, Somogy, Tolna</p>
-                </div>
-                <div className="p-4 bg-orange-50 rounded-lg border border-orange-200">
-                  <h4 className="font-bold text-orange-900">EDKE</h4>
-                  <p className="text-sm text-gray-700">Pest Region</p>
-                  <p className="text-xs text-gray-600 mt-1">Co-operator in Pest County with ELMŰ</p>
-                </div>
+                {partners.map((partner) => {
+                  const colorMap: { [key: string]: { bg: string; border: string; text: string } } = {
+                    blue: { bg: 'bg-blue-50', border: 'border-blue-200', text: 'text-blue-900' },
+                    green: { bg: 'bg-green-50', border: 'border-green-200', text: 'text-green-900' },
+                    purple: { bg: 'bg-purple-50', border: 'border-purple-200', text: 'text-purple-900' },
+                    orange: { bg: 'bg-orange-50', border: 'border-orange-200', text: 'text-orange-900' },
+                  };
+                  const colors = colorMap[partner.color];
+                  
+                  return (
+                    <div key={partner.key} className={`p-4 ${colors.bg} rounded-lg border ${colors.border}`}>
+                      <h4 className={`font-bold ${colors.text}`}>{t(`partners.${partner.key}.title`)}</h4>
+                      <p className="text-sm text-gray-700">{t(`partners.${partner.key}.region`)}</p>
+                      <p className="text-xs text-gray-600 mt-1">{t(`partners.${partner.key}.areas`)}</p>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -195,7 +204,7 @@ export default function WhereWeWork() {
         {/* Learn More Button */}
         <div className="flex justify-center mt-16">
           <Link
-            href={`/${(useParams().locale as string)}/where-we-work`}
+            href={`/${locale}/where-we-work`}
             className="group relative px-12 py-5 bg-gradient-to-r from-orange-500/20 via-orange-600/30 to-orange-500/20 backdrop-blur-sm border-2 border-orange-500/50 text-orange-600 rounded-full text-lg font-bold shadow-xl hover:shadow-orange-500/40 transition-all duration-300 hover:scale-105 overflow-hidden"
           >
             {/* Animated background effect */}
@@ -205,7 +214,7 @@ export default function WhereWeWork() {
             <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/40 to-transparent" />
             
             <span className="relative flex items-center gap-3 group-hover:text-orange-700">
-              Explore Our Service Areas
+              {t('exploreAreas')}
               <svg className="w-6 h-6 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>

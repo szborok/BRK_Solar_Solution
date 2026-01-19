@@ -3,8 +3,10 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 export default function TargetAudience() {
+  const t = useTranslations('targetAudience');
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const params = useParams();
@@ -64,10 +66,10 @@ export default function TargetAudience() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-dark-700 mb-4">
-            Solar Solutions for Everyone
+            {t('title')}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Whether you're a homeowner or a business owner, we have the perfect solar solution tailored to your needs
+            {t('subtitle')}
           </p>
         </div>
 
@@ -108,9 +110,9 @@ export default function TargetAudience() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-3xl md:text-4xl font-bold mb-4">Residential</h3>
+                <h3 className="text-3xl md:text-4xl font-bold mb-4">{t('residential.title')}</h3>
                 <p className="text-lg mb-6 text-gray-100">
-                  Transform your home into a sustainable energy powerhouse
+                  {t('residential.description')}
                 </p>
               
                 <div className="space-y-4 mb-8">
@@ -122,7 +124,7 @@ export default function TargetAudience() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="text-base">Reduce your monthly electricity bills by up to 90%</span>
+                    <span className="text-base">{t('residential.benefit1')}</span>
                   </div>
                   <div className="flex items-start space-x-3">
                     <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -132,7 +134,7 @@ export default function TargetAudience() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="text-base">Increase your property value instantly</span>
+                    <span className="text-base">{t('residential.benefit2')}</span>
                   </div>
                   <div className="flex items-start space-x-3">
                     <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -142,7 +144,7 @@ export default function TargetAudience() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="text-base">25+ year warranty on solar panels</span>
+                    <span className="text-base">{t('residential.benefit3')}</span>
                   </div>
                   <div className="flex items-start space-x-3">
                     <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -152,13 +154,13 @@ export default function TargetAudience() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="text-base">Flexible financing options available</span>
+                    <span className="text-base">{t('residential.benefit4')}</span>
                   </div>
                 </div>
               </div>
 
               <button className="absolute bottom-8 left-8 right-8 w-auto bg-white text-primary-600 hover:bg-gray-100 px-8 py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 shadow-lg">
-                Explore Home Solutions
+                {t('residential.button')}
               </button>
             </div>
           </Link>
@@ -199,9 +201,9 @@ export default function TargetAudience() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-3xl md:text-4xl font-bold mb-4">Commercial</h3>
+                <h3 className="text-3xl md:text-4xl font-bold mb-4">{t('commercial.title')}</h3>
                 <p className="text-lg mb-6 text-gray-100">
-                  Maximize profits while minimizing your carbon footprint
+                  {t('commercial.description')}
                 </p>
               
                 <div className="space-y-4 mb-8">
@@ -213,7 +215,7 @@ export default function TargetAudience() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="text-base">Significant ROI within 3-5 years</span>
+                    <span className="text-base">{t('commercial.benefit1')}</span>
                   </div>
                   <div className="flex items-start space-x-3">
                     <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -223,7 +225,7 @@ export default function TargetAudience() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="text-base">Tax incentives and business deductions</span>
+                    <span className="text-base">{t('commercial.benefit2')}</span>
                   </div>
                   <div className="flex items-start space-x-3">
                     <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -233,7 +235,7 @@ export default function TargetAudience() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="text-base">Enhanced corporate sustainability profile</span>
+                    <span className="text-base">{t('commercial.benefit3')}</span>
                   </div>
                   <div className="flex items-start space-x-3">
                     <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -243,13 +245,13 @@ export default function TargetAudience() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="text-base">Scalable systems for any business size</span>
+                    <span className="text-base">{t('commercial.benefit4')}</span>
                   </div>
                 </div>
               </div>
 
               <button className="absolute bottom-8 left-8 right-8 w-auto bg-white text-dark-700 hover:bg-gray-100 px-8 py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 shadow-lg">
-                Explore Business Solutions
+                {t('commercial.button')}
               </button>
             </div>
           </Link>

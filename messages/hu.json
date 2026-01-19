@@ -1,6 +1,10 @@
 {
   "header": {
     "services": "Szolgáltatásaink",
+    "whereWeWork": "Hol Dolgozunk",
+    "howWeWork": "Hogyan Dolgozunk",
+    "governmentSupport": "Állami Támogatás",
+    "knowledge": "Tudásközpont",
     "about": "Rólunk",
     "references": "Referenciák",
     "faq": "GYIK",
@@ -10,7 +14,46 @@
     "title": "Zöldebb Jövőt Teremtünk",
     "subtitle": "Napenergia Megoldások az Ön Otthonához",
     "requestConsultation": "Konzultáció Kérése",
-    "ourServices": "Szolgáltatásaink"
+    "ourServices": "Szolgáltatásaink",
+    "projectsCompleted": "Befejezett Projektek",
+    "yearsWarranty": "Év Garancia",
+    "satisfaction": "Elégedettség"
+  },
+  "whereWeWork": {
+    "title": "Hol Dolgozunk",
+    "description": "A BRK Electrical Solution egész Magyarország ellátásában működik a nagy nemzeti villamosenergia-szolgáltatókkal való partneri kapcsolatok révén. Az EON, MVM, ELMŰ és EDKE-val dolgozunk együtt, hogy átfogó elektromos megoldásokat nyújtsunk országszerte.",
+    "exploreAreas": "Fedezze fel Szolga Területeinket",
+    "learnMore": "Tudjon Meg Többet Folyamatunkról",
+    "networkPartners": "Hálózati Partnereink",
+    "regions": {
+      "western": "Nyugati Régiók",
+      "centralEastern": "Közép- és Kelet-Magyarország",
+      "budapest": "Budapest & Közép-Magyarország",
+      "pest": "Pest Régió",
+      "pestPartner": "Partneri Pest Megyében az ELMŰ-vel"
+    },
+    "partners": {
+      "eon": {
+        "title": "EON",
+        "region": "Nyugati Régiók",
+        "areas": "Győr-Moson-Sopron, Vas, Komárom-Esztergom, Baranya"
+      },
+      "mvm": {
+        "title": "MVM",
+        "region": "Közép- és Kelet-Magyarország",
+        "areas": "Bács-Kiskun, Csongrád-Csanád, Békés, Jász-Nagykun-Szolnok, Heves, Nógrád, Borsod-Abaúj-Zemplén, Szabolcs-Szatmár-Bereg, Hajdú-Bihar"
+      },
+      "elmuu": {
+        "title": "ELMŰ",
+        "region": "Budapest & Közép-Magyarország",
+        "areas": "Budapest, Pest, Fejér, Veszprém, Somogy, Tolna"
+      },
+      "edke": {
+        "title": "EDKE",
+        "region": "Pest Régió",
+        "areas": "Partneri Pest Megyében az ELMŰ-vel"
+      }
+    }
   },
   "targetAudience": {
     "title": "Napenergia Megoldások Mindenkinek",
@@ -43,6 +86,7 @@
   "services": {
     "title": "Szolgáltatásaink",
     "subtitle": "Átfogó elektromos és napenergia megoldások az Ön ingatlanja számára",
+    "learnMoreButton": "Az Összes Szolgáltatásunk Felfedezése",
     "solarPanels": {
       "title": "Napelemes Rendszerek",
       "description": "Teljes napelem telepítés nagy hatékonyságú modulokkal, inverterekkel és monitoring rendszerekkel a maximális energia termelésért."
@@ -65,6 +109,7 @@
   "howWeWork": {
     "title": "Hogyan Dolgozunk",
     "subtitle": "Egyszerűsített folyamatunk egyszerűvé és problémamentessé teszi a napenergiára való átállást",
+    "learnMore": "Tudjon meg többet a folyamatunkról",
     "step1": {
       "title": "Kezdeti Megbeszélés",
       "description": "Kezdeti konzultáció az Ön energiaigényeinek megértésére, ingatlana felmérésére és az optimális napenergia megoldás meghatározására."
@@ -184,9 +229,95 @@
   "footer": {
     "tagline": "Megújuló energia a fenntartható jövőért",
     "servicesTitle": "Szolgáltatások",
-    "companyTitle": "Cégünk",
+    "companyTitle": "Vállalat",
     "contactTitle": "Kapcsolat",
     "about": "Rólunk",
-    "copyright": "Minden jog fenntartva"
+    "copyright": "© 2026 BRK Solar. Minden jog fenntartva.",
+    "privacy": "Adatvédelmi Nyilatkozat",
+    "terms": "Szolgáltatási Feltételek",
+    "cookies": "Cookie Szabályzat"
+  },
+  "contact": {
+    "title": "Lépjen velünk kapcsolatba",
+    "description": "Vegye fel velünk a kapcsolatot, vagy kérjen részletes naptári telepítési árajánlatot",
+    "requestQuoteButton": "Árajánlat Kérése",
+    "quickContactButton": "Gyors Kapcsolatfelvétel",
+    "sendMessage": "Küldjön nekünk üzenetet",
+    "nameLabel": "Név",
+    "namePlaceholder": "John Doe",
+    "phoneLabel": "Telefon",
+    "phonePlaceholder": "+36 XX XXX-XXXX",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "az@email.com",
+    "messageLabel": "Üzenet",
+    "messagePlaceholder": "Hogyan segíthetünk?",
+    "sendMessageButton": "Üzenet Küldése",
+    "sendingButton": "Küldés...",
+    "successMessage": "Köszönjük! Hamarosan felvesszük Önnel a kapcsolatot.",
+    "errorMessage": "Hiba történt. Kérjük, próbálja újra.",
+    "phoneTitle": "Telefon",
+    "emailTitle": "E-mail",
+    "officeTitle": "Iroda",
+    "officeLocation": "Budapest, Magyarország",
+    "requestDetailedQuote": "Részletes Árajánlat Kérése",
+    "personalInformation": "Személyes Adatok",
+    "firstNameLabel": "Keresztnév",
+    "firstNamePlaceholder": "János",
+    "surnameLabel": "Vezetéknév",
+    "surnamePlaceholder": "Kiss",
+    "propertyInformation": "Ingatlan Adatai",
+    "cityLabel": "Település",
+    "cityPlaceholder": "Budapest",
+    "installationAddress": "Cím",
+    "installationAddressPlaceholder": "Cím",
+    "propertyTypeLabel": "Ingatlan Típusa",
+    "selectTypeOption": "Válasszon típust...",
+    "residentialHouse": "Lakóház",
+    "apartmentBuilding": "Apartmanház",
+    "commercialBuilding": "Kereskedelmi Épület",
+    "industrialFacility": "Ipari Létesítmény",
+    "roofTypeLabel": "Tetőtípus",
+    "selectRoofOption": "Válasszon típust...",
+    "flatRoof": "Lapos Tető",
+    "pitchedRoof": "Meredek Tető",
+    "tileRoof": "Cseréptetű",
+    "metalRoof": "Fémes Tető",
+    "otherRoof": "Egyéb",
+    "orientationLabel": "Tájolása az Ingatlannak",
+    "orientationPlaceholder": "Válasszon tájolást...",
+    "north": "Észak",
+    "northeast": "Északkeleti",
+    "east": "Kelet",
+    "southeast": "Délkeleti",
+    "south": "Dél",
+    "southwest": "Délnyugati",
+    "west": "Nyugat",
+    "northwest": "Északnyugati",
+    "phasesLabel": "Fázisok Száma",
+    "selectPhases": "Válasszon fázisszámot...",
+    "singlePhase": "Egyfázisú",
+    "threePhase": "Háromfázisú",
+    "energyBillLabel": "Havi Energiaszámla",
+    "selectRangeOption": "Válasszon tartományt...",
+    "installationPreferences": "Telepítési Beállítások",
+    "installationTypeLabel": "Telepítés Típusa",
+    "solarOnly": "Csak Napelemek",
+    "solarBattery": "Napelem + Energiatárolás",
+    "solarEV": "Napelem + EV Töltő",
+    "solarHVAC": "Napelem + HVAC Rendszer",
+    "allServices": "Összes Szolgáltatás",
+    "completeSystem": "Komplett Rendszer (Napelem + Akkumulátor + EV)",
+    "timeframeLabel": "Kívánt Időkeret",
+    "selectTimeframe": "Válasszon időkeretet...",
+    "asap": "Azonnal",
+    "next3Months": "3 Hónapon Belül",
+    "next6Months": "6 Hónapon Belül",
+    "flexible": "Rugalmas",
+    "justExploring": "Csak felderítem a lehetőségeket",
+    "additionalInfo": "További Információk",
+    "additionalInfoLabel": "Mondjon Többet a Projektjéről (opcionális)",
+    "additionalInfoPlaceholder": "Vannak-e speciális követelmények vagy kérdések?",
+    "submitQuoteButton": "Az Én Árajánlatom",
+    "submittingQuoteButton": "Feldolgozás..."
   }
 }

@@ -14,11 +14,19 @@
     "title": "Powering a Greener Future",
     "subtitle": "Solar Energy Solutions for Your Home",
     "requestConsultation": "Request Consultation",
-    "ourServices": "Our Services"
+    "ourServices": "Our Services",
+    "projectsCompleted": "Projects Completed",
+    "yearsWarranty": "Years Warranty",
+    "satisfaction": "Satisfaction"
   },
   "targetAudience": {
     "title": "Solar Solutions for Everyone",
     "subtitle": "Whether you're a homeowner or a business owner, we have the perfect solar solution tailored to your needs",
+    "stats": {
+      "projectsCompleted": "Projects Completed",
+      "yearsWarranty": "Years Warranty",
+      "satisfaction": "Satisfaction"
+    },
     "residential": {
       "title": "Residential",
       "description": "Transform your home into a sustainable energy powerhouse",
@@ -69,9 +77,46 @@
       "description": "Upgrade and prepare your property's electrical infrastructure to support solar panels and modern energy systems."
     }
   },
+  "whereWeWork": {
+    "title": "Where We Work",
+    "description": "BRK Electrical Solution serves all of Hungary through our partnerships with major national electricity distributors. We work with EON, MVM, ELMŰ, and EDKE to provide comprehensive electrical solutions nationwide.",
+    "exploreAreas": "Explore Our Service Areas",
+    "learnMore": "Learn More About Our Process",
+    "networkPartners": "Our Network Partners",
+    "regions": {
+      "western": "Western Regions",
+      "centralEastern": "Central & Eastern",
+      "budapest": "Budapest & Central",
+      "pest": "Pest Region",
+      "pestPartner": "Co-operator in Pest County with ELMŰ"
+    },
+    "partners": {
+      "eon": {
+        "title": "EON",
+        "region": "Western Regions",
+        "areas": "Győr-Moson-Sopron, Vas, Komárom-Esztergom, Baranya"
+      },
+      "mvm": {
+        "title": "MVM",
+        "region": "Central & Eastern",
+        "areas": "Bács-Kiskun, Csongrád-Csanád, Békés, Jász-Nagykun-Szolnok, Heves, Nógrád, Borsod-Abaúj-Zemplén, Szabolcs-Szatmár-Bereg, Hajdú-Bihar"
+      },
+      "elmuu": {
+        "title": "ELMŰ",
+        "region": "Budapest & Central",
+        "areas": "Budapest, Pest, Fejér, Veszprém, Somogy, Tolna"
+      },
+      "edke": {
+        "title": "EDKE",
+        "region": "Pest Region",
+        "areas": "Co-operator in Pest County with ELMŰ"
+      }
+    }
+  },
   "howWeWork": {
     "title": "How We Work",
     "subtitle": "Our streamlined process makes going solar simple and hassle-free",
+    "learnMore": "Learn More About Our Process",
     "step1": {
       "title": "Initial Meeting",
       "description": "Initial consultation to understand your energy needs, assess your property, and determine the optimal solar solution for your home."
@@ -1357,6 +1402,92 @@
     "companyTitle": "Company",
     "contactTitle": "Contact",
     "about": "About Us",
-    "copyright": "All rights reserved"
+    "copyright": "© 2026 BRK Solar. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Policy"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Get in touch or request a detailed solar installation quote",
+    "requestQuoteButton": "Request Quote",
+    "quickContactButton": "Quick Contact",
+    "sendMessage": "Send us a message",
+    "nameLabel": "Name",
+    "namePlaceholder": "John Doe",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "+36 XX XXX-XXXX",
+    "emailLabel": "Email",
+    "emailPlaceholder": "your@email.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "How can we help you?",
+    "sendMessageButton": "Send Message",
+    "sendingButton": "Sending...",
+    "successMessage": "Thank you! We'll get back to you shortly.",
+    "errorMessage": "Something went wrong. Please try again.",
+    "phoneTitle": "Phone",
+    "emailTitle": "Email",
+    "officeTitle": "Office",
+    "officeLocation": "Budapest, Hungary",
+    "requestDetailedQuote": "Request Detailed Quote",
+    "personalInformation": "Personal Information",
+    "firstNameLabel": "First Name",
+    "firstNamePlaceholder": "John",
+    "surnameLabel": "Last Name",
+    "surnamePlaceholder": "Doe",
+    "propertyInformation": "Property Information",
+    "cityLabel": "City",
+    "cityPlaceholder": "Budapest",
+    "installationAddress": "Address",
+    "installationAddressPlaceholder": "Address",
+    "propertyTypeLabel": "Property Type",
+    "selectTypeOption": "Select type...",
+    "residentialHouse": "Residential House",
+    "apartmentBuilding": "Apartment Building",
+    "commercialBuilding": "Commercial Building",
+    "industrialFacility": "Industrial Facility",
+    "roofTypeLabel": "Roof Type",
+    "selectRoofOption": "Select type...",
+    "flatRoof": "Flat Roof",
+    "pitchedRoof": "Pitched Roof",
+    "tileRoof": "Tile Roof",
+    "metalRoof": "Metal Roof",
+    "otherRoof": "Other",
+    "orientationLabel": "Property Orientation",
+    "orientationPlaceholder": "Select orientation...",
+    "north": "North",
+    "northeast": "Northeast",
+    "east": "East",
+    "southeast": "Southeast",
+    "south": "South",
+    "southwest": "Southwest",
+    "west": "West",
+    "northwest": "Northwest",
+    "phasesLabel": "Number of Phases",
+    "selectPhases": "Select phases...",
+    "singlePhase": "Single Phase",
+    "threePhase": "Three Phase",
+    "energyBillLabel": "Monthly Energy Bill",
+    "selectRangeOption": "Select range...",
+    "installationPreferences": "Installation Preferences",
+    "installationTypeLabel": "Installation Type",
+    "solarOnly": "Solar Panels Only",
+    "solarBattery": "Solar + Battery Storage",
+    "solarEV": "Solar + EV Charger",
+    "solarHVAC": "Solar + HVAC System",
+    "allServices": "All Services",
+    "completeSystem": "Complete System (Solar + Battery + EV)",
+    "timeframeLabel": "Desired Timeframe",
+    "selectTimeframe": "Select timeframe...",
+    "asap": "ASAP",
+    "next3Months": "Within 3 Months",
+    "next6Months": "Within 6 Months",
+    "flexible": "Flexible",
+    "justExploring": "Just exploring options",
+    "additionalInfo": "Additional Information",
+    "additionalInfoLabel": "Tell us more about your project (optional)",
+    "additionalInfoPlaceholder": "Any specific requirements or questions?",
+    "submitQuoteButton": "Get My Quote",
+    "submittingQuoteButton": "Processing..."
   }
 }

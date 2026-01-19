@@ -1,6 +1,10 @@
 {
   "header": {
     "services": "Unsere Dienstleistungen",
+    "whereWeWork": "Wo Wir Arbeiten",
+    "howWeWork": "Wie Wir Arbeiten",
+    "governmentSupport": "Staatliche Unterstützung",
+    "knowledge": "Wissenszentrum",
     "about": "Über uns",
     "references": "Referenzen",
     "faq": "FAQ",
@@ -10,7 +14,46 @@
     "title": "Eine grünere Zukunft gestalten",
     "subtitle": "Solarenergielösungen für Ihr Zuhause",
     "requestConsultation": "Beratung anfordern",
-    "ourServices": "Unsere Dienstleistungen"
+    "ourServices": "Unsere Dienstleistungen",
+    "projectsCompleted": "Abgeschlossene Projekte",
+    "yearsWarranty": "Jahre Garantie",
+    "satisfaction": "Zufriedenheit"
+  },
+  "whereWeWork": {
+    "title": "Wo Wir Arbeiten",
+    "description": "BRK Electrical Solution bedient ganz Ungarn durch Partnerschaften mit großen nationalen Stromversorgern. Wir arbeiten mit EON, MVM, ELMŰ und EDKE zusammen, um umfassende elektrische Lösungen landesweit bereitzustellen.",
+    "exploreAreas": "Unsere Servicegebiete erkunden",
+    "learnMore": "Mehr über unseren Prozess erfahren",
+    "networkPartners": "Unsere Netzwerkpartner",
+    "regions": {
+      "western": "Westliche Regionen",
+      "centralEastern": "Zentral- und Osteuropa",
+      "budapest": "Budapest & Zentralbereich",
+      "pest": "Pest Region",
+      "pestPartner": "Kooperationspartner in Pest-Komitat mit ELMŰ"
+    },
+    "partners": {
+      "eon": {
+        "title": "EON",
+        "region": "Westliche Regionen",
+        "areas": "Győr-Moson-Sopron, Vas, Komárom-Esztergom, Baranya"
+      },
+      "mvm": {
+        "title": "MVM",
+        "region": "Zentral- und Osteuropa",
+        "areas": "Bács-Kiskun, Csongrád-Csanád, Békés, Jász-Nagykun-Szolnok, Heves, Nógrád, Borsod-Abaúj-Zemplén, Szabolcs-Szatmár-Bereg, Hajdú-Bihar"
+      },
+      "elmuu": {
+        "title": "ELMŰ",
+        "region": "Budapest & Zentralbereich",
+        "areas": "Budapest, Pest, Fejér, Veszprém, Somogy, Tolna"
+      },
+      "edke": {
+        "title": "EDKE",
+        "region": "Pest Region",
+        "areas": "Kooperationspartner in Pest-Komitat mit ELMŰ"
+      }
+    }
   },
   "targetAudience": {
     "title": "Solarlösungen für Jedermann",
@@ -43,6 +86,7 @@
   "services": {
     "title": "Unsere Dienstleistungen",
     "subtitle": "Umfassende Elektro- und Solarlösungen für Ihre Immobilie",
+    "learnMoreButton": "Alle Unsere Dienstleistungen Erkunden",
     "solarPanels": {
       "title": "Solaranlagen-Systeme",
       "description": "Komplette Solaranlageninstallation mit hocheffizienten Modulen, Wechselrichtern und Überwachungssystemen für maximale Energieproduktion."
@@ -67,6 +111,7 @@
   "howWeWork": {
     "title": "Wie wir arbeiten",
     "subtitle": "Unser optimierter Prozess macht den Umstieg auf Solar einfach und problemlos",
+    "learnMore": "Erfahren Sie mehr über unseren Prozess",
     "step1": {
       "title": "Erstgespräch",
       "description": "Erstberatung, um Ihren Energiebedarf zu verstehen, Ihr Grundstück zu bewerten und die optimale Solarlösung für Ihr Zuhause zu bestimmen."
@@ -191,6 +236,91 @@
     "companyTitle": "Unternehmen",
     "contactTitle": "Kontakt",
     "about": "Über uns",
-    "copyright": "Alle Rechte vorbehalten"
+    "copyright": "© 2026 BRK Solar. Alle Rechte vorbehalten.",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Geschäftsbedingungen",
+    "cookies": "Cookie-Richtlinie"
+  },
+  "contact": {
+    "title": "Kontaktieren Sie uns",
+    "description": "Treten Sie mit uns in Kontakt oder fordern Sie ein detailliertes Solaranlagen-Angebot an",
+    "requestQuoteButton": "Angebot anfordern",
+    "quickContactButton": "Schneller Kontakt",
+    "sendMessage": "Senden Sie uns eine Nachricht",
+    "nameLabel": "Name",
+    "namePlaceholder": "John Doe",
+    "phoneLabel": "Telefon",
+    "phonePlaceholder": "+36 XX XXX-XXXX",
+    "emailLabel": "E-Mail",
+    "emailPlaceholder": "ihre@email.com",
+    "messageLabel": "Nachricht",
+    "messagePlaceholder": "Wie können wir dir helfen?",
+    "sendMessageButton": "Nachricht senden",
+    "sendingButton": "Wird gesendet...",
+    "successMessage": "Vielen Dank! Wir werden Sie in Kürze kontaktieren.",
+    "errorMessage": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+    "phoneTitle": "Telefon",
+    "emailTitle": "E-Mail",
+    "officeTitle": "Büro",
+    "officeLocation": "Budapest, Ungarn",
+    "requestDetailedQuote": "Detailliertes Angebot anfordern",
+    "personalInformation": "Persönliche Informationen",
+    "firstNameLabel": "Vorname",
+    "firstNamePlaceholder": "Hans",
+    "surnameLabel": "Nachname",
+    "surnamePlaceholder": "Schmidt",
+    "propertyInformation": "Grundstück Informationen",
+    "cityLabel": "Stadt",
+    "cityPlaceholder": "Budapest",
+    "installationAddress": "Adresse",
+    "installationAddressPlaceholder": "Adresse",    "propertyTypeLabel": "Grundstückstyp",
+    "selectTypeOption": "Wählen Sie einen Typ...",
+    "residentialHouse": "Wohnhaus",
+    "apartmentBuilding": "Wohngebäude",
+    "commercialBuilding": "Geschäftsgebäude",
+    "industrialFacility": "Industrieanlage",
+    "roofTypeLabel": "Dachtyp",
+    "selectRoofOption": "Wählen Sie einen Typ...",
+    "flatRoof": "Flachdach",
+    "pitchedRoof": "Geneigtes Dach",
+    "tileRoof": "Ziegeldach",
+    "metalRoof": "Metalldach",
+    "otherRoof": "Sonstiges",
+    "orientationLabel": "Ausrichtung des Grundstücks",
+    "orientationPlaceholder": "Wählen Sie eine Ausrichtung...",
+    "north": "Norden",
+    "northeast": "Nordosten",
+    "east": "Osten",
+    "southeast": "Südosten",
+    "south": "Süden",
+    "southwest": "Südwesten",
+    "west": "Westen",
+    "northwest": "Nordwesten",
+    "phasesLabel": "Anzahl der Phasen",
+    "selectPhases": "Wählen Sie Phasen...",
+    "singlePhase": "Einphasig",
+    "threePhase": "Dreiphasig",
+    "energyBillLabel": "Monatliche Stromrechnung",
+    "selectRangeOption": "Wählen Sie einen Bereich...",
+    "installationPreferences": "Installationspräferenzen",
+    "installationTypeLabel": "Installationstyp",
+    "solarOnly": "Nur Solarpanels",
+    "solarBattery": "Solar + Stromspeicher",
+    "solarEV": "Solar + EV-Ladegerät",
+    "solarHVAC": "Solar + HVAC-System",
+    "allServices": "Alle Dienstleistungen",
+    "completeSystem": "Komplettes System (Solar + Batterie + EV)",
+    "timeframeLabel": "Gewünschter Zeitrahmen",
+    "selectTimeframe": "Zeitrahmen auswählen...",
+    "asap": "Schnellstmöglich",
+    "next3Months": "Innerhalb von 3 Monaten",
+    "next6Months": "Innerhalb von 6 Monaten",
+    "flexible": "Flexibel",
+    "justExploring": "Ich erkunde nur die Möglichkeiten",
+    "additionalInfo": "Zusätzliche Informationen",
+    "additionalInfoLabel": "Erzählen Sie uns mehr über Ihr Projekt (optional)",
+    "additionalInfoPlaceholder": "Spezifische Anforderungen oder Fragen?",
+    "submitQuoteButton": "Mein Angebot erhalten",
+    "submittingQuoteButton": "Wird verarbeitet..."
   }
 }

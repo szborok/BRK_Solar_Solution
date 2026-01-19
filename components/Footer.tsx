@@ -1,4 +1,12 @@
+'use client';
+
+import { useTranslations } from 'next-intl';
+
 export default function Footer() {
+  const t = useTranslations('footer');
+  const tServices = useTranslations('services');
+  const tHeader = useTranslations('header');
+  
   return (
     <footer className="bg-dark-900 text-white pt-20 pb-8 relative overflow-hidden">
       {/* Tree Background - Lower Portion (Roots) */}
@@ -38,7 +46,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Leading provider of sustainable solar energy solutions for homes and businesses across Hungary.
+              {t('tagline')}
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 bg-white/10 hover:bg-primary-600 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110">
@@ -61,36 +69,36 @@ export default function Footer() {
 
           {/* Services Column */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-white">Services</h3>
+            <h3 className="text-lg font-bold mb-6 text-white">{t('servicesTitle')}</h3>
             <ul className="space-y-3">
               <li>
                 <a href="#services" className="text-gray-300 hover:text-accent-500 transition-colors flex items-center gap-2 group">
                   <span className="text-primary-500 group-hover:translate-x-1 transition-transform">→</span>
-                  Solar Panel Installation
+                  {tServices('solarPanels.title')}
                 </a>
               </li>
               <li>
                 <a href="#services" className="text-gray-300 hover:text-accent-500 transition-colors flex items-center gap-2 group">
                   <span className="text-primary-500 group-hover:translate-x-1 transition-transform">→</span>
-                  Battery Storage Systems
+                  {tServices('batteryStorage.title')}
                 </a>
               </li>
               <li>
                 <a href="#services" className="text-gray-300 hover:text-accent-500 transition-colors flex items-center gap-2 group">
                   <span className="text-primary-500 group-hover:translate-x-1 transition-transform">→</span>
-                  EV Charger Installation
+                  {tServices('evCharger.title')}
                 </a>
               </li>
               <li>
                 <a href="#services" className="text-gray-300 hover:text-accent-500 transition-colors flex items-center gap-2 group">
                   <span className="text-primary-500 group-hover:translate-x-1 transition-transform">→</span>
-                  System Maintenance
+                  {tServices('hvac.title')}
                 </a>
               </li>
               <li>
                 <a href="#services" className="text-gray-300 hover:text-accent-500 transition-colors flex items-center gap-2 group">
                   <span className="text-primary-500 group-hover:translate-x-1 transition-transform">→</span>
-                  Energy Consultation
+                  {tServices('electricalPrep.title')}
                 </a>
               </li>
             </ul>
@@ -98,30 +106,30 @@ export default function Footer() {
 
           {/* Company Column */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-white">Company</h3>
+            <h3 className="text-lg font-bold mb-6 text-white">{t('companyTitle')}</h3>
             <ul className="space-y-3">
               <li>
                 <a href="#how-we-work" className="text-gray-300 hover:text-accent-500 transition-colors flex items-center gap-2 group">
                   <span className="text-primary-500 group-hover:translate-x-1 transition-transform">→</span>
-                  About Us
+                  {tHeader('about')}
                 </a>
               </li>
               <li>
                 <a href="#services" className="text-gray-300 hover:text-accent-500 transition-colors flex items-center gap-2 group">
                   <span className="text-primary-500 group-hover:translate-x-1 transition-transform">→</span>
-                  Our Projects
+                  {tHeader('references')}
                 </a>
               </li>
               <li>
                 <a href="#faq" className="text-gray-300 hover:text-accent-500 transition-colors flex items-center gap-2 group">
                   <span className="text-primary-500 group-hover:translate-x-1 transition-transform">→</span>
-                  FAQ
+                  {tHeader('faq')}
                 </a>
               </li>
               <li>
                 <a href="#contact" className="text-gray-300 hover:text-accent-500 transition-colors flex items-center gap-2 group">
                   <span className="text-primary-500 group-hover:translate-x-1 transition-transform">→</span>
-                  Contact
+                  {t('contactTitle')}
                 </a>
               </li>
               <li>
@@ -135,7 +143,7 @@ export default function Footer() {
 
           {/* Contact Column */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-white">Get in Touch</h3>
+            <h3 className="text-lg font-bold mb-6 text-white">{t('contactTitle')}</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <div className="w-10 h-10 bg-primary-600/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -185,17 +193,17 @@ export default function Footer() {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-300 text-sm">
-              © 2026 BRK Solar. All rights reserved.
+              {t('copyright')}
             </p>
             <div className="flex gap-6 text-sm">
               <a href="#" className="text-gray-300 hover:text-accent-500 transition-colors">
-                Privacy Policy
+                {t('privacy')}
               </a>
               <a href="#" className="text-gray-300 hover:text-accent-500 transition-colors">
-                Terms of Service
+                {t('terms')}
               </a>
               <a href="#" className="text-gray-300 hover:text-accent-500 transition-colors">
-                Cookie Policy
+                {t('cookies')}
               </a>
             </div>
           </div>

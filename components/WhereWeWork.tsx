@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 type CountyType = 
   | 'budapest' | 'pest' | 'fejér' | 'komárom-esztergom' | 'győr-moson-sopron' 
@@ -16,6 +17,7 @@ interface County {
 }
 
 export default function WhereWeWork() {
+  const t = useTranslations('whereWeWork');
   const [activeCounty, setActiveCounty] = useState<CountyType>(null);
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
 
@@ -67,9 +69,9 @@ export default function WhereWeWork() {
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Where We Work</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">{t('title')}</h2>
           <p className="text-xl max-w-3xl mx-auto text-gray-100">
-            Certified to operate across all of Hungary. Hover over any county to see details.
+            {t('description')}
           </p>
         </div>
 

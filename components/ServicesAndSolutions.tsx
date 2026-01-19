@@ -7,6 +7,7 @@ import { useParams } from 'next/navigation';
 
 export default function ServicesAndSolutions() {
   const t = useTranslations('services');
+  const tAudience = useTranslations('targetAudience');
   const params = useParams();
   const locale = params.locale as string;
   const [isVisible, setIsVisible] = useState(false);
@@ -118,10 +119,10 @@ export default function ServicesAndSolutions() {
         <div ref={solutionsRef}>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-dark-700 mb-4">
-              Solar Solutions for Everyone
+              {tAudience('title')}
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Whether you're a homeowner or a business owner, we have the perfect solar solution tailored to your needs
+              {tAudience('subtitle')}
             </p>
           </div>
 
@@ -162,9 +163,9 @@ export default function ServicesAndSolutions() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-3xl md:text-4xl font-bold mb-4">Residential</h3>
+                  <h3 className="text-3xl md:text-4xl font-bold mb-4">{tAudience('residential.title')}</h3>
                   <p className="text-lg mb-6 text-gray-100">
-                    Transform your home into a sustainable energy powerhouse
+                    {tAudience('residential.description')}
                   </p>
                 
                   <div className="space-y-4 mb-8">
@@ -176,7 +177,7 @@ export default function ServicesAndSolutions() {
                           clipRule="evenodd"
                         />
                       </svg>
-                      <span className="text-base">Reduce your monthly electricity bills by up to 90%</span>
+                      <span className="text-base">{tAudience('residential.benefit1')}</span>
                     </div>
                     <div className="flex items-start space-x-3">
                       <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -186,7 +187,7 @@ export default function ServicesAndSolutions() {
                           clipRule="evenodd"
                         />
                       </svg>
-                      <span className="text-base">Increase your property value instantly</span>
+                      <span className="text-base">{tAudience('residential.benefit2')}</span>
                     </div>
                     <div className="flex items-start space-x-3">
                       <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -196,7 +197,7 @@ export default function ServicesAndSolutions() {
                           clipRule="evenodd"
                         />
                       </svg>
-                      <span className="text-base">25+ year warranty on solar panels</span>
+                      <span className="text-base">{tAudience('residential.benefit3')}</span>
                     </div>
                     <div className="flex items-start space-x-3">
                       <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -206,13 +207,13 @@ export default function ServicesAndSolutions() {
                           clipRule="evenodd"
                         />
                       </svg>
-                      <span className="text-base">Flexible financing options available</span>
+                      <span className="text-base">{tAudience('residential.benefit4')}</span>
                     </div>
                   </div>
                 </div>
 
                 <button className="absolute bottom-8 left-8 right-8 w-auto bg-white text-primary-600 hover:bg-gray-100 px-8 py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 shadow-lg">
-                  Explore Home Solutions
+                  {tAudience('residential.button')}
                 </button>
               </div>
             </Link>
@@ -253,9 +254,9 @@ export default function ServicesAndSolutions() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-3xl md:text-4xl font-bold mb-4">Commercial</h3>
+                  <h3 className="text-3xl md:text-4xl font-bold mb-4">{tAudience('commercial.title')}</h3>
                   <p className="text-lg mb-6 text-gray-100">
-                    Maximize profits while minimizing your carbon footprint
+                    {tAudience('commercial.description')}
                   </p>
                 
                   <div className="space-y-4 mb-8">
@@ -267,7 +268,7 @@ export default function ServicesAndSolutions() {
                           clipRule="evenodd"
                         />
                       </svg>
-                      <span className="text-base">Significant ROI within 3-5 years</span>
+                      <span className="text-base">{tAudience('commercial.benefit1')}</span>
                     </div>
                     <div className="flex items-start space-x-3">
                       <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -277,7 +278,7 @@ export default function ServicesAndSolutions() {
                           clipRule="evenodd"
                         />
                       </svg>
-                      <span className="text-base">Tax incentives and business deductions</span>
+                      <span className="text-base">{tAudience('commercial.benefit2')}</span>
                     </div>
                     <div className="flex items-start space-x-3">
                       <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -287,7 +288,7 @@ export default function ServicesAndSolutions() {
                           clipRule="evenodd"
                         />
                       </svg>
-                      <span className="text-base">Enhanced corporate sustainability profile</span>
+                      <span className="text-base">{tAudience('commercial.benefit3')}</span>
                     </div>
                     <div className="flex items-start space-x-3">
                       <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -297,13 +298,13 @@ export default function ServicesAndSolutions() {
                           clipRule="evenodd"
                         />
                       </svg>
-                      <span className="text-base">Scalable systems for any business size</span>
+                      <span className="text-base">{tAudience('commercial.benefit4')}</span>
                     </div>
                   </div>
                 </div>
 
                 <button className="absolute bottom-8 left-8 right-8 w-auto bg-white text-dark-700 hover:bg-gray-100 px-8 py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 shadow-lg">
-                  Explore Business Solutions
+                  {tAudience('commercial.button')}
                 </button>
               </div>
             </Link>
