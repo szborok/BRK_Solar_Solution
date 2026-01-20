@@ -120,7 +120,7 @@ export default function ResidentialPage() {
                 <div className="h-64 bg-gradient-to-br from-primary-500 to-accent-500" />
                 <div className="p-8">
                   <h3 className="text-2xl font-bold text-dark-700 mb-4">{t(`stories.story${num}.title`)}</h3>
-                  <p className="text-gray-600 mb-6 italic">"{t(`stories.story${num}.quote`)}"</p>
+                  <p className="text-gray-600 mb-6 italic">&quot;{t(`stories.story${num}.quote`)}&quot;</p>
                   <div className="border-t pt-6">
                     <div className="flex justify-between text-sm">
                       <div>

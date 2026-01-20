@@ -1,9 +1,65 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { useEffect, useRef } from 'react';
 
 export default function Hero() {
   const t = useTranslations('hero');
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const animationRef = useRef<number>();
+  const isReversingRef = useRef(false);
+  const playbackSpeedRef = useRef(0.5); // Reverse speed factor
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.play().catch(() => {
+      // Handle autoplay errors gracefully
+    });
+
+    const handleEnded = () => {
+      // Start reversing
+      isReversingRef.current = true;
+      video.pause();
+      reverseVideo();
+    };
+
+    const reverseVideo = () => {
+      if (!video.duration) {
+        animationRef.current = requestAnimationFrame(reverseVideo);
+        return;
+      }
+
+      const step = () => {
+        if (isReversingRef.current) {
+          video.currentTime = Math.max(0, video.currentTime - playbackSpeedRef.current);
+
+          // If we've reached the beginning, play forward
+          if (video.currentTime <= 0) {
+            isReversingRef.current = false;
+            video.currentTime = 0;
+            video.play().catch(() => {});
+            return;
+          }
+
+          animationRef.current = requestAnimationFrame(step);
+        }
+      };
+
+      animationRef.current = requestAnimationFrame(step);
+    };
+
+    video.addEventListener('ended', handleEnded);
+
+    return () => {
+      video.removeEventListener('ended', handleEnded);
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, []);
+
   const scrollToContact = () => {
     const element = document.getElementById('contact');
     if (element) {
@@ -23,15 +79,15 @@ export default function Hero() {
       {/* Background Video/GIF */}
       <div className="absolute inset-0 z-0 bg-gray-900">
         <video
+          ref={videoRef}
           autoPlay
-          loop
           muted
           playsInline
           preload="auto"
           className="absolute inset-0 w-full h-full object-cover"
           poster="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072"
         >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-solar-panels-in-the-field-1194-large.mp4" type="video/mp4" />
+          <source src="/media_collection/solar/3884707157-preview.mp4" type="video/mp4" />
         </video>
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/50" />

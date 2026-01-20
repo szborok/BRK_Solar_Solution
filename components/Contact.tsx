@@ -28,7 +28,7 @@ export default function Contact() {
     orientation: '',
     phases: '',
     energyBill: '',
-    installationType: '',
+    installationType: [] as string[],
     timeframe: '',
     message: '',
   });
@@ -46,9 +46,27 @@ export default function Contact() {
   const handleQuoteChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
-    const { name, value } = e.target;
-    setQuoteData((prev) => ({ ...prev, [name]: value }));
+    const { name, value, type } = e.target as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
+    
+    if (type === 'checkbox') {
+      const checked = (e.target as HTMLInputElement).checked;
+      setQuoteData((prev) => {
+        if (name === 'installationType') {
+          const currentArray = prev[name] as string[];
+          return {
+            ...prev,
+            [name]: checked
+              ? [...currentArray, value]
+              : currentArray.filter((item) => item !== value),
+          };
+        }
+        return prev;
+      });
+    } else {
+      setQuoteData((prev) => ({ ...prev, [name]: value }));
+    }
   };
+
 
   const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -73,9 +91,20 @@ export default function Contact() {
       await new Promise((resolve) => setTimeout(resolve, 1000));
       setSubmitStatus('success');
       setQuoteData({
-        name: '', phone: '', email: '', address: '', propertyType: '',
-        roofType: '', roofArea: '', energyBill: '', installationType: '',
-        timeframe: '', message: '',
+        firstName: '',
+        surname: '',
+        phone: '',
+        email: '',
+        city: '',
+        address: '',
+        propertyType: '',
+        roofType: '',
+        orientation: '',
+        phases: '',
+        energyBill: '',
+        installationType: [],
+        timeframe: '',
+        message: '',
       });
     } catch (error) {
       setSubmitStatus('error');
@@ -493,28 +522,39 @@ export default function Contact() {
                 <div className="mb-0">
                   <h4 className="text-lg font-semibold mt-6 mb-0 text-accent-600">{t('installationPreferences')}</h4>
                   <div className="grid md:grid-cols-2 gap-6">
+                    {/* Installation Type Checkboxes */}
                     <div>
-                      <label htmlFor="quote-installationType" className="block text-sm font-semibold mb-2">
+                      <label className="block text-sm font-semibold mb-3">
                         {t('installationTypeLabel')} *
                       </label>
-                      <select
-                        id="quote-installationType"
-                        name="installationType"
-                        value={quoteData.installationType}
-                        onChange={handleQuoteChange}
-                        required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-600 focus:border-transparent"
-                      >
-                        <option value="">{t('selectTypeOption')}</option>
-                        <option value="solar-only">{t('solarOnly')}</option>
-                        <option value="solar-battery">{t('solarBattery')}</option>
-                        <option value="solar-ev">{t('solarEV')}</option>
-                        <option value="complete">{t('completeSystem')}</option>
-                      </select>
+                      <div className="space-y-2">
+                        {[
+                          { value: 'solar-only', label: t('solarOnly') },
+                          { value: 'solar-battery', label: t('solarBattery') },
+                          { value: 'solar-ev', label: t('solarEV') },
+                          { value: 'complete', label: t('completeSystem') },
+                        ].map((option) => (
+                          <div key={option.value} className="flex items-center">
+                            <input
+                              type="checkbox"
+                              id={`installationType-${option.value}`}
+                              name="installationType"
+                              value={option.value}
+                              checked={quoteData.installationType.includes(option.value)}
+                              onChange={handleQuoteChange}
+                              className="w-4 h-4 text-accent-600 rounded focus:ring-2 focus:ring-accent-600"
+                            />
+                            <label htmlFor={`installationType-${option.value}`} className="ml-2 text-sm cursor-pointer">
+                              {option.label}
+                            </label>
+                          </div>
+                        ))}
+                      </div>
                     </div>
 
+                    {/* Timeframe Dropdown */}
                     <div>
-                      <label htmlFor="quote-timeframe" className="block text-sm font-semibold mb-2">
+                      <label htmlFor="quote-timeframe" className="block text-sm font-semibold mb-3">
                         {t('timeframeLabel')} *
                       </label>
                       <select

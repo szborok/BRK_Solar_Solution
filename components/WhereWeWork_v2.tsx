@@ -366,7 +366,7 @@ export default function WhereWeWork() {
 
           <div className="space-y-6 text-gray-700">
             <p className="text-lg leading-relaxed">
-              We are certified to work across all major electrical distribution networks in Hungary. This means we have operational authority in all regions, whether served by EON, MVM, ELMŰ, or EDKE. There's no need for multiple contractors or coordination with different service providers.
+              We are certified to work across all major electrical distribution networks in Hungary. This means we have operational authority in all regions, whether served by EON, MVM, ELMŰ, or EDKE. There&apos;s no need for multiple contractors or coordination with different service providers.
             </p>
 
             <div className="grid md:grid-cols-3 gap-6 mt-8 pt-8 border-t border-gray-200">
@@ -379,7 +379,7 @@ export default function WhereWeWork() {
               <div>
                 <h4 className="font-bold text-gray-900 mb-3 text-lg">Lower Costs</h4>
                 <p className="text-gray-600 leading-relaxed">
-                  You don't finance another company's operational overhead, staff, or profit margins. Direct savings get passed to you.
+                  You don&apos;t finance another company&apos;s operational overhead, staff, or profit margins. Direct savings get passed to you.
                 </p>
               </div>
               <div>

@@ -31,7 +31,7 @@ export default function Header() {
       <div className="w-full px-6 py-5">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-4">
-            <div className="flex items-center gap-3">
+            <Link href={`/${locale}`} className="flex items-center gap-3 hover:opacity-80 transition-opacity">
               <div className="w-10 h-10 bg-gradient-to-br from-primary-400 to-primary-600 rounded-lg flex items-center justify-center">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -41,7 +41,7 @@ export default function Header() {
                 <span className="text-white">BRK</span>{' '}
                 <span className="text-primary-400">SOLAR</span>
               </div>
-            </div>
+            </Link>
             <div className="hidden md:block">
               <LanguageSwitcher />
             </div>
@@ -49,6 +49,12 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-2">
+            <Link
+              href={`/${locale}`}
+              className="px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-300"
+            >
+              {t('home')}
+            </Link>
             <Link
               href={`/${locale}/services`}
               className="px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-300"
@@ -120,6 +126,13 @@ export default function Header() {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 flex flex-col gap-4">
+            <Link
+              href={`/${locale}`}
+              className="text-left hover:text-accent-400 transition-colors py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t('home')}
+            </Link>
             <Link
               href={`/${locale}/services`}
               className="text-left hover:text-accent-400 transition-colors py-2"

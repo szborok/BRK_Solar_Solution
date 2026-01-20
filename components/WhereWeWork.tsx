@@ -345,7 +345,7 @@ export default function WhereWeWork() {
               <div>
                 <h4 className="font-bold text-gray-900 mb-2">Lower Costs</h4>
                 <p className="text-sm text-gray-600">
-                  You don't pay for another company's operational costs, staff, or owner's profit margin.
+                  You don&apos;t pay for another company&apos;s operational costs, staff, or owner&apos;s profit margin.
                 </p>
               </div>
               <div>
