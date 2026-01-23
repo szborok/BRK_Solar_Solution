@@ -83,17 +83,20 @@ export default function ServicesPage() {
       </section>
 
       {/* Overview */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-6xl text-center">
-          <h2 className="text-4xl font-bold text-dark-700 mb-6">{t('overview.title')}</h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">{t('overview.description')}</p>
+      <section className="py-20 bg-gradient-to-br from-accent-600 to-primary-600 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-white/30 z-0" />
+        <div className="container mx-auto px-4 max-w-6xl text-center relative z-10">
+          <h2 className="text-4xl font-bold text-white mb-6 drop-shadow-lg">{t('overview.title')}</h2>
+          <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed font-medium drop-shadow-md">{t('overview.description')}</p>
         </div>
       </section>
 
       {/* Detailed Services */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <h2 className="text-4xl font-bold text-dark-700 mb-16 text-center">{t('services.title')}</h2>
+      <section className="py-20 bg-gradient-to-br from-accent-600 to-primary-600 relative overflow-hidden">
+        <div className="absolute inset-0 bg-white/20 z-0" />
+        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-16 text-center drop-shadow-xl">{t('services.title')}</h2>
+          <p className="text-xl text-white max-w-4xl mx-auto text-center mb-16 drop-shadow-lg">{t('services.subtitle')}</p>
           <div className="space-y-16">
             {services.map((service, index) => (
               <div key={index} className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 items-center bg-white rounded-2xl overflow-hidden shadow-xl`}>

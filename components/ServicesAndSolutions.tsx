@@ -85,48 +85,29 @@ export default function ServicesAndSolutions() {
   ];
 
   return (
-    <section id="services" className="py-20 bg-gray-50 relative overflow-hidden">
-      {/* Dark Gradient Overlay */}
-      <div className="absolute inset-0 z-0" style={{
-        background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.08) 50%, rgba(0, 0, 0, 0.1) 100%)'
-      }} />
+    <section id="services" className="py-20 text-white relative overflow-hidden" style={{
+      backgroundImage: 'linear-gradient(225deg, rgba(243, 156, 18, 0.5), rgba(46, 204, 113, 0.5)), url(/media_collection/bg/solar-8656654_1920.jpg)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center center',
+      backgroundRepeat: 'no-repeat',
+      transform: 'scaleX(-1)'
+    }}>
+      {/* White overlay */}
+      <div className="absolute inset-0 bg-white/20 z-0" />
 
-      {/* Hexagon Solar Cell Pattern */}
-      <div className="absolute inset-0 z-0 opacity-[0.08]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          backgroundSize: '40px 70px'
-        }} />
-      </div>
-
-      {/* Animated Gradient Orbs */}
-      <div className="absolute top-[-10%] right-[-5%] w-[700px] h-[700px] bg-gray-800 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" />
-      <div className="absolute bottom-[-15%] left-[30%] w-[550px] h-[550px] bg-gray-700 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000" />
-      <div className="absolute top-[10%] right-[25%] w-[350px] h-[350px] bg-gray-600 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-blob animation-delay-1000" />
-      <div className="absolute top-[50%] right-[-5%] w-[450px] h-[450px] bg-gray-900 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-3000" />
-
-      {/* Floating Particles */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-[15%] left-[10%] w-2 h-2 bg-gray-700 rounded-full opacity-60 animate-float" />
-        <div className="absolute top-[25%] right-[15%] w-3 h-3 bg-gray-600 rounded-full opacity-50 animate-float animation-delay-1000" />
-        <div className="absolute top-[45%] left-[20%] w-2 h-2 bg-gray-800 rounded-full opacity-40 animate-float animation-delay-2000" />
-        <div className="absolute top-[60%] right-[25%] w-3 h-3 bg-gray-500 rounded-full opacity-60 animate-float animation-delay-3000" />
-        <div className="absolute top-[35%] right-[40%] w-2 h-2 bg-gray-900 rounded-full opacity-50 animate-float animation-delay-1500" />
-      </div>
-      
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-10" style={{ transform: 'scaleX(-1)' }}>
         {/* Solar Solutions Section - Now First */}
         <div ref={solutionsRef}>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-dark-700 mb-4">
+          <div className="text-right mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)' }}>
               {tAudience('title')}
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-white/90 max-w-2xl ml-auto" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8), 0 0 15px rgba(0,0,0,0.5)' }}>
               {tAudience('subtitle')}
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-24">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl ml-auto mb-24">
             {/* Residential Card */}
             <Link
               href={`/${locale}/solutions/residential`}
@@ -313,16 +294,16 @@ export default function ServicesAndSolutions() {
 
         {/* Services Section - Now Second */}
         <div className="mt-24">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-dark-700 mb-4">
+          <div className="text-right mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: '#ffffff', textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)' }}>
               {t('title')}
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl max-w-2xl ml-auto" style={{ color: '#ffffff', textShadow: '2px 2px 6px rgba(0,0,0,0.8), 0 0 15px rgba(0,0,0,0.5)' }}>
               {t('subtitle')}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl ml-auto mb-16">
             {services.map((service, index) => (
               <div
                 key={index}
@@ -357,13 +338,13 @@ export default function ServicesAndSolutions() {
           </div>
 
           {/* Learn More Button */}
-          <div className="flex justify-center">
+          <div className="flex justify-end">
             <Link
               href={`/${locale}/services`}
-              className="group relative px-12 py-5 bg-gradient-to-r from-orange-500/20 via-orange-600/30 to-orange-500/20 backdrop-blur-sm border-2 border-orange-500/50 text-orange-600 rounded-full text-lg font-bold shadow-xl hover:shadow-orange-500/40 transition-all duration-300 hover:scale-105 overflow-hidden"
+              className="group relative px-12 py-5 bg-gradient-to-r from-white/20 via-gray-100/30 to-white/20 backdrop-blur-sm border-2 border-white/50 text-gray-900 rounded-full text-lg font-bold shadow-xl hover:shadow-white/40 transition-all duration-300 hover:scale-105 overflow-hidden"
             >
               {/* Animated background effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-600/40 via-orange-500/50 to-orange-600/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-white/40 via-gray-100/50 to-white/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
               {/* Shine effect */}
               <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/40 to-transparent" />

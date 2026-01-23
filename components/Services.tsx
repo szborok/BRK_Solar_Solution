@@ -69,6 +69,9 @@ export default function Services() {
       <div className="absolute top-[10%] right-[25%] w-[350px] h-[350px] bg-primary-300 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-blob animation-delay-1000" />
       <div className="absolute top-[50%] right-[-5%] w-[450px] h-[450px] bg-green-400 rounded-full mix-blend-multiply filter blur-3xl opacity-18 animate-blob animation-delay-3000" />
 
+      {/* White Overlay */}
+      <div className="absolute inset-0 bg-white/20 z-0" />
+
       {/* Floating Particles */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-[15%] left-[10%] w-2 h-2 bg-primary-400 rounded-full opacity-60 animate-float" />
@@ -80,10 +83,10 @@ export default function Services() {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-dark-700 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: '#ffffff', textShadow: '0 4px 6px rgba(0,0,0,0.3)' }}>
             {t('title')}
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl max-w-2xl mx-auto" style={{ color: '#ffffff', textShadow: '0 2px 4px rgba(0,0,0,0.2)' }}>
             {t('subtitle')}
           </p>
         </div>

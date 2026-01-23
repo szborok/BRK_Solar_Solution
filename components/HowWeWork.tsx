@@ -92,7 +92,7 @@ export default function HowWeWork() {
   ];
 
   return (
-    <section ref={sectionRef} id="how-we-work" className="py-20 bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 text-gray-900 relative overflow-hidden">
+    <section ref={sectionRef} id="how-we-work" className="py-20 bg-gradient-to-b from-gray-100 via-gray-50 to-white text-gray-900 relative overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0 opacity-20">
         <video
@@ -104,11 +104,14 @@ export default function HowWeWork() {
         >
           <source src="https://cdn.pixabay.com/video/2020/06/12/41787-430909611_large.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50/80 via-gray-100/80 to-gray-200/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-100/80 via-gray-50/80 to-white/80" />
       </div>
 
       {/* Animated Grid Pattern */}
-      <div className="absolute inset-0 opacity-[0.08]">
+      <div className="absolute inset-0 opacity-[0.08]" style={{
+        maskImage: 'linear-gradient(to bottom, black 0%, black 50%, transparent 100%)',
+        WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 50%, transparent 100%)'
+      }}>
         <div className="absolute inset-0" style={{
           backgroundImage: 'linear-gradient(to right, black 1px, transparent 1px), linear-gradient(to bottom, black 1px, transparent 1px)',
           backgroundSize: '60px 60px'
@@ -117,7 +120,6 @@ export default function HowWeWork() {
 
       {/* Subtle animated dots */}
       <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] bg-gradient-to-br from-gray-300 to-gray-400 rounded-full opacity-15 blur-3xl animate-blob" />
-      <div className="absolute bottom-[-10%] right-[-5%] w-[600px] h-[600px] bg-gradient-to-br from-gray-400 to-gray-500 rounded-full opacity-15 blur-3xl animate-blob animation-delay-2000" />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">

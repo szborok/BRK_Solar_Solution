@@ -41,29 +41,25 @@ export default function GovernmentSupport() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white via-primary-50/30 to-white relative overflow-hidden" style={{
-      backgroundImage: 'linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(245,246,250,0.3) 50%, rgba(255,255,255,1) 100%)'
-    }}>
-      {/* Background Decoration */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary-100/50 to-transparent opacity-60" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary-200/30 rounded-full blur-3xl opacity-40 -translate-x-1/2 translate-y-1/2" />
-      
-      {/* Subtle Grid Pattern */}
-      <div className="absolute inset-0 opacity-[0.03]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)',
-          backgroundSize: '100px 100px'
-        }} />
+    <section className="py-20 relative overflow-hidden">
+      {/* Full Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=2071" 
+          alt="Finance background" 
+          className="w-full h-full object-cover"
+          style={{ objectPosition: '30% center' }}
+        />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl ml-auto">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="text-right mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-dark-700 mb-4">
               {t('title')}
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl ml-auto">
               {t('subtitle')}
             </p>
           </div>
@@ -72,41 +68,37 @@ export default function GovernmentSupport() {
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             {/* Left: Big Highlight */}
             <div className="relative group/main">
-              <div className="rounded-3xl p-12 text-white shadow-2xl shadow-primary-500/30 relative overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-3xl hover:shadow-primary-500/50 cursor-pointer" style={{
-                backgroundImage: 'linear-gradient(135deg, rgba(34, 139, 34, 0.9), rgba(30, 58, 47, 0.95)), url(https://images.unsplash.com/photo-1634733988138-bf2c3a2a13fa?q=80&w=2070)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center'
-              }}>
+              <div className="rounded-3xl p-12 bg-white/90 backdrop-blur-sm shadow-2xl relative overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-3xl cursor-pointer">
                 {/* Decoration */}
-                <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover/main:bg-white/20 transition-all duration-500" />
+                <div className="absolute top-0 right-0 w-64 h-64 bg-green-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover/main:bg-green-500/20 transition-all duration-500" />
                 
                 {/* Hover glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-400/0 via-primary-300/0 to-primary-200/0 group-hover/main:from-primary-400/20 group-hover/main:via-primary-300/10 group-hover/main:to-primary-200/5 transition-all duration-500 rounded-3xl" />
+                <div className="absolute inset-0 bg-gradient-to-br from-green-400/0 via-green-300/0 to-green-200/0 group-hover/main:from-green-400/10 group-hover/main:via-green-300/5 group-hover/main:to-green-200/5 transition-all duration-500 rounded-3xl" />
                 
                 <div className="relative z-10">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center group-hover/main:bg-white/30 group-hover/main:scale-110 transition-all duration-300">
-                      <svg className="w-6 h-6 group-hover/main:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center group-hover/main:bg-green-500/30 group-hover/main:scale-110 transition-all duration-300">
+                      <svg className="w-6 h-6 text-green-600 group-hover/main:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
-                    <span className="text-sm font-semibold uppercase tracking-wider opacity-90">{t('highlight.label')}</span>
+                    <span className="text-sm font-semibold uppercase tracking-wider text-gray-600">{t('highlight.label')}</span>
                   </div>
                   
                   <div className="mb-6">
-                    <div className="text-7xl font-bold mb-2 group-hover/main:scale-110 transition-transform duration-300">{t('highlight.percentage')}</div>
-                    <div className="text-xl opacity-90">{t('highlight.subtitle')}</div>
+                    <div className="text-7xl font-bold mb-2 text-green-600 group-hover/main:scale-110 transition-transform duration-300">{t('highlight.percentage')}</div>
+                    <div className="text-xl text-gray-700">{t('highlight.subtitle')}</div>
                   </div>
                   
-                  <p className="text-white/90 text-lg leading-relaxed mb-8">
+                  <p className="text-gray-600 text-lg leading-relaxed mb-8">
                     {t('highlight.description')}
                   </p>
                   
-                  <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4">
-                    <svg className="w-6 h-6 text-primary-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex items-center gap-3 bg-green-50 rounded-xl px-6 py-4">
+                    <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    <span className="text-sm">{t('highlight.note')}</span>
+                    <span className="text-sm text-gray-700">{t('highlight.note')}</span>
                   </div>
                 </div>
               </div>
@@ -125,24 +117,19 @@ export default function GovernmentSupport() {
                 return (
                   <div
                     key={index}
-                    className="rounded-2xl p-6 transition-all duration-500 group relative overflow-hidden cursor-pointer hover:scale-110 hover:shadow-2xl hover:shadow-primary-500/40 hover:z-10"
-                    style={{
-                      backgroundImage: backgroundImages[index],
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center'
-                    }}
+                    className="rounded-2xl p-6 bg-white/90 backdrop-blur-sm transition-all duration-500 group relative overflow-hidden cursor-pointer hover:scale-110 hover:shadow-2xl hover:z-10"
                   >
                     {/* Hover overlay with color shift */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary-400/0 to-primary-600/0 group-hover:from-primary-400/20 group-hover:to-primary-600/10 transition-all duration-500 rounded-2xl" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-400/0 to-green-600/0 group-hover:from-green-400/10 group-hover:to-green-600/5 transition-all duration-500 rounded-2xl" />
                     
                     <div className="relative z-10">
-                      <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 transition-all duration-500 bg-white/20 backdrop-blur-sm text-white group-hover:bg-white/40 group-hover:scale-125 group-hover:rotate-6">
+                      <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 transition-all duration-500 bg-green-500/20 text-green-600 group-hover:bg-green-500/30 group-hover:scale-125 group-hover:rotate-6">
                         {benefit.icon}
                       </div>
-                      <h3 className="text-lg font-bold mb-2 text-white group-hover:scale-105 transition-transform duration-300">
+                      <h3 className="text-lg font-bold mb-2 text-gray-900 group-hover:scale-105 transition-transform duration-300">
                         {t(`${benefit.key}.title`)}
                       </h3>
-                      <p className="text-sm leading-relaxed text-white/90 group-hover:text-white transition-colors duration-300">
+                      <p className="text-sm leading-relaxed text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
                         {t(`${benefit.key}.description`)}
                       </p>
                     </div>
