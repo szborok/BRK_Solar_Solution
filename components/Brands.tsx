@@ -94,7 +94,7 @@ export default function Brands() {
   ];
 
   return (
-    <section className="h-[140px] bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 border-y border-gray-600 flex items-center overflow-hidden relative z-10">
+    <section className="h-[90px] bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 border-y border-gray-600 flex items-center overflow-hidden relative z-10">
       {/* Subtle dark accents */}
       <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-gray-600/20 rounded-full blur-3xl" />
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-gray-500/20 rounded-full blur-3xl" />

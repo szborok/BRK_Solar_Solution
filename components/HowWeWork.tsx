@@ -21,17 +21,16 @@ export default function HowWeWork() {
       const rect = section.getBoundingClientRect();
       const windowHeight = window.innerHeight;
       
-      // Calculate the center position of the section
+      // Animation starts when section enters viewport
+      // Animation completes when the header text exits the top of viewport
       const sectionTop = rect.top;
-      const sectionHeight = rect.height;
-      const sectionCenter = sectionTop + sectionHeight / 2;
       
-      // Animation starts when section center is at bottom of viewport
-      // Animation completes when section center reaches middle of viewport
-      const scrollStart = windowHeight; // Section center at bottom
-      const scrollEnd = windowHeight / 2; // Section center at middle
+      // Animation starts when section is visible (top at bottom of viewport)
+      const scrollStart = windowHeight;
+      // Animation completes when title area (approx first 150px) exits viewport
+      const scrollEnd = -150;
       
-      const progress = (scrollStart - sectionCenter) / (scrollStart - scrollEnd);
+      const progress = (scrollStart - sectionTop) / (scrollStart - scrollEnd);
       
       // Clamp between 0 and 1
       const clampedProgress = Math.max(0, Math.min(1, progress));
@@ -123,10 +122,10 @@ export default function HowWeWork() {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.3), 0 0 20px rgba(0,0,0,0.2)' }}>
             {t('title')}
           </h2>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.3), 0 0 10px rgba(0,0,0,0.2)' }}>
             {t('subtitle')}
           </p>
         </div>

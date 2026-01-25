@@ -47,7 +47,7 @@ export default function HowWeWorkPage() {
                     {num}
                   </div>
                 </div>
-                <div className="flex-1 bg-white rounded-2xl p-8 shadow-lg">
+                <div className="flex-1 bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <h3 className="text-2xl font-bold text-dark-700 mb-4">{t(`steps.step${num}.title`)}</h3>
                   <p className="text-gray-600 text-lg mb-6 leading-relaxed">{t(`steps.step${num}.description`)}</p>
                   

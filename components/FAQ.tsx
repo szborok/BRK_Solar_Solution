@@ -39,10 +39,10 @@ export default function FAQ() {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-dark-700 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-dark-700 mb-4" style={{ textShadow: '2px 2px 4px rgba(255,255,255,0.8), 0 0 10px rgba(255,255,255,0.5)' }}>
             {t('title')}
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto" style={{ textShadow: '1px 1px 3px rgba(255,255,255,0.8), 0 0 8px rgba(255,255,255,0.5)' }}>
             {t('subtitle')}
           </p>
         </div>

@@ -96,10 +96,10 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4">
         <div className="max-w-4xl">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-2xl">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight" style={{ textShadow: '3px 3px 10px rgba(0,0,0,0.9), 0 0 25px rgba(0,0,0,0.6)' }}>
             {t('title')}
           </h1>
-          <p className="text-xl md:text-2xl mb-10 text-gray-100 max-w-2xl">
+          <p className="text-xl md:text-2xl mb-10 text-gray-100 max-w-2xl" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8), 0 0 15px rgba(0,0,0,0.5)' }}>
             {t('subtitle')}
           </p>
 

@@ -61,63 +61,52 @@ export default function WhereWeWork() {
                   -webkit-user-select: none;
                   -moz-user-select: none;
                   -ms-user-select: none;
-                  touch-action: none;
-                  overflow: hidden !important;
+                  pointer-events: none;
                 }
                 
                 #map svg {
                   cursor: default !important;
-                  transform: none !important;
+                  pointer-events: none !important;
                 }
                 
                 #map rect[fill="white"] {
                   fill: transparent !important;
                 }
                 
-                /* Hide zoom and reset buttons */
+                /* Hide ALL zoom and control buttons */
                 #map button,
                 #map input[type="button"],
+                #map a,
                 .simplemaps_mapbutton,
-                .simplemaps_back_button {
+                .simplemaps_back_button,
+                .sm_plus_button,
+                .sm_minus_button,
+                .sm_zoom_button,
+                .sm_resetbutton,
+                [class*="zoom"],
+                [class*="button"] {
                   display: none !important;
+                  visibility: hidden !important;
+                  opacity: 0 !important;
+                  pointer-events: none !important;
                 }
               `;
               document.head.appendChild(style);
               
               // Remove any buttons that might be added
               const removeButtons = () => {
-                const buttons = mapElement.querySelectorAll<HTMLElement>('button, input[type="button"]');
+                const buttons = mapElement.querySelectorAll<HTMLElement>('button, input[type="button"], a[class*="button"], [class*="zoom"]');
                 buttons.forEach(btn => {
                   btn.style.display = 'none';
+                  btn.style.visibility = 'hidden';
+                  btn.remove();
                 });
               };
               removeButtons();
               setInterval(removeButtons, 500);
               
-              // Block only clicks and zooming - allow mousemove for hover
-              const blockClickAndZoom = (e: Event) => {
-                e.preventDefault();
-                e.stopPropagation();
-              };
-              
-              // Block clicks on the map itself
-              mapElement.addEventListener('click', blockClickAndZoom, true);
-              mapElement.addEventListener('dblclick', blockClickAndZoom, true);
-              
-              // Block zoom with wheel
-              mapElement.addEventListener('wheel', blockClickAndZoom, { capture: true, passive: false });
-              mapElement.addEventListener('mousewheel', blockClickAndZoom, { capture: true, passive: false });
-              
-              // Block touch interactions
-              mapElement.addEventListener('touchstart', blockClickAndZoom, { capture: true, passive: false });
-              mapElement.addEventListener('touchmove', blockClickAndZoom, { capture: true, passive: false });
-              mapElement.addEventListener('touchend', blockClickAndZoom, { capture: true, passive: false });
-              
-              // Block drag by preventing SVG element selection and transforms
-              mapElement.addEventListener('mousedown', (e: Event) => {
-                e.preventDefault();
-                e.stopPropagation();
-              }, true);
+              // Disable map interactions but ALLOW page scrolling
+              mapElement.style.pointerEvents = 'none';
               
               console.log('Map initialized with interaction blocking');
             } else {
@@ -161,7 +150,7 @@ export default function WhereWeWork() {
       <div className="relative z-10 max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)' }}>
             {t('title')}
           </h2>
           <p className="text-xl text-gray-100 max-w-3xl mx-auto">

@@ -56,10 +56,10 @@ export default function GovernmentSupport() {
         <div className="max-w-6xl ml-auto">
           {/* Header */}
           <div className="text-right mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-dark-700 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)' }}>
               {t('title')}
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl ml-auto">
+            <p className="text-xl text-gray-100 max-w-3xl ml-auto" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.5)' }}>
               {t('subtitle')}
             </p>
           </div>
@@ -68,7 +68,7 @@ export default function GovernmentSupport() {
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             {/* Left: Big Highlight */}
             <div className="relative group/main">
-              <div className="rounded-3xl p-12 bg-white/90 backdrop-blur-sm shadow-2xl relative overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-3xl cursor-pointer">
+              <div className="rounded-3xl p-12 bg-white/60 backdrop-blur-sm shadow-2xl relative overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-3xl cursor-pointer">
                 {/* Decoration */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-green-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover/main:bg-green-500/20 transition-all duration-500" />
                 
@@ -117,7 +117,7 @@ export default function GovernmentSupport() {
                 return (
                   <div
                     key={index}
-                    className="rounded-2xl p-6 bg-white/90 backdrop-blur-sm transition-all duration-500 group relative overflow-hidden cursor-pointer hover:scale-110 hover:shadow-2xl hover:z-10"
+                    className="rounded-2xl p-6 bg-white/60 backdrop-blur-sm transition-all duration-500 group relative overflow-hidden cursor-pointer hover:scale-110 hover:shadow-2xl hover:z-10"
                   >
                     {/* Hover overlay with color shift */}
                     <div className="absolute inset-0 bg-gradient-to-br from-green-400/0 to-green-600/0 group-hover:from-green-400/10 group-hover:to-green-600/5 transition-all duration-500 rounded-2xl" />
@@ -140,11 +140,7 @@ export default function GovernmentSupport() {
           </div>
 
           {/* CTA Section */}
-          <div className="rounded-3xl p-8 md:p-12 text-center text-white relative overflow-hidden" style={{
-            backgroundImage: 'linear-gradient(135deg, rgba(30, 30, 30, 0.75), rgba(20, 20, 20, 0.8)), url(https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}>
+          <div className="rounded-3xl p-8 md:p-12 text-center text-white relative overflow-hidden bg-gray-800/60 backdrop-blur-sm">
             <div className="relative z-10">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">
                 {t('cta.title')}

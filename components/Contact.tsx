@@ -130,8 +130,8 @@ export default function Contact() {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">{t('title')}</h2>
-          <p className="text-xl max-w-2xl mx-auto text-gray-800">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.3), 0 0 20px rgba(0,0,0,0.2)' }}>{t('title')}</h2>
+          <p className="text-xl max-w-2xl mx-auto text-gray-800" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.3), 0 0 10px rgba(0,0,0,0.2)' }}>
             {t('description')}
           </p>
         </div>
