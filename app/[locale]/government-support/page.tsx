@@ -16,28 +16,37 @@ export default function GovernmentSupportPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative h-[70vh] flex items-center justify-center text-white overflow-hidden">
+      <section className="relative h-[80vh] flex items-center justify-center text-white overflow-hidden">
         <div
-          className="absolute inset-0 z-0"
+          className="absolute inset-0 z-0 transition-transform duration-700 hover:scale-105"
           style={{
             backgroundImage: 'url(https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-900/90 via-primary-700/85 to-accent-700/90 z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-900/90 via-primary-700/80 to-accent-700/90 z-0"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.1),transparent_70%)] z-0"></div>
         
         <div className="container mx-auto px-4 relative z-10 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 drop-shadow-2xl">{t('hero.title')}</h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto drop-shadow-lg opacity-95">{t('hero.subtitle')}</p>
+          <div className="inline-flex items-center bg-white/20 backdrop-blur-md px-6 py-3 rounded-full text-sm font-bold mb-8 border border-white/30 shadow-lg">
+            <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+            </svg>
+            Government Subsidies Available
+          </div>
+          <h1 className="text-7xl font-bold mb-6 drop-shadow-2xl animate-fade-in">{t('hero.title')}</h1>
+          <p className="text-2xl max-w-3xl mx-auto drop-shadow-lg opacity-95 leading-relaxed">{t('hero.subtitle')}</p>
         </div>
       </section>
 
       {/* Main Program Highlight */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,197,94,0.1),transparent_50%),radial-gradient(circle_at_70%_80%,rgba(251,146,60,0.1),transparent_50%)]"></div>
-        <div className="container mx-auto px-4 max-w-6xl relative z-10">
-          <div className="relative bg-gradient-to-br from-primary-500 via-primary-600 to-accent-600 text-white rounded-3xl p-12 md:p-16 text-center shadow-2xl overflow-hidden group hover:shadow-3xl transition-all duration-500">
+      <section className="py-24 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,197,94,0.12),transparent_50%),radial-gradient(circle_at_70%_80%,rgba(251,146,60,0.12),transparent_50%)]"></div>
+        <div className="absolute top-10 left-10 w-96 h-96 bg-primary-100 rounded-full blur-3xl opacity-40"></div>
+        <div className="absolute bottom-10 right-10 w-80 h-80 bg-accent-100 rounded-full blur-3xl opacity-40"></div>
+        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+          <div className="relative bg-gradient-to-br from-primary-500 via-primary-600 to-accent-600 text-white rounded-3xl p-20 text-center shadow-2xl overflow-hidden group hover:shadow-3xl transition-all duration-500 hover:scale-[1.02]">   
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 group-hover:scale-150 transition-transform duration-700"></div>
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full -ml-24 -mb-24 group-hover:scale-150 transition-transform duration-700"></div>
             <div className="relative z-10">
@@ -65,13 +74,15 @@ export default function GovernmentSupportPage() {
       </section>
 
       {/* Available Programs */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-4xl font-bold text-dark-700 mb-4 text-center">{t('programs.title')}</h2>
-          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">Discover all available financial support options for your green energy investment</p>
-          <div className="grid md:grid-cols-2 gap-8">
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="absolute top-20 right-20 w-96 h-96 bg-primary-50 rounded-full blur-3xl opacity-50"></div>
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-accent-50 rounded-full blur-3xl opacity-50"></div>
+        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+          <h2 className="text-5xl font-bold text-dark-700 mb-6 text-center">{t('programs.title')}</h2>
+          <p className="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto leading-relaxed">Discover all available financial support options for your green energy investment</p>
+          <div className="grid md:grid-cols-2 gap-10">
             {[1, 2, 3, 4, 5, 6].map((num) => (
-              <div key={num} className="group bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-primary-200 hover:-translate-y-1">
+              <div key={num} className="group bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-primary-300 hover:-translate-y-3 relative overflow-hidden">
                 <div className="flex items-start gap-6">
                   <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-primary-500 to-accent-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -96,13 +107,14 @@ export default function GovernmentSupportPage() {
       </section>
 
       {/* Eligibility */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-4xl font-bold text-dark-700 mb-4 text-center">{t('eligibility.title')}</h2>
-          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">Check if you qualify for government support programs</p>
-          <div className="grid md:grid-cols-3 gap-8">
+      <section className="py-24 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(34,197,94,0.08),transparent_70%)]"></div>
+        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+          <h2 className="text-5xl font-bold text-dark-700 mb-6 text-center">{t('eligibility.title')}</h2>
+          <p className="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto leading-relaxed">Check if you qualify for government support programs</p>
+          <div className="grid md:grid-cols-3 gap-10">
             {[1, 2, 3].map((num) => (
-              <div key={num} className="relative bg-white rounded-2xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+              <div key={num} className="relative bg-white rounded-3xl p-10 shadow-xl border-2 border-gray-100 hover:border-primary-300 hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 group overflow-hidden">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary-100 to-accent-100 rounded-bl-[100px] opacity-50 group-hover:opacity-100 transition-opacity"></div>
                 <div className="relative z-10">
                   <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-accent-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
