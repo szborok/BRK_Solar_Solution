@@ -16,62 +16,75 @@ export default function GovernmentSupportPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center text-white overflow-hidden">
+      <section className="relative h-[70vh] flex items-center justify-center text-white overflow-hidden">
         <div
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: 'linear-gradient(to bottom, rgba(30, 58, 47, 0.8), rgba(34, 139, 34, 0.85)), url(https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070)',
+            backgroundImage: 'url(https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
         />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-900/90 via-primary-700/85 to-accent-700/90 z-0"></div>
         
         <div className="container mx-auto px-4 relative z-10 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">{t('hero.title')}</h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto">{t('hero.subtitle')}</p>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 drop-shadow-2xl">{t('hero.title')}</h1>
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto drop-shadow-lg opacity-95">{t('hero.subtitle')}</p>
         </div>
       </section>
 
       {/* Main Program Highlight */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="bg-gradient-to-br from-primary-500 to-accent-500 text-white rounded-3xl p-12 text-center shadow-2xl">
-            <div className="inline-block bg-white/20 backdrop-blur-sm px-6 py-2 rounded-full text-sm font-semibold mb-6">
-              {t('highlight.badge')}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,197,94,0.1),transparent_50%),radial-gradient(circle_at_70%_80%,rgba(251,146,60,0.1),transparent_50%)]"></div>
+        <div className="container mx-auto px-4 max-w-6xl relative z-10">
+          <div className="relative bg-gradient-to-br from-primary-500 via-primary-600 to-accent-600 text-white rounded-3xl p-12 md:p-16 text-center shadow-2xl overflow-hidden group hover:shadow-3xl transition-all duration-500">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 group-hover:scale-150 transition-transform duration-700"></div>
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full -ml-24 -mb-24 group-hover:scale-150 transition-transform duration-700"></div>
+            <div className="relative z-10">
+              <div className="inline-flex items-center bg-white/20 backdrop-blur-md px-6 py-3 rounded-full text-sm font-bold mb-8 border border-white/30 shadow-lg">
+                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                {t('highlight.badge')}
+              </div>
+              <div className="text-7xl md:text-8xl font-black mb-4 bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent drop-shadow-2xl">{t('highlight.percentage')}</div>
+              <h3 className="text-3xl md:text-4xl font-bold mb-6 drop-shadow-lg">{t('highlight.title')}</h3>
+              <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto opacity-95 leading-relaxed">{t('highlight.description')}</p>
+              <button
+                onClick={scrollToContact}
+                className="group/btn relative bg-white text-primary-600 px-10 py-5 rounded-full text-lg font-bold hover:bg-gray-50 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 inline-flex items-center"
+              >
+                <span>{t('highlight.button')}</span>
+                <svg className="w-5 h-5 ml-2 transform group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </button>
             </div>
-            <h2 className="text-6xl font-bold mb-4">{t('highlight.percentage')}</h2>
-            <h3 className="text-3xl font-bold mb-6">{t('highlight.title')}</h3>
-            <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">{t('highlight.description')}</p>
-            <button
-              onClick={scrollToContact}
-              className="bg-white text-primary-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg"
-            >
-              {t('highlight.button')}
-            </button>
           </div>
         </div>
       </section>
 
       {/* Available Programs */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-4xl font-bold text-dark-700 mb-12 text-center">{t('programs.title')}</h2>
+          <h2 className="text-4xl font-bold text-dark-700 mb-4 text-center">{t('programs.title')}</h2>
+          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">Discover all available financial support options for your green energy investment</p>
           <div className="grid md:grid-cols-2 gap-8">
             {[1, 2, 3, 4, 5, 6].map((num) => (
-              <div key={num} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+              <div key={num} className="group bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-primary-200 hover:-translate-y-1">
                 <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full flex items-center justify-center">
+                  <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-primary-500 to-accent-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-dark-700 mb-3">{t(`programs.program${num}.title`)}</h3>
-                    <p className="text-gray-600 mb-4">{t(`programs.program${num}.description`)}</p>
-                    <div className="bg-gradient-to-br from-primary-50 to-accent-50 p-4 rounded-xl">
+                    <h3 className="text-2xl font-bold text-dark-700 mb-3 group-hover:text-primary-600 transition-colors">{t(`programs.program${num}.title`)}</h3>
+                    <p className="text-gray-600 mb-4 leading-relaxed">{t(`programs.program${num}.description`)}</p>
+                    <div className="bg-gradient-to-br from-primary-50 via-white to-accent-50 p-5 rounded-xl border border-primary-100 shadow-inner">
                       <div className="flex justify-between items-center">
-                        <span className="text-sm text-gray-600">{t('programs.maxSupport')}</span>
-                        <span className="text-xl font-bold text-primary-600">{t(`programs.program${num}.amount`)}</span>
+                        <span className="text-sm text-gray-600 font-medium">{t('programs.maxSupport')}</span>
+                        <span className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">{t(`programs.program${num}.amount`)}</span>
                       </div>
                     </div>
                   </div>
@@ -83,23 +96,32 @@ export default function GovernmentSupportPage() {
       </section>
 
       {/* Eligibility */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-4xl font-bold text-dark-700 mb-12 text-center">{t('eligibility.title')}</h2>
+          <h2 className="text-4xl font-bold text-dark-700 mb-4 text-center">{t('eligibility.title')}</h2>
+          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">Check if you qualify for government support programs</p>
           <div className="grid md:grid-cols-3 gap-8">
             {[1, 2, 3].map((num) => (
-              <div key={num} className="bg-gradient-to-br from-primary-50 to-accent-50 p-8 rounded-2xl">
-                <h3 className="text-2xl font-bold text-dark-700 mb-6">{t(`eligibility.category${num}.title`)}</h3>
-                <ul className="space-y-3">
-                  {[1, 2, 3, 4].map((req) => (
-                    <li key={req} className="flex items-start">
-                      <svg className="w-6 h-6 text-primary-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-                      <span className="text-gray-700">{t(`eligibility.category${num}.requirement${req}`)}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div key={num} className="relative bg-white rounded-2xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary-100 to-accent-100 rounded-bl-[100px] opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-accent-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-3xl font-bold text-white">{num}</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-dark-700 mb-6 group-hover:text-primary-600 transition-colors">{t(`eligibility.category${num}.title`)}</h3>
+                  <ul className="space-y-4">
+                    {[1, 2, 3, 4].map((req) => (
+                      <li key={req} className="flex items-start group/item">
+                        <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5 group-hover/item:scale-110 transition-transform">
+                          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                        </div>
+                        <span className="text-gray-700 leading-relaxed">{t(`eligibility.category${num}.requirement${req}`)}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             ))}
           </div>
