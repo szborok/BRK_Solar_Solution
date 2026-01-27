@@ -24,19 +24,21 @@ export default function KnowledgePage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center text-white overflow-hidden">
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: 'linear-gradient(to bottom, rgba(30, 58, 47, 0.8), rgba(34, 139, 34, 0.85)), url(https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=2073)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
+      <section className="relative h-screen flex items-center justify-center text-white overflow-hidden">
+        {/* Video Background */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        >
+          <source src="/media_collection/hero/3799746825-preview.mp4" type="video/mp4" />
+        </video>
         
         <div className="container mx-auto px-4 relative z-10 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">{t('hero.title')}</h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto">{t('hero.subtitle')}</p>
+          <h1 className="text-6xl md:text-7xl font-bold mb-6" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)' }}>{t('hero.title')}</h1>
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)' }}>{t('hero.subtitle')}</p>
         </div>
       </section>
 
@@ -68,7 +70,7 @@ export default function KnowledgePage() {
       {/* Featured Article */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-3xl font-bold text-dark-700 mb-8">{t('featured.title')}</h2>
+          <h2 className="text-3xl font-bold text-dark-700 mb-3 sm:mb-4" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}>{t('featured.title')}</h2>
           <div className="bg-gradient-to-br from-primary-500 to-accent-500 rounded-3xl overflow-hidden shadow-2xl">
             <div className="grid md:grid-cols-2">
               <div
@@ -100,7 +102,7 @@ export default function KnowledgePage() {
       {/* Articles Grid */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-3xl font-bold text-dark-700 mb-12">{t('articles.title')}</h2>
+          <h2 className="text-3xl font-bold text-dark-700 mb-8 sm:mb-12" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}>{t('articles.title')}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {articles.map((article) => (
               <div key={article.id} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">

@@ -99,10 +99,10 @@ export default function ServicesAndSolutions() {
         {/* Solar Solutions Section - Now First */}
         <div ref={solutionsRef}>
           <div className="text-right mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)' }}>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)' }}>
               {tAudience('title')}
             </h2>
-            <p className="text-xl text-white/90 max-w-2xl ml-auto" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8), 0 0 15px rgba(0,0,0,0.5)' }}>
+            <p className="text-xl text-white/90 max-w-2xl ml-auto mb-8 sm:mb-12" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8), 0 0 15px rgba(0,0,0,0.5)' }}>
               {tAudience('subtitle')}
             </p>
           </div>
@@ -295,10 +295,10 @@ export default function ServicesAndSolutions() {
         {/* Services Section - Now Second */}
         <div className="mt-24">
           <div className="text-right mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: '#ffffff', textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)' }}>
+            <h2 className="text-4xl md:text-5xl font-bold mb-3 sm:mb-4" style={{ color: '#ffffff', textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)' }}>
               {t('title')}
             </h2>
-            <p className="text-xl max-w-2xl ml-auto" style={{ color: '#ffffff', textShadow: '2px 2px 6px rgba(0,0,0,0.8), 0 0 15px rgba(0,0,0,0.5)' }}>
+            <p className="text-lg md:text-xl mb-8 sm:mb-12 opacity-90" style={{ color: '#ffffff', textShadow: '2px 2px 6px rgba(0,0,0,0.8), 0 0 15px rgba(0,0,0,0.5)' }}>
               {t('subtitle')}
             </p>
           </div>
@@ -307,7 +307,7 @@ export default function ServicesAndSolutions() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="group relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                className="group relative bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden"
               >
                 {/* Icon/Image Header */}
                 <div className="relative h-48 overflow-hidden">

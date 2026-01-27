@@ -62,16 +62,16 @@ export default function Header() {
               {t('services')}
             </Link>
             <Link
-              href={`/${locale}/where-we-work`}
+              href={`/${locale}/regions`}
               className="px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-300"
             >
-              {t('whereWeWork')}
+              {t('regions')}
             </Link>
             <Link
-              href={`/${locale}/how-we-work`}
+              href={`/${locale}/workflow`}
               className="px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-300"
             >
-              {t('howWeWork')}
+              {t('workflow')}
             </Link>
             <Link
               href={`/${locale}/government-support`}
@@ -142,18 +142,18 @@ export default function Header() {
               {t('services')}
             </Link>
             <Link
-              href={`/${locale}/where-we-work`}
+              href={`/${locale}/regions`}
               className="text-left hover:text-accent-400 transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
-              {t('whereWeWork')}
+              {t('regions')}
             </Link>
             <Link
-              href={`/${locale}/how-we-work`}
+              href={`/${locale}/workflow`}
               className="text-left hover:text-accent-400 transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
-              {t('howWeWork')}
+              {t('workflow')}
             </Link>
             <Link
               href={`/${locale}/government-support`}

@@ -40,8 +40,8 @@ export default function CommercialPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-dark-700 mb-6">{t('overview.title')}</h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">{t('overview.description')}</p>
+            <h2 className="text-4xl font-bold text-dark-700 mb-3 sm:mb-4" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}>{t('overview.title')}</h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8 sm:mb-12 leading-relaxed" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.1)' }}>{t('overview.description')}</p>
           </div>
           
           <div className="grid md:grid-cols-4 gap-8">

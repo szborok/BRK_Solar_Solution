@@ -56,10 +56,10 @@ export default function GovernmentSupport() {
         <div className="max-w-6xl mr-auto">
           {/* Header */}
           <div className="text-left mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)' }}>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)' }}>
               {t('title')}
             </h2>
-            <p className="text-xl text-gray-100 max-w-3xl mr-auto" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.5)' }}>
+            <p className="text-xl text-gray-100 max-w-3xl mr-auto mb-8 sm:mb-12" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.5)' }}>
               {t('subtitle')}
             </p>
           </div>
@@ -67,7 +67,7 @@ export default function GovernmentSupport() {
           {/* Main Content Grid */}
           <div className="space-y-8 mb-16">
             {/* Top: Big Highlight */}
-            <div className="rounded-2xl p-12 bg-white/60 backdrop-blur-sm transition-all duration-500 group relative overflow-hidden cursor-pointer hover:scale-[1.02] hover:shadow-2xl">
+            <div className="rounded-2xl p-12 bg-white/60 backdrop-blur-sm transition-all duration-500 group relative overflow-hidden cursor-pointer hover:scale-[1.02] hover:shadow-2xl shadow-xl">
               {/* Hover overlay with color shift */}
               <div className="absolute inset-0 bg-gradient-to-br from-green-400/0 to-green-600/0 group-hover:from-green-400/10 group-hover:to-green-600/5 transition-all duration-500 rounded-2xl" />
               
@@ -101,7 +101,7 @@ export default function GovernmentSupport() {
                 return (
                   <div
                     key={index}
-                    className="rounded-2xl p-6 bg-white/60 backdrop-blur-sm transition-all duration-500 group relative overflow-hidden cursor-pointer hover:scale-105 hover:shadow-2xl hover:z-10"
+                    className="rounded-2xl p-6 bg-white/60 backdrop-blur-sm transition-all duration-500 group relative overflow-hidden cursor-pointer hover:scale-105 hover:shadow-2xl hover:z-10 shadow-lg"
                   >
                     {/* Hover overlay with color shift */}
                     <div className="absolute inset-0 bg-gradient-to-br from-green-400/0 to-green-600/0 group-hover:from-green-400/10 group-hover:to-green-600/5 transition-all duration-500 rounded-2xl" />

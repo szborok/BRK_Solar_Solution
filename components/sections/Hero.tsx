@@ -87,16 +87,14 @@ export default function Hero() {
           className="absolute inset-0 w-full h-full object-cover"
           poster="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072"
         >
-          <source src="/media_collection/solar/3884707157-preview.mp4" type="video/mp4" />
+          <source src="/media_collection/hero/3884707157-preview.mp4" type="video/mp4" />
         </video>
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/50" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4">
         <div className="max-w-4xl">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight" style={{ textShadow: '3px 3px 10px rgba(0,0,0,0.9), 0 0 25px rgba(0,0,0,0.6)' }}>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)' }}>
             {t('title')}
           </h1>
           <p className="text-xl md:text-2xl mb-10 text-gray-100 max-w-2xl" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8), 0 0 15px rgba(0,0,0,0.5)' }}>

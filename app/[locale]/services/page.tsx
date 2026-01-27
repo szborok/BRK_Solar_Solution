@@ -1,11 +1,60 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { useEffect, useRef } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Brands from '@/components/sections/Brands';
 
 export default function ServicesPage() {
   const t = useTranslations('servicesPage');
+  const vantaRef = useRef<HTMLDivElement>(null);
+  const vantaEffect = useRef<any>(null);
+
+  useEffect(() => {
+    if (!vantaEffect.current && vantaRef.current) {
+      // Load Three.js
+      const script1 = document.createElement('script');
+      script1.src = 'https://cdn.jsdelivr.net/npm/three@0.121.1/build/three.min.js';
+      script1.async = true;
+      
+      script1.onload = () => {
+        // Load Vanta Fog
+        const script2 = document.createElement('script');
+        script2.src = 'https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.fog.min.js';
+        script2.async = true;
+        
+        script2.onload = () => {
+          if (vantaRef.current && (window as any).VANTA) {
+            vantaEffect.current = (window as any).VANTA.FOG({
+              el: vantaRef.current,
+              mouseControls: true,
+              touchControls: true,
+              gyroControls: false,
+              minHeight: 200.00,
+              minWidth: 200.00,
+              highlightColor: 0xcdbf9f,
+              midtoneColor: 0xc8a49f,
+              lowlightColor: 0x342f46,
+              baseColor: 0x59615b,
+              speed: 1.70,
+              zoom: 1.30
+            });
+          }
+        };
+        
+        document.head.appendChild(script2);
+      };
+      
+      document.head.appendChild(script1);
+    }
+    
+    return () => {
+      if (vantaEffect.current) {
+        vantaEffect.current.destroy();
+      }
+    };
+  }, []);
 
   const scrollToContact = () => {
     window.location.href = '/#contact';
@@ -65,74 +114,86 @@ export default function ServicesPage() {
     <main className="min-h-screen bg-white">
       <Header />
       
-      {/* Hero Section */}
-      <section className="relative h-[60vh] sm:h-[70vh] flex items-center justify-center text-white overflow-hidden">
-        <div
-          className="absolute inset-0 z-0 transition-transform duration-700 hover:scale-105"
-          style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-900/90 via-primary-700/80 to-accent-700/90 z-0"></div>
+      {/* Hero Section - Video Background */}
+      <section className="relative h-screen flex items-center justify-center text-white overflow-hidden">
+        <div className="absolute inset-0 z-0 bg-gray-900">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            className="absolute inset-0 w-full h-full object-cover"
+            poster="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072"
+          >
+            <source src="/media_collection/hero/3940526531-preview.mp4" type="video/mp4" />
+          </video>
+        </div>
         
         <div className="container mx-auto px-4 sm:px-6 relative z-10 text-center">
-          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 drop-shadow-2xl animate-fade-in">{t('hero.title')}</h1>
-          <p className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto drop-shadow-lg opacity-95">{t('hero.subtitle')}</p>
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-3 sm:mb-4" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)' }}>{t('hero.title')}</h1>
+          <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto text-gray-100" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)' }}>{t('hero.subtitle')}</p>
         </div>
       </section>
 
-      {/* Detailed Services */}
-      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+      <Brands />
+
+      {/* Detailed Services - Grid Layout */}
+      <section className="py-12 sm:py-16 md:py-20 relative overflow-hidden">
+        {/* Vanta Fog Background */}
+        <div ref={vantaRef} className="absolute inset-0"></div>
+        
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-dark-700 mb-4 sm:mb-6 text-center">End-to-End Energy Solutions</h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto text-center mb-12 sm:mb-16">From solar panel installation to electrical infrastructure upgrades, we provide everything you need to transition to sustainable energy. Our expert team handles every aspect of your project with precision and care.</p>
-          <div className="space-y-12 sm:space-y-16 md:space-y-20">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-dark-700 mb-3 sm:mb-4 text-center" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}>End-to-End Energy Solutions</h2>
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto text-center mb-8 sm:mb-12" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.1)' }}>From solar panel installation to electrical infrastructure upgrades, we provide everything you need to transition to sustainable energy.</p>
+          
+          {/* Grid of Service Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
             {services.map((service, index) => (
-              <div key={index} className={`relative group ${index % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}>
-                <div className="flex flex-col lg:flex-row lg:items-start gap-6 sm:gap-8">
-                  {/* Picture - stays on left (or right for odd items) */}
-                  <div className={`w-full lg:w-5/12 ${index % 2 === 0 ? '' : 'lg:order-2'}`}>
-                    <div
-                      className="relative h-96 sm:h-[28rem] md:h-[32rem] lg:h-[36rem] bg-cover bg-center rounded-3xl overflow-hidden shadow-2xl transform transition-all duration-500 group-hover:scale-[1.02] group-hover:shadow-3xl"
-                      style={{
-                        backgroundImage: `url(${service.image})`,
-                      }}
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary-600/80 to-accent-600/80 transition-opacity duration-500 group-hover:opacity-90"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="p-8 bg-white/20 backdrop-blur-md rounded-3xl text-white transform transition-all duration-500 group-hover:scale-110 group-hover:bg-white/30 border border-white/30">
-                          {service.icon}
-                        </div>
-                      </div>
+              <div key={index} className="group relative bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transform transition-all duration-500 hover:-translate-y-2 flex flex-col">
+                {/* Image with Icon Overlay */}
+                <div className="relative h-64 overflow-hidden">
+                  <div
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                    style={{
+                      backgroundImage: `url(${service.image})`,
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary-600/70 to-accent-600/70 transition-opacity duration-500 group-hover:opacity-80"></div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="p-5 bg-white/20 backdrop-blur-md rounded-2xl text-white transform transition-all duration-500 group-hover:scale-110 group-hover:bg-white/30 border border-white/30">
+                      {service.icon}
                     </div>
                   </div>
+                </div>
+                
+                {/* Content */}
+                <div className="p-6 flex-grow flex flex-col">
+                  <h3 className="text-xl sm:text-2xl font-bold text-dark-700 mb-2 transition-colors duration-300 group-hover:text-primary-600">
+                    {t(`services.${service.key}.title`)}
+                  </h3>
+                  <p className="text-gray-600 text-sm sm:text-base mb-4 leading-relaxed line-clamp-3">
+                    {t(`services.${service.key}.fullDescription`)}
+                  </p>
                   
-                  {/* Text Card - overlaps picture */}
-                  <div className={`w-full lg:w-7/12 lg:-mt-0 ${index % 2 === 0 ? 'lg:-ml-16' : 'lg:-mr-16 lg:order-1'} relative z-10`}>
-                    <div className="lg:mt-16 p-6 sm:p-8 md:p-12 bg-white rounded-3xl shadow-xl transform transition-all duration-500 group-hover:shadow-2xl flex flex-col">
-                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-dark-700 mb-3 sm:mb-4 transition-colors duration-300 group-hover:text-primary-600">{t(`services.${service.key}.title`)}</h3>
-                      <p className="text-gray-600 text-base sm:text-lg mb-4 sm:mb-6 leading-relaxed">{t(`services.${service.key}.fullDescription`)}</p>
-                    
-                      <h4 className="text-lg sm:text-xl font-bold text-dark-700 mb-3 sm:mb-4 flex items-center">
-                        <span className="w-6 sm:w-8 h-0.5 bg-primary-600 mr-2 sm:mr-3"></span>
-                        {t('services.keyFeatures')}
-                      </h4>
-                      <ul className="space-y-2 sm:space-y-3">
-                        {[1, 2, 3, 4].map((num) => (
-                          <li key={num} className="flex items-start transition-transform duration-300 hover:translate-x-2">
-                            <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0 mt-0.5">
-                              <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                              </svg>
-                            </div>
-                            <span className="text-sm sm:text-base text-gray-700">{t(`services.${service.key}.feature${num}`)}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
+                  {/* Key Features - Compact */}
+                  <ul className="space-y-2 mt-auto">
+                    {[1, 2].map((num) => (
+                      <li key={num} className="flex items-start text-xs sm:text-sm text-gray-700">
+                        <div className="w-4 h-4 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center mr-2 flex-shrink-0 mt-0.5">
+                          <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                        </div>
+                        <span>{t(`services.${service.key}.feature${num}`)}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  {/* Learn More Button */}
+                  <button className="mt-4 w-full py-3 px-4 bg-white text-primary-600 hover:bg-gray-100 rounded-xl font-semibold text-sm transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 opacity-0 group-hover:opacity-100 border border-gray-100">
+                    Learn More
+                  </button>
                 </div>
               </div>
             ))}
@@ -140,76 +201,100 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Target Audiences */}
-      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-50 to-white">
+      {/* Target Audiences - Compact */}
+      <section className="py-12 sm:py-16 relative overflow-hidden" style={{
+        backgroundImage: 'url(/media_collection/bg/house_and_business.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center 40%'
+      }}>
+        {/* Decorative circles */}
+        <div className="absolute top-10 left-20 w-64 h-64 bg-gradient-to-br from-primary-300/30 to-accent-300/30 rounded-full blur-2xl animate-pulse" style={{ animationDuration: '4s' }}></div>
+        <div className="absolute bottom-10 right-20 w-80 h-80 bg-gradient-to-br from-accent-300/30 to-primary-300/30 rounded-full blur-2xl animate-pulse" style={{ animationDuration: '5s' }}></div>
         <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-dark-700 mb-3 sm:mb-4 text-center">{t('targetAudience.title')}</h2>
-          <p className="text-sm sm:text-base text-gray-600 text-center mb-8 sm:mb-12 max-w-2xl mx-auto">Choose the solution that fits your needs</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            <div className="group relative bg-gradient-to-br from-primary-500 via-primary-600 to-accent-600 text-white rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl hover:shadow-3xl transform transition-all duration-500 hover:-translate-y-2 overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 sm:w-40 sm:h-40 bg-white/10 rounded-full -mr-16 sm:-mr-20 -mt-16 sm:-mt-20 group-hover:scale-150 transition-transform duration-700"></div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4 text-center relative z-10" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)' }}>{t('targetAudience.title')}</h2>
+          <p className="text-sm sm:text-base text-white text-center mb-8 sm:mb-12 max-w-2xl mx-auto relative z-10" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)' }}>Choose the solution that fits your needs</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+            <div className="group relative bg-gradient-to-br from-primary-600/70 to-primary-700/70 text-white rounded-2xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transform transition-all duration-500 hover:-translate-y-1 overflow-hidden backdrop-blur-sm">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700"></div>
               <div className="relative z-10">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-10 h-10 sm:w-12 sm:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                   </svg>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">{t('targetAudience.residential.title')}</h3>
-                <p className="text-base sm:text-lg mb-4 sm:mb-6 opacity-95 leading-relaxed">{t('targetAudience.residential.description')}</p>
-                <div className="space-y-2 sm:space-y-3">
+                <h3 className="text-xl sm:text-2xl font-bold mb-2">{t('targetAudience.residential.title')}</h3>
+                <p className="text-sm sm:text-base mb-4 opacity-95">{t('targetAudience.residential.description')}</p>
+                <div className="space-y-2">
                   {[1, 2, 3, 4].map((num) => (
-                    <div key={num} className="flex items-start bg-white/10 backdrop-blur-sm rounded-xl p-2 sm:p-3 transition-all duration-300 hover:bg-white/20">
-                      <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/30 flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0 mt-0.5">
-                        <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <div key={num} className="flex items-start text-sm">
+                      <div className="w-5 h-5 rounded-full bg-white/30 flex items-center justify-center mr-2 flex-shrink-0 mt-0.5">
+                        <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                       </div>
-                      <span className="text-sm sm:text-base text-white/95">{t(`targetAudience.residential.benefit${num}`)}</span>
+                      <span className="text-white/95">{t(`targetAudience.residential.benefit${num}`)}</span>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
 
-            <div className="group relative bg-gradient-to-br from-dark-700 via-dark-600 to-gray-800 text-white rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl hover:shadow-3xl transform transition-all duration-500 hover:-translate-y-2 overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 sm:w-40 sm:h-40 bg-white/10 rounded-full -mr-16 sm:-mr-20 -mt-16 sm:-mt-20 group-hover:scale-150 transition-transform duration-700"></div>
+            <div className="group relative bg-gradient-to-br from-dark-700/70 via-dark-600/70 to-gray-800/70 text-white rounded-2xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transform transition-all duration-500 hover:-translate-y-1 overflow-hidden backdrop-blur-sm">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700"></div>
               <div className="relative z-10">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-10 h-10 sm:w-12 sm:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">{t('targetAudience.commercial.title')}</h3>
-                <p className="text-base sm:text-lg mb-4 sm:mb-6 opacity-95 leading-relaxed">{t('targetAudience.commercial.description')}</p>
-                <div className="space-y-2 sm:space-y-3">
+                <h3 className="text-xl sm:text-2xl font-bold mb-2">{t('targetAudience.commercial.title')}</h3>
+                <p className="text-sm sm:text-base mb-4 opacity-95">{t('targetAudience.commercial.description')}</p>
+                <div className="space-y-2">
                   {[1, 2, 3, 4].map((num) => (
-                    <div key={num} className="flex items-start bg-white/10 backdrop-blur-sm rounded-xl p-2 sm:p-3 transition-all duration-300 hover:bg-white/20">
-                      <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/30 flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0 mt-0.5">
-                        <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <div key={num} className="flex items-start text-sm">
+                      <div className="w-5 h-5 rounded-full bg-white/30 flex items-center justify-center mr-2 flex-shrink-0 mt-0.5">
+                        <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                       </div>
-                      <span className="text-sm sm:text-base text-white/95">{t(`targetAudience.commercial.benefit${num}`)}</span>
+                      <span className="text-white/95">{t(`targetAudience.commercial.benefit${num}`)}</span>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-primary-600 to-accent-600 text-white">
-        <div className="container mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">{t('cta.title')}</h2>
-          <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto">{t('cta.subtitle')}</p>
-          <button
-            onClick={scrollToContact}
-            className="bg-white text-primary-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg"
-          >
-            {t('cta.button')}
-          </button>
+          
+          {/* CTA at bottom of section */}
+          <div className="rounded-3xl p-8 md:p-12 text-center text-white relative overflow-hidden bg-gray-900/80 backdrop-blur-sm mt-12 max-w-6xl mx-auto">
+            <div className="relative z-10">
+              <h3 className="text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}>{t('cta.title')}</h3>
+              <p className="text-gray-200 text-lg mb-8 sm:mb-12 max-w-2xl mx-auto" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.3)' }}>{t('cta.subtitle')}</p>
+              <p className="text-gray-300 text-base mb-8 sm:mb-12 max-w-3xl mx-auto" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.3)' }}>
+                Our experienced team will assess your property, recommend the perfect solution for your needs, and provide a transparent quote with no hidden fees. We handle everything from permits to installation, making your transition to clean energy seamless.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-2xl mx-auto">
+                <button
+                  onClick={scrollToContact}
+                  className="flex-1 inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                >
+                  {t('cta.button')}
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </button>
+                <button
+                  onClick={scrollToContact}
+                  className="flex-1 inline-flex items-center justify-center gap-2 bg-white/40 hover:bg-white/50 backdrop-blur-md text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 border border-white/60"
+                >
+                  Contact Us
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

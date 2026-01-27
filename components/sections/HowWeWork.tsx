@@ -91,7 +91,7 @@ export default function HowWeWork() {
   ];
 
   return (
-    <section ref={sectionRef} id="how-we-work" className="py-20 bg-gradient-to-b from-gray-100 via-gray-50 to-white text-gray-900 relative overflow-hidden">
+    <section ref={sectionRef} id="workflow" className="py-20 bg-gradient-to-b from-gray-100 via-gray-50 to-white text-gray-900 relative overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0 opacity-20">
         <video
@@ -122,10 +122,10 @@ export default function HowWeWork() {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.3), 0 0 20px rgba(0,0,0,0.2)' }}>
+          <h2 className="text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-gray-900" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.3), 0 0 20px rgba(0,0,0,0.2)' }}>
             {t('title')}
           </h2>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.3), 0 0 10px rgba(0,0,0,0.2)' }}>
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto mb-8 sm:mb-12" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.3), 0 0 10px rgba(0,0,0,0.2)' }}>
             {t('subtitle')}
           </p>
         </div>
@@ -227,7 +227,7 @@ export default function HowWeWork() {
         {/* Learn More Button */}
         <div className="flex justify-center mt-16">
           <Link
-            href={`/${locale}/how-we-work`}
+            href={`/${locale}/workflow`}
             className="group relative px-12 py-5 bg-gradient-to-r from-orange-500/20 via-orange-600/30 to-orange-500/20 backdrop-blur-sm border-2 border-orange-500/50 text-orange-600 rounded-full text-lg font-bold shadow-xl hover:shadow-orange-500/40 transition-all duration-300 hover:scale-105 overflow-hidden"
           >
             {/* Animated background effect */}

@@ -109,7 +109,7 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-6 text-white">{t('companyTitle')}</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#how-we-work" className="text-gray-300 hover:text-accent-500 transition-colors flex items-center gap-2 group">
+                <a href="#workflow" className="text-gray-300 hover:text-accent-500 transition-colors flex items-center gap-2 group">
                   <span className="text-primary-500 group-hover:translate-x-1 transition-transform">→</span>
                   {tHeader('about')}
                 </a>

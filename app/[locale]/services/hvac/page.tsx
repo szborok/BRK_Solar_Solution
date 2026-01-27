@@ -48,8 +48,8 @@ export default function HVACPage() {
               />
             </div>
             <div>
-              <h2 className="text-4xl font-bold text-dark-700 mb-6">{t('overview.title')}</h2>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">{t('overview.description')}</p>
+              <h2 className="text-4xl font-bold text-dark-700 mb-3 sm:mb-4" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}>{t('overview.title')}</h2>
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.1)' }}>{t('overview.description')}</p>
               <p className="text-lg text-gray-600 leading-relaxed">{t('overview.description2')}</p>
             </div>
           </div>

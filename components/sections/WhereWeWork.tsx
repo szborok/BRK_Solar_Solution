@@ -145,12 +145,12 @@ export default function WhereWeWork() {
   };
 
   return (
-    <section className="relative py-16 md:py-24" id="where-we-work">
+    <section className="relative py-16 md:py-24" id="regions">
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-40"
         style={{
-          backgroundImage: 'url(/where_we_work_bg/pexels-darshan394-1123972.jpg)',
+          backgroundImage: 'url(/media_collection/bg/pexels-darshan394-1123972.jpg)',
           backgroundAttachment: 'fixed',
         }}
       />
@@ -159,10 +159,10 @@ export default function WhereWeWork() {
       <div className="relative z-10 max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)' }}>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)' }}>
             {t('title')}
           </h2>
-          <p className="text-xl text-gray-100 max-w-3xl mx-auto" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)' }}>
+          <p className="text-xl text-gray-100 max-w-3xl mx-auto mb-8 sm:mb-12" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)' }}>
             {t('description')}
           </p>
         </div>
@@ -449,7 +449,7 @@ export default function WhereWeWork() {
         {/* Learn More Button */}
         <div className="flex justify-center mt-16">
           <Link
-            href={`/${locale}/where-we-work`}
+            href={`/${locale}/regions`}
             className="group relative px-12 py-5 bg-gradient-to-r from-orange-500/20 via-orange-600/30 to-orange-500/20 backdrop-blur-sm border-2 border-orange-500/50 text-orange-600 rounded-full text-lg font-bold shadow-xl hover:shadow-orange-500/40 transition-all duration-300 hover:scale-105 overflow-hidden"
           >
             {/* Animated background effect */}
